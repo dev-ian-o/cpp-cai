@@ -21,12 +21,12 @@
 		<div class="panel-heading clearfix">Simulate
 			<div class="pull-right">
 				<a class="btn btn-sm btn-success" href="javascript:void(0);" onclick="startSimulate();">Simulate</a>
-				</div>
+			</div>
 		</div>
 		<div class="panel-body">
 			<div class="my-code-area">
 				<pre>
-					<?php include $dir . '/simulate/html/html-lesson1.html';?>
+					<?php include $dir . '/simulate/html/html-lesson1.php';?>
 				</pre>
 			</div>
 		</div>

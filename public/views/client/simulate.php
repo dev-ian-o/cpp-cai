@@ -2,22 +2,6 @@
 <?php require_once 'header-footer/nav.php';?>
 
 <link rel="stylesheet" type="text/css" href="../../../node_modules/intro.js/introjs.css">
-<style>
-	.button-compile{
-		margin-top: -552px;
-		position: absolute;		
-	}
-	.mLn200{
-		margin-left: -200px;
-	}
-	.mLn116{
-		margin-left: -116px;
-	}
-	.introjs-helperNumberLayer{
-		line-height: 10px;
-	}
-
-</style>
 
 
 <div class="container">

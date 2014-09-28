@@ -53,7 +53,9 @@
                             <h4>Lesson: <?= $valueSub->lesson_sub_description?></h4>
                         </div>
                         <div class="pull-right">
-                            <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#add-row-exam"><i class="fa fa-plus"></i> ADD</button>
+                            <input type="hidden" name="lesson_id" value="<?= $valueSub->lesson_id;?>">
+                            <input type="hidden" name="lesson_sub_id" value="<?= $valueSub->lesson_sub_id;?>">
+                            <button class="btn btn-sm btn-success add-exam-btn" data-toggle="modal" data-target="#add-row-exam"><i class="fa fa-plus"></i> ADD</button>
                         </div>                        
                     </div>
                     <hr class="mTn5">
@@ -86,8 +88,10 @@
                             <a href="#" class="tooltip-texts" data-toggle="tooltip" data-placement="top" title="<?= $value->lesson_answer;?>"><?=  show_limit($value->lesson_answer, 20);?></a>
                         </td>
                         <td>
-                            <input type="hidden" name="exam_item_id" value="<?= $value->lesson_id;?>">
+                            <input type="hidden" name="exam_item_id" value="<?= $value->exam_item_id;?>">
                             <input type="hidden" name="lesson_question" value="<?= $value->lesson_question;?>">
+                            <input type="hidden" name="lesson_id" value="<?= $value->lesson_id;?>">
+                            <input type="hidden" name="lesson_sub_id" value="<?= $value->lesson_sub_id;?>">
                             <input type="hidden" name="lesson_answer" value="<?= $value->lesson_answer;?>">
 
                             <input type="hidden" name="lesson_choice1" value="<?= $value->lesson_choice1;?>">
@@ -121,6 +125,8 @@
     <div class="modal-dialog">
         <form id="form-add-row-exam" method="post">
         <input type="hidden" name="add-row-exam-page" value="exam">
+        <input type="hidden" name="lesson_id" value="">
+        <input type="hidden" name="lesson_sub_id" value="">
         <input type="hidden" name="form" value="add-row-exam-page">
         <div class="modal-content">
             <div class="modal-header">
@@ -129,12 +135,28 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label>Chapter Lesson</label>
-                    <input type="text" name="lesson_description" class="form-control" placeholder="Chapter Lesson">
+                    <label>Question</label>
+                    <input type="text" name="lesson_question" class="form-control" placeholder="Enter text">
                 </div>
                 <div class="form-group">
-                    <label>Chapter No.</label>
-                    <input type="text" name="lesson_chapter" class="form-control" placeholder="Enter text">
+                    <label>Choice #1</label>
+                    <input type="text" name="lesson_choice1" class="form-control" placeholder="Enter text">
+                </div>
+                <div class="form-group">
+                    <label>Choice #2</label>
+                    <input type="text" name="lesson_choice2" class="form-control" placeholder="Enter text">
+                </div>
+                <div class="form-group">
+                    <label>Choice #3</label>
+                    <input type="text" name="lesson_choice3" class="form-control" placeholder="Enter text">
+                </div>
+                <div class="form-group">
+                    <label>Choice #4</label>
+                    <input type="text" name="lesson_choice4" class="form-control" placeholder="Enter text">
+                </div>
+                <div class="form-group">
+                    <label>Answer</label>
+                    <input type="text" name="lesson_answer" class="form-control" placeholder="Enter text">
                 </div>
             </div>
             <div class="modal-footer">
@@ -152,6 +174,8 @@
     <div class="modal-dialog">
         <form id="form-edit-row-exam" method="post">
         <input type="hidden" name="edit-row-exam-page" value="exam">
+        <input type="hidden" name="lesson_id" value="">
+        <input type="hidden" name="lesson_sub_id" value="">
         <input type="hidden" name="exam_item_id" value="">
         <input type="hidden" name="form" value="edit-row-exam-page">
         <div class="modal-content">
@@ -224,6 +248,9 @@
 
 	<a href="#" class="go-top">Go Top</a>
 <?php require_once 'header-footer/footer.php';?>
+<script src="../../../includes/scripts-ajax/script-row-add-quiz-question.js"></script>    
+<script src="../../../includes/scripts-ajax/script-row-edit-quiz-question.js"></script>    
+
 <script>
     $(document).ready(function() {
         $('.tooltip-texts').tooltip();
@@ -246,6 +273,8 @@
             lesson_choice2 = $($parent).find('input[name=lesson_choice2]').val();
             lesson_choice3 = $($parent).find('input[name=lesson_choice3]').val();
             lesson_choice4 = $($parent).find('input[name=lesson_choice4]').val();
+            lesson_id = $($parent).find('input[name=lesson_id]').val();
+            lesson_sub_id = $($parent).find('input[name=lesson_sub_id]').val();
             $form = "#form-edit-row-exam";
             $($form).find('input[name=exam_item_id]').val(exam_item_id)
             $($form).find('input[name=lesson_question]').val(lesson_question);
@@ -254,7 +283,17 @@
             $($form).find('input[name=lesson_choice2]').val(lesson_choice2);
             $($form).find('input[name=lesson_choice3]').val(lesson_choice3);
             $($form).find('input[name=lesson_choice4]').val(lesson_choice4);
-        })
+            $($form).find('input[name=lesson_id]').val(lesson_choice3);
+            $($form).find('input[name=lesson_sub_id]').val(lesson_choice4);
+        });
+        $(".add-exam-btn").click(function(){
+            $parent = this.parentElement;
+            lesson_id = $($parent).find('input[name=lesson_id]').val();
+            lesson_sub_id = $($parent).find('input[name=lesson_sub_id]').val();
+            $form = "#form-add-row-exam";
+            $($form).find('input[name=lesson_id]').val(lesson_id);
+            $($form).find('input[name=lesson_sub_id]').val(lesson_sub_id);
+        });
     });
 
 </script>

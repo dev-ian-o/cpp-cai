@@ -178,6 +178,31 @@
 .mBn95{ margin-bottom: -95px!important;}
 .mBn100{ margin-bottom: -100px!important;}
 
+.introjs-bullets{
+  display: none!important;
+}
+
+.introjs-helperNumberLayer{
+  font-size: 9px!important;
+  line-height: 10px!important;
+
+}
+
+.introjs-overlay{
+  opacity: 0.3!important;
+}
+
+.button-compile{
+  margin-top: -554px;
+  position: absolute;   
+}
+.mLn200{
+  margin-left: -230px;
+}
+.mLn116{
+  margin-left: -134px;
+}
+
 
 .gritter-close{
 	display: block!important;

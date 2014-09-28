@@ -1,16 +1,6 @@
 <?php require_once 'header-footer/header.php';?>
 <?php require_once 'header-footer/nav.php';?>
 <style>
-	.button-compile{
-		margin-top: -552px;
-		position: absolute;		
-	}
-	.mLn200{
-		margin-left: -200px;
-	}
-	.mLn116{
-		margin-left: -116px;
-	}
 
 </style>
 
