@@ -1,10 +1,10 @@
 
 $(document).ready(function(){
-
 	$("#form-edit-row-sub-lesson").on('submit', function(e){
 		e.preventDefault();
 		form = "#form-edit-row-sub-lesson";
-		initEditLesson("form-edit-row-sub-lesson");	
+		// console.log('here');
+		initEditSubLesson("form-edit-row-sub-lesson");	
 		return false;
 	});
 
@@ -12,11 +12,11 @@ $(document).ready(function(){
 
 
 
-function initEditLesson(form){
+function initEditSubLesson(form){
 	console.log("fetching");
 	$(".loader").fadeIn('fast');
 	form = $('#'+form);
-
+	debugger;
 	$.ajax({
 		url: '../../../includes/requests/request-row-edit-sub-lesson.php',
 		type: 'POST',
@@ -28,11 +28,14 @@ function initEditLesson(form){
 			{
 				$('#edit-row-sub').modal('hide');
 				notif_edit();
+				console.log(vars);
+
 				$(form)[0].reset();
 				window.location = "index-page.php";
 			}
 			else
 			{
+				console.log(vars);
 				notif_error();
 			}
 		},

@@ -1,10 +1,11 @@
 
 $(document).ready(function(){
-	$("#form-add-row-sub-lesson").on('submit', function(e){
+
+	$("#form-edit-row-lesson").on('submit', function(e){
 		e.preventDefault();
-		form = "#form-add-row-sub-lesson";
-		initAddSubLesson("form-add-row-sub-lesson");	
-		debugger;
+		form = "#form-edit-row-lesson";
+		initEditLesson("form-edit-row-lesson");	
+		// debugger;
 		return false;
 	});
 
@@ -12,13 +13,12 @@ $(document).ready(function(){
 
 
 
-function initAddSubLesson(form){
+function initEditLesson(form){
 	console.log("fetching");
 	$(".loader").fadeIn('fast');
 	form = $('#'+form);
-	console.log(form.serialize());
 	$.ajax({
-		url: '../../../includes/requests/request-row-add-sub-lesson.php',
+		url: '../../../includes/requests/request-row-edit-lesson.php',
 		type: 'POST',
 		data: form.serialize(),
 		dataType: 'json',
@@ -26,15 +26,13 @@ function initAddSubLesson(form){
 			var vars = results;
 			if(vars.error === "ok")
 			{
-				$('#add-row-sub').modal('hide');
-				notif_success();
+				$('#edit-row').modal('hide');
+				notif_edit();
 				$(form)[0].reset();
 				window.location = "index-page.php";
-				// renderHtml(vars);
 			}
 			else
 			{
-				console.log(vars);
 				notif_error();
 			}
 		},
@@ -44,7 +42,6 @@ function initAddSubLesson(form){
 		}
 	});
 }
-
 
 
 function notif_success(){

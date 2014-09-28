@@ -59,7 +59,7 @@
                     <div class="panel-heading clearfix">
                         CPP Sub Lessons 
                         <div class="pull-right">
-                            <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#add-row-sub"><i class="fa fa-plus"></i> ADD</button>
+                            <button class="btn btn-sm btn-success add-btn-sub" data-toggle="modal" data-target="#add-row-sub"><i class="fa fa-plus"></i> ADD</button>
                         </div>
                     </div>
                     <!-- /.panel-heading -->
@@ -383,7 +383,7 @@
             position = $(this.selectedOptions).data('pos');
             $('#form-edit-row-sub-lesson').find('[name=lesson_chapter]').find('[data-pos]').removeAttr('selected');
             $('#form-edit-row-sub-lesson').find('[name=lesson_chapter]').find('[data-pos='+position+']').attr('selected','selected');
-
+            // console.log('her');
 
             $('#form-edit-row-sub-lesson').find('[name=lesson_id]').find('[data-pos]').removeAttr('selected');
             $('#form-edit-row-sub-lesson').find('[name=lesson_id]').find('[data-pos='+position+']').attr('selected','selected');

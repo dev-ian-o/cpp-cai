@@ -26,15 +26,14 @@ function add_sub_lesson($row,$conn){
 	$stmt = $conn->prepare("INSERT INTO tbl_lessons_sub_chapters(
 		lesson_id,
 		lesson_chapter,
-		lesson_sub_description,
-		content) values(:lesson_id,:lesson_chapter,:lesson_sub_description,:content)
+		lesson_sub_description) values(:lesson_id,:lesson_chapter,:lesson_sub_description)
 	");
 
 	$stmt->execute(array(
 		"lesson_id" => $row["lesson_id"],
 		"lesson_chapter" => $row["lesson_chapter"],
 		"lesson_sub_description" => $row["lesson_sub_description"],
-		"content" => $row["content"]
+
 	));
 	
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -59,32 +58,30 @@ function update_lesson($row,$conn){
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-
 function update_sub_lesson($row,$conn){
 	$stmt = $conn->prepare("UPDATE tbl_lessons_sub_chapters 
-		SET lesson_id = :lesson_id,
-			lesson_chapter = :lesson_chapter,
-			lesson_sub_description = :lesson_sub_description,
-			content = :content
+		SET lesson_id =:lesson_id,
+			lesson_chapter =:lesson_chapter,
+			lesson_sub_description =:lesson_sub_description
 		WHERE lesson_sub_id = :lesson_sub_id
 	");
 
-	$stmt->execute(array(
+	$stmt->execute(array(		
 		"lesson_sub_id" => $row["lesson_sub_id"],
 		"lesson_id" => $row["lesson_id"],
 		"lesson_chapter" => $row["lesson_chapter"],
 		"lesson_sub_description" => $row["lesson_sub_description"],
-		"content" => $row["content"],
 	));
 	
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+
 // $arr = array(
 // 		"lesson_sub_id" => "1",
 // 		"lesson_id" => "1",
 // 		"lesson_chapter" => "1",
 // 		"lesson_sub_description" => "sample",
-// 		"content" => "asd",
 // );
 
 // update_sub_lesson($arr,$conn);
@@ -103,9 +100,25 @@ function fetch_lessons($conn,$print = true){
 
 	if ($print) print_r($row); else return $row;
 }
-function fetch_exam_items($conn,$id,$print = true){
+function fetch_exam_items_lesson_id($conn,$id,$print = true){
 	$stmt = $conn->prepare("SELECT * 
 		FROM tbl_exam_items
+		WHERE lesson_id =:lesson_id
+	");
+	
+	$stmt->execute(array(
+		"lesson_id" => $id
+	));
+	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	$row = json_encode($row);
+
+	if ($print) print_r($row); else return $row;
+}
+
+function fetch_sub_lesson_id($conn,$id,$print = true){
+	$stmt = $conn->prepare("SELECT * 
+		FROM tbl_lessons_sub_chapters
 		WHERE lesson_id =:lesson_id
 	");
 	
