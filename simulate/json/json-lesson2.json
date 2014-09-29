@@ -1,0 +1,47 @@
+[
+{ 
+  intro: "Hello world!"
+},
+{
+  element: '.line1',
+  intro: 'More features, more fun.',
+  position: 'bottom'
+},
+{
+  element: '.line1',
+  intro: "Assuming you input 1.",
+  position: 'bottom'
+},
+{
+  element: '.line3',
+  intro: 'Get it, use it.'
+},
+{
+  element: '.line4',
+  intro: 'Get it, use it.'
+},
+{
+  element: '.line5',
+  intro: 'Get it, use it.'
+},
+{
+  element: '.line6',
+  intro: 'Get it, use it.'
+},
+{
+  element: '.line7',
+  intro: 'Get it, use it.'
+},
+{
+  element: '.line8',
+  intro: 'Get it, use it.'
+},
+{
+  element: '.line9',
+  intro: 'Get it, use it.'
+},
+{
+  element: '.line11',
+  intro: 'Get it, use it.'
+}
+]			

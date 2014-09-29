@@ -25,6 +25,15 @@
 
 	<script type="text/javascript">
 		<?php include $dir . '/simulate/js/js-lesson1.js';?>
+		function startSimulate(){
+			var intro = introJs();
+			var stepsLine = {
+				steps: <?php include $dir . '/simulate/json/'.$jsonPage;?>
+			};
+			intro.setOptions({ steps: stepsLine.steps });
+
+			intro.start();
+		}
     </script>
 
 <?php require_once 'header-footer/footer.php';?>

@@ -85,6 +85,7 @@
                                                     <input type="hidden" name="lesson_sub_id" value="<?= $value->lesson_sub_id;?>">
                                                     <input type="hidden" name="lesson_id" value="<?= $value->lesson_id;?>">
                                                     <button class="btn btn-info btn-sm edit-btn-sub" data-toggle="modal" data-target="#edit-row-sub"><i class="fa fa-pencil"></i> Edit</button>
+                                                    <a href="lesson-content.php?lesson=<?= $value->lesson_sub_id;?>" class="btn btn-info btn-sm"><i class="fa fa-pencil"></i> Add/Edit Content</a>
                                                     <button class="btn btn-danger btn-sm remove-btn-sub" data-toggle="modal" data-target="#remove-row-sub"><i class="fa fa-remove"></i> Remove</button>
                                                 </td>
                                         </tr>

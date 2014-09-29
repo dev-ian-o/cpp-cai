@@ -21,10 +21,10 @@ function init(form){
 		dataType: 'json',
 		success: function(results){
 			var vars = results;
-			$(".content-chapter").html(vars[0].content);
+			$(".content-chapter").html(vars[0].contentHTML);
 			// debugger;
 			$(".lesson-title").html(vars[0].lesson_sub_description);
-			console.log(vars);
+			// console.log(vars);
 							
 		},
 		complete:function(){

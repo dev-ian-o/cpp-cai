@@ -1,0 +1,41 @@
+[
+{ 
+  intro: "Array Program"
+},
+{
+  id: "1",
+  element: '.line3',
+  intro: 'Load the iostream preprocessor directive to the program.  It contains information about the object cout and cin.',
+  position: 'bottom'
+},
+{
+  id: "2",
+  element: '.line5',
+  intro: 'Allows us to code in our programs cout (and later cin) without having to qualify these by coding std::cout (and std::cin).',
+  position: 'bottom'
+},
+{
+  id: "3",
+  element: '.line7',
+  intro: 'Begins execution and controls the C++ program by executing C++ statements and other functions.',
+  position: 'bottom'
+},
+{
+  id: "4",
+  element: '.line9',
+  intro: 'Declare and initialize NUM array of size 5 IN COMPUTER MEMORY with the values 2,7,27, 13 and 40 respectively',
+  position: 'bottom'
+},
+{
+  id: "5" ,
+  element: '.line10',
+  intro: 'Represents the index of each element of array',
+  position: 'bottom'
+},
+{
+  id: "6" ,
+  element: '.line10',
+  intro: '',
+  position: 'bottom'
+}
+]     

@@ -4,7 +4,6 @@ $(document).ready(function(){
 		e.preventDefault();
 		form = "#form-add-row-sub-lesson";
 		initAddSubLesson("form-add-row-sub-lesson");	
-		debugger;
 		return false;
 	});
 

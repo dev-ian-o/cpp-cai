@@ -1,47 +1,151 @@
 [
 { 
-  intro: "Hello world!"
+  intro: "Array Program"
 },
 {
-  element: '.line1',
-  intro: 'More features, more fun.',
-  position: 'bottom'
-},
-{
-  element: '.line1',
-  intro: "Assuming you input 1.",
-  position: 'bottom'
-},
-{
+  id: "1",
   element: '.line3',
-  intro: 'Get it, use it.'
+  intro: 'Load the iostream preprocessor directive to the program.  It contains information about the object cout and cin.',
+  position: 'bottom'
 },
 {
-  element: '.line4',
-  intro: 'Get it, use it.'
-},
-{
+  id: "2",
   element: '.line5',
-  intro: 'Get it, use it.'
+  intro: 'Allows us to code in our programs cout (and later cin) without having to qualify these by coding std::cout (and std::cin).',
+  position: 'bottom'
 },
 {
-  element: '.line6',
-  intro: 'Get it, use it.'
-},
-{
+  id: "3",
   element: '.line7',
-  intro: 'Get it, use it.'
+  intro: 'Begins execution and controls the C++ program by executing C++ statements and other functions.',
+  position: 'bottom'
 },
 {
-  element: '.line8',
-  intro: 'Get it, use it.'
-},
-{
+  id: "4",
   element: '.line9',
-  intro: 'Get it, use it.'
+  intro: 'Declare and initialize NUM array of size 5 IN COMPUTER MEMORY with the values 2,7,27, 13 and 40 respectively',
+  position: 'bottom'
 },
 {
+  id: "5" ,
+  element: '.line10',
+  intro: 'Represents the index of each element of array',
+  position: 'bottom'
+},
+{
+  id: "6",
   element: '.line11',
-  intro: 'Get it, use it.'
-}
+  intro: 'Initiliaze the variable index to 0',
+  position: 'bottom'
+},
+{
+  id: "7",
+  element: '.line13',
+  intro: 'Evaluate the condition. If true go to the body of the loop',
+  position: 'bottom'
+},
+{
+  id: "8",
+  element: '.line15',
+  intro: 'Condition returns true. will print num[0] = 2',
+  position: 'bottom'
+},
+{
+  id: "9",
+  element: '.line16',
+  intro: 'Increment the value of x by 1, it now becomes 1',
+  position: 'bottom'
+},
+
+{
+  id: "10",
+  element: '.line13',
+  intro: 'Evaluate the condition. If true go to the body of the loop',
+  position: 'bottom'
+},
+{
+  id: "11",
+  element: '.line15',
+  intro: 'Condition returns true. will print num[1] = 7',
+  position: 'bottom'
+},
+{
+  id: "12",
+  element: '.line16',
+  intro: 'Increment the value of x by 1, it now becomes 2',
+  position: 'bottom'
+},
+{
+  id: "13",
+  element: '.line13',
+  intro: 'Evaluate the condition. If true go to the body of the loop',
+  position: 'bottom'
+},
+{
+  id: "14",
+  element: '.line15',
+  intro: 'Condition returns true. will print num[2] = 27',
+  position: 'bottom'
+},
+{
+  id: "15",
+  element: '.line16',
+  intro: 'Increment the value of x by 1, it now becomes 3',
+  position: 'bottom'
+},
+
+
+{
+  id: "16",
+  element: '.line13',
+  intro: 'Evaluate the condition. If true go to the body of the loop',
+  position: 'bottom'
+},
+{
+  id: "17",
+  element: '.line15',
+  intro: 'Condition returns true. will print num[3] = 13',
+  position: 'bottom'
+},
+{
+  id: "18",
+  element: '.line16',
+  intro: 'Increment the value of x by 1, it now becomes 4',
+  position: 'bottom'
+},
+{
+  id: "19",
+  element: '.line13',
+  intro: 'Evaluate the condition. If true go to the body of the loop',
+  position: 'bottom'
+},
+{
+  id: "20",
+  element: '.line15',
+  intro: 'Condition returns true. will print num[4] = 40',
+  position: 'bottom'
+},
+{
+  id: "21",
+  element: '.line16',
+  intro: 'Increment the value of x by 1, it now becomes 5',
+  position: 'bottom'
+},
+{
+  id: "22",
+  element: '.line13',
+  intro: 'If false exit the loop the go to statement after the close } of the while loop',
+  position: 'bottom'
+},
+{
+  id: "23",
+  element: '.line18',
+  intro: 'Print the message "Condition returns false.  Program will not terminate."',
+  position: 'bottom'
+},
+{
+  element: '.line19',
+  intro: 'Ends the execution of main() and sends the integer value 0 back to the operating system to indicate that the program ended normally.',
+  position: 'top'
+},
 ]			

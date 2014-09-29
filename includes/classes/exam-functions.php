@@ -126,6 +126,25 @@ function update_sub_lesson($row,$conn){
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function update_sub_lesson_content($row,$conn){
+	$stmt = $conn->prepare("UPDATE tbl_lessons_sub_chapters 
+		SET content = :content
+		WHERE lesson_sub_id = :lesson_sub_id
+	");
+
+	$stmt->execute(array(		
+		"lesson_sub_id" => $row["lesson_sub_id"],
+		"content" => $row["content"],
+	));
+	
+	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+
+
+
+
 
 // $arr = array(
 // 		"lesson_sub_id" => $row["1"],

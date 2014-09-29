@@ -1,5 +1,6 @@
 <?php $dir = $_SERVER['DOCUMENT_ROOT'] .'cai_project'; ?>
 <?php include($dir ."/includes/classes/exam-functions.php"); ?>
+<?php include($dir ."/includes/classes/file.php"); ?>
 <?php
 	// print_r(json_encode($_POST));
 
@@ -12,8 +13,12 @@
 			"output" => "",
 		);
 
-		$vars = query_sub_lessons($conn,$vars['sub_chapter'],true);
-		// print_r(json_encode($vars));
+		$vars = query_sub_lessons($conn,$vars['sub_chapter'],false);
+		$vars = json_decode($vars);
+		// $vars[0]->content = File::get($dir."/lesson-content/".$vars[0]->content);
+		$vars[0]->contentHTML = File::get($dir."/lesson-content/".$vars[0]->content);
+		$vars = json_encode($vars);
+		print_r($vars);
 		
 
 
