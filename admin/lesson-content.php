@@ -101,11 +101,10 @@
 
 <a href="#" class="go-top">Go Top</a>
 <?php require_once 'header-footer/footer.php';?>
-  <script src="../../../lib/ace/ace.js"></script>
-  <script src="../../../lib/ace/theme-twilight.js"></script>
-  <script src="../../../lib/ace/mode-html.js"></script>
-  <script src="../../../lib/jquery-ace.min.js"></script>
-  <script src="../../../includes/scripts-ajax/script-compile.js"></script>    
+  <script src="../lib/ace/ace.js"></script>
+  <script src="../lib/ace/theme-twilight.js"></script>
+  <script src="../lib/ace/mode-html.js"></script>
+  <script src="../lib/jquery-ace.min.js"></script>
   <script>
       $('.my-code-area').ace({ theme: 'twilight', lang: 'html',height:"300px",width:"auto"})
   </script>

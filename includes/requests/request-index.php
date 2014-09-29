@@ -16,7 +16,8 @@
 		$vars = query_sub_lessons($conn,$vars['sub_chapter'],false);
 		$vars = json_decode($vars);
 		// $vars[0]->content = File::get($dir."/lesson-content/".$vars[0]->content);
-		$vars[0]->contentHTML = File::get($dir."/lesson-content/".$vars[0]->content);
+		if($vars[0]->content !== "") {$vars[0]->contentHTML = File::get($dir."/lesson-content/".$vars[0]->content);}
+		else{ $vars[0]->contentHTML = "No content!";}
 		$vars = json_encode($vars);
 		print_r($vars);
 		

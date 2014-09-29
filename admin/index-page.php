@@ -324,10 +324,10 @@
 
 
 <?php require_once 'header-footer/footer.php';?>
-<script src="../../../includes/scripts-ajax/script-row-add-lesson.js"></script>    
-<script src="../../../includes/scripts-ajax/script-row-edit-lesson.js"></script>   
-<script src="../../../includes/scripts-ajax/script-row-add-sub-lesson.js"></script>    
-<script src="../../../includes/scripts-ajax/script-row-edit-sub-lesson.js"></script>    
+<script src="../includes/scripts-ajax/script-row-add-lesson.js"></script>    
+<script src="../includes/scripts-ajax/script-row-edit-lesson.js"></script>   
+<script src="../includes/scripts-ajax/script-row-add-sub-lesson.js"></script>    
+<script src="../includes/scripts-ajax/script-row-edit-sub-lesson.js"></script>    
 <script>
     $(document).ready(function() {
         $('#datatable-lesson').dataTable();

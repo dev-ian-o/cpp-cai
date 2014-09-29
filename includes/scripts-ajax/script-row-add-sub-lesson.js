@@ -17,7 +17,7 @@ function initAddSubLesson(form){
 	form = $('#'+form);
 	console.log(form.serialize());
 	$.ajax({
-		url: '../../../includes/requests/request-row-add-sub-lesson.php',
+		url: '../includes/requests/request-row-add-sub-lesson.php',
 		type: 'POST',
 		data: form.serialize(),
 		dataType: 'json',

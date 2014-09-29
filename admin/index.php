@@ -76,8 +76,8 @@
     });
 
 </script>
-<script type="text/javascript" src="../../../lib/js/jspdf/dist/jspdf.min.js"></script>
-<script type="text/javascript" src="../../../lib/js/html2canvas/dist/html2canvas.js"></script>
+<script type="text/javascript" src="../lib/js/jspdf/dist/jspdf.min.js"></script>
+<script type="text/javascript" src="../lib/js/html2canvas/dist/html2canvas.js"></script>
 	<script autoload="true">
 	$(document).ready(function(){
 		// debugger;

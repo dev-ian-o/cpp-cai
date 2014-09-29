@@ -11,11 +11,11 @@
 </div> <!-- end-container -->
 
 	
-    <script src="../../../lib/jquery/jquery-1.8.3.min.js"></script>
-	<script src="../../../lib/ace/ace.js"></script>
-	<script src="../../../lib/ace/theme-twilight.js"></script>
-	<script src="../../../lib/ace/mode-c_cpp.js"></script>
-	<script src="../../../lib/jquery-ace.min.js"></script>
+    <script src="../lib/jquery/jquery-1.8.3.min.js"></script>
+	<script src="../lib/ace/ace.js"></script>
+	<script src="../lib/ace/theme-twilight.js"></script>
+	<script src="../lib/ace/mode-c_cpp.js"></script>
+	<script src="../lib/jquery-ace.min.js"></script>
 	<script src="../includes/scripts-ajax/script-compile.js"></script>   	
 	<script>
 		  $('.my-code-area').ace({ theme: 'twilight', lang: 'c_cpp',height:"500px",width:"auto"})

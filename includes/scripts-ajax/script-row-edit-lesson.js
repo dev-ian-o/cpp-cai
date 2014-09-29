@@ -18,7 +18,7 @@ function initEditLesson(form){
 	$(".loader").fadeIn('fast');
 	form = $('#'+form);
 	$.ajax({
-		url: '../../../includes/requests/request-row-edit-lesson.php',
+		url: '../includes/requests/request-row-edit-lesson.php',
 		type: 'POST',
 		data: form.serialize(),
 		dataType: 'json',

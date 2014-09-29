@@ -16,9 +16,8 @@ function initEditSubLesson(form){
 	console.log("fetching");
 	$(".loader").fadeIn('fast');
 	form = $('#'+form);
-	debugger;
 	$.ajax({
-		url: '../../../includes/requests/request-row-edit-sub-lesson.php',
+		url: '../includes/requests/request-row-edit-sub-lesson.php',
 		type: 'POST',
 		data: form.serialize(),
 		dataType: 'json',

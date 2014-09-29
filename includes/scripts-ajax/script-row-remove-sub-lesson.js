@@ -18,7 +18,7 @@ function init(form){
 	form = $('#'+form);
 	// console.log(form.serialize());
 	$.ajax({
-		url: '../../../includes/requests/request-add-row-lesson.php',
+		url: '../includes/requests/request-add-row-lesson.php',
 		type: 'POST',
 		data: form.serialize(),
 		dataType: 'json',

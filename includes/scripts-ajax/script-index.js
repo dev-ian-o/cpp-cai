@@ -15,7 +15,7 @@ function init(form){
 	$(".loader").fadeIn('fast');
 
 	$.ajax({
-		url: '../../../includes/requests/request-index.php',
+		url: '../includes/requests/request-index.php',
 		type: 'POST',
 		data: form,
 		dataType: 'json',

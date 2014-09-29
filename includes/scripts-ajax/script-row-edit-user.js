@@ -23,7 +23,7 @@ function initEditUser(form){
 	form = $('#'+form);
 	console.log(form.serialize());
 	$.ajax({
-		url: '../../../includes/requests/request-row-edit-user.php',
+		url: '../includes/requests/request-row-edit-user.php',
 		type: 'POST',
 		data: form.serialize(),
 		dataType: 'json',

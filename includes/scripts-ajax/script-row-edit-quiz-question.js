@@ -17,7 +17,7 @@ function initEditExam(form){
 	form = $('#'+form);
 	console.log(form.serialize());
 	$.ajax({
-		url: '../../../includes/requests/request-row-edit-quiz-question.php',
+		url: '../includes/requests/request-row-edit-quiz-question.php',
 		type: 'POST',
 		data: form.serialize(),
 		dataType: 'json',

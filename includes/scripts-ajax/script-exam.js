@@ -37,7 +37,7 @@ function init(form){
 	// console.log(form.serialize());
 	debugger;
 	$.ajax({
-		url: '../../../includes/requests/request.php',
+		url: '../includes/requests/request.php',
 		type: 'POST',
 		data: form.serialize(),
 		dataType: 'json',

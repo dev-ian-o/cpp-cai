@@ -183,8 +183,8 @@
 
 	<a href="#" class="go-top">Go Top</a>
 <?php require_once 'header-footer/footer.php';?>
-<script src="../../../includes/scripts-ajax/script-row-add-user.js"></script>    
-<script src="../../../includes/scripts-ajax/script-row-edit-user.js"></script>    
+<script src="../includes/scripts-ajax/script-row-add-user.js"></script>    
+<script src="../includes/scripts-ajax/script-row-edit-user.js"></script>    
 
 <script type="text/javascript">
     
@@ -196,7 +196,6 @@ $(document).ready(function() {
         $form = "#form-edit-row-user-name";
         $($form).find('input[name=user_id]').val(user_id);
         $($form).find('input[name=username]').val(username);
-        debugger;
     });
     $(".edit-btn-password").click(function(){
         user_id = $(this.parentElement).find('input[name=user_id]').val();

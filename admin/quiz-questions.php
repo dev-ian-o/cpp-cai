@@ -248,8 +248,8 @@
 
 	<a href="#" class="go-top">Go Top</a>
 <?php require_once 'header-footer/footer.php';?>
-<script src="../../../includes/scripts-ajax/script-row-add-quiz-question.js"></script>    
-<script src="../../../includes/scripts-ajax/script-row-edit-quiz-question.js"></script>    
+<script src="../includes/scripts-ajax/script-row-add-quiz-question.js"></script>    
+<script src="../includes/scripts-ajax/script-row-edit-quiz-question.js"></script>    
 
 <script>
     $(document).ready(function() {
