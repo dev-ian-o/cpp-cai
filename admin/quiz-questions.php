@@ -25,7 +25,7 @@
                     CPP Quiz Items 
                     <b>(<?php 
                         $ok = false;
-                        $lesson_id = $lessons[0]->lesson_id;
+                        $lesson_id = $lessons[4]->lesson_id;
                         foreach ($lessons as $key => $value):
                             if(isset($_GET['page']) && $_GET['page'] === $value->lesson_chapter)
                             {
@@ -36,7 +36,7 @@
                         endforeach;
                         if (!$ok)
                         {
-                            echo $lessons[0]->lesson_chapter.":". $lessons[0]->lesson_description;
+                            echo $lessons[4]->lesson_chapter.":". $lessons[4]->lesson_description;
                         }
                     ?>)</b> 
                 </div>
@@ -78,10 +78,10 @@
                     <tr>
                         <td><?= $a++; ?></td>
                         <td class="lesson_question">
-                            <a href="#" class="tooltip-texts" data-toggle="tooltip" data-placement="top" title="<?= $value->lesson_question;?>"><?= show_limit($value->lesson_question, 20);?></a>
+                            <a href="#" class="tooltip-texts" data-toggle="tooltip" data-placement="top" title="<?= $value->lesson_question;?>"><?= htmlspecialchars($value->lesson_question, 20);?></a>
                         </td>
                         <td class="lesson_choices">
-                            <?php $combinedQuestions = $value->lesson_choice1.", ".$value->lesson_choice2.", ".$value->lesson_choice3.", ".$value->lesson_choice4;?>
+                            <?php $combinedQuestions = htmlspecialchars($value->lesson_choice1.", ".$value->lesson_choice2.", ".$value->lesson_choice3.", ".$value->lesson_choice4);?>
                             <a href="#" class="tooltip-texts" data-toggle="tooltip" data-placement="top" title="<?= $combinedQuestions;?>"><?=  show_limit($combinedQuestions, 20);?></a>
                         </td>
                         <td class="lesson_answer">

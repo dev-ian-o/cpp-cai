@@ -29,6 +29,7 @@ function initAddExam(form){
 				$('#add-row-exam').modal('hide');
 				notif_success();
 				$(form)[0].reset();
+				debugger;
 				window.location = "quiz-questions.php";
 			}
 			else
