@@ -18,6 +18,7 @@
 		"2" => "json-string1.json",
 		"3" => "json-string2.json",
 		"4" => "json-string3.json",
+		"5" => "json-class3.json",
 	);
 
 	$programNameArr = array(
@@ -26,6 +27,7 @@
 		"2" => "String Program 1",
 		"3" => "String Program 2",
 		"4" => "String Program 3",
+		"5" => "Class Program 1",
 	);
 
 	if(isset($_GET['html']) && isset($_GET['json'])){
