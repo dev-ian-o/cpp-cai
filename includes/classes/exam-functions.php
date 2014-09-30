@@ -70,6 +70,62 @@ function update_user_name($row,$conn){
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function query_correct_id($conn,$row,$print = false)
+{
+
+	$stmt = $conn->prepare("SELECT * 
+		FROM tbl_exam_items
+		WHERE exam_item_id =:exam_item_id AND lesson_answer =:lesson_answer 
+	");
+	
+	$stmt->execute(array(
+		"exam_item_id" => $row["exam_item_id"], 
+		"lesson_answer" => $row["lesson_answer"]
+	));
+	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	$row = json_encode($row);
+
+	if ($print) print_r($row); else return $row;
+}
+
+function query_item($conn,$row,$print = false)
+{
+
+	$stmt = $conn->prepare("SELECT * 
+		FROM tbl_exam_items
+		WHERE exam_item_id =:exam_item_id 
+	");
+	
+	$stmt->execute(array(
+		"exam_item_id" => $row
+	));
+	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	$row = json_encode($row);
+
+	if ($print) print_r($row); else return $row;
+}
+
+
+// function query_correct_sub_id($conn,$row)
+// {
+
+// 		$stmt = $conn->prepare("SELECT * 
+// 		FROM tbl_exam_items
+// 		WHERE lesson_id
+// 	");
+	
+// 	$stmt->execute(array(
+
+// 	));
+// 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// 	$row = json_encode($row);
+
+// 	if ($print) print_r($row); else return $row;
+// }
+
 
 // $arr = array(
 // 	'user_id' => '1',
@@ -237,6 +293,25 @@ function fetch_exam_by_lesson($conn,$id,$print = true){
 	if ($print) print_r($row); else return $row;
 }
 
+function fetch_exam_by_chapter($conn,$id,$print = true){
+	$stmt = $conn->prepare("SELECT * 
+		FROM tbl_exam_items
+		WHERE lesson_id = :lesson_id
+		ORDER BY RAND()
+	");
+	
+	$stmt->execute(array(
+		"lesson_id" => $id,
+	));
+
+	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	$row = json_encode($row);
+
+	if ($print) print_r($row); else return $row;
+}
+
+
 // fetch_exam_by_lesson($conn,17,true);
 
 function query_lessons($conn, $row, $print=true){
@@ -274,6 +349,8 @@ function query_lessons_id($conn, $row, $print=true){
 
 	if ($print) print_r($row); else return $row;
 }
+
+
 
 function fetch_sub_lessons($conn,$print = true){
 	$stmt = $conn->prepare("SELECT * 

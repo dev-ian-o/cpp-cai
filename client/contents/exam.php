@@ -4,22 +4,13 @@
 
 <?php $lessons = json_decode(fetch_lessons($conn,false)); ?>
 <?php $sub_lessons = json_decode(fetch_sub_lessons($conn,false)); ?>
-<?php $items = json_decode(fetch_exam_by_lesson($conn,17,false));?>
 <div class="row">
 	<div class="col-xs-12 col-md-12">
 		<div class="panel panel-default">
-			<div class="panel-heading">EXAM</div>
+			<div class="panel-heading">CHOOSE QUIZ FROM THE LIST:</div>
 			<div class="panel-body">
 				<div class="panel-group" id="accordion">
 				  <!-- panel #1 -->
-
-<?php 
-	if(isset($_POST['submit'])){
-		print_r($_POST);
-	}
-
-?>
-</pre>
 				 <?php foreach ($lessons as $key => $value) : ?>
 				  <div class="panel">
 					<div class="panel-heading">
@@ -35,14 +26,16 @@
 					  		<div class="list-group">
 			  					<?php foreach ($sub_lessons as $key_sub => $value_sub) : ?>
 			  						<?php if($value->lesson_id == $value_sub->lesson_id ):?>
-									<a href="#" class="list-group-item sub-chapter-link"><?= $value_sub->lesson_sub_description;?>
-										<input type="hidden" value="<?= $value_sub->lesson_sub_id;?>">
+			  						<form method="post">
+									<a href="quiz.php?type=lesson_test&lesson_id=<?=  $value_sub->lesson_sub_id;?>" type="submit" name="lesson" class="list-group-item sub-chapter-link">
+										<?= $value_sub->lesson_sub_description;?>
 									</a>
+
+									</form>
 									<?php endif;?>
 								<?php endforeach; ?>
-									<a href="#" class="list-group-item sub-chapter-link">
+									<a href="quiz.php?type=chapter_test&lesson_id=<?=  $value->lesson_id;?>" class="list-group-item sub-chapter-link">
 										Chapter Test
-										<input type="hidden" value="<?= $value->lesson_id;?>">
 									</a>
 							</div>
 					  	</div>
@@ -54,7 +47,10 @@
 		</div>
 	
 	</div>
-	<div class="panel panel-default">
+	
+</div>
+
+<div class="panel panel-default hide">
 		<div class="panel-heading clearfix">EXAM
 			<div class="pull-right">
 				<a class="right btn-right btn btn-danger btn-sm" href="#test-page" data-slide="next">
@@ -89,7 +85,7 @@
 						</div>
 					</div>
 					<?php endforeach;?>
-					<!-- <div class="item">
+					<div class="item">
 						<div class="mL20">
 							<p>1. What is C++?</p>
 							<div class="radio">
@@ -117,7 +113,7 @@
 								</label>
 							</div>
 						</div>
-					</div> -->
+					</div>
 					<div class="item">
 						<div class="text-center">
 							<button type="submit" name="submit" class="btn btn-lg btn-primary">
@@ -136,5 +132,3 @@
 		</form>
 
 	</div>
-</div>
-<pre>

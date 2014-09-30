@@ -1,0 +1,1624 @@
+<p>
+    <strong>5.2 The </strong>
+    <strong>string</strong>
+    <strong> Class: An Introduction to Classes and Objects</strong>
+</p>
+<p>
+    <strong>5.2.1 Familiar Classes and Objects</strong>
+</p>
+<p>
+    We have been working with several classes since the first chapter. In <u>Chapter 1</u>, we introduced the standard input and output streams cin and cout.
+The C++ language comes with several predefined classes. Two of these are the input class <a name="ch10term13"></a>istream and the output class    <a name="ch10term15"></a>ostream. The standard input stream cin is an istream class object. The definition of the istream and ostream classes and the
+    definitions of cin and cout are contained in the header file iostream.
+</p>
+<p>
+    In a program, we can obtain data from the keyboard by applying the extraction operator &gt;&gt; to the cin object. We can view the statement
+</p>
+<p>
+    cin &gt;&gt; price;
+</p>
+<p>
+    as follows: the statement tells the cin object to extract a number from the input stream and place the number's value into the variable price. Thus, we
+    send a message to the cin object and it responds in a certain way to that message. How that message is carried out (that is, the mechanics of extracting
+    the characters and converting them into a number), is immaterial to us (information hiding).
+</p>
+<p>
+    <a name="iddle1669"></a>
+    <a name="iddle1026"></a>
+    Likewise, we can display data on the monitor by applying the insertion operator &lt;&lt; to the cout object. We can view the statement
+</p>
+<p>
+    cout &lt;&lt; "The value is " &lt;&lt; price;
+</p>
+<p>
+    as sending a message to the cout object to display on the monitor screen the string
+</p>
+<p>
+    "The value is" followed by the value of the variable price.
+</p>
+<p>
+    We have used get() with cin as follows, where ch is a variable of type char.
+</p>
+<p>
+    ch = cin.get();
+</p>
+<p>
+    The function get() is a method of the istream class. When we code cin.get(), we are sending the get() message to the cin object. In response to this
+    message, the object returns to the program the value of the next character in the input buffer.
+</p>
+<p>
+    Note that we use the same dot operator that we use with structures.
+</p>
+<p>
+    The same is true about getline(). When we code
+</p>
+<p>
+    cin.getline(name, 81);
+</p>
+<p>
+    we are sending the getline() message to the cin object. In response to the message, the cin object extracts an entire line of text from the input buffer
+    and places a copy of it into the array name. Again, it is no concern to us how the cin object obtains the line of characters and places them into the
+    array. That is the responsibility of the object.
+</p>
+<p>
+    In the remainder of this chapter, we shall illustrate these object-oriented concepts by studying the built-in C++ class string. In the following chapters,
+    we shall discuss how you can code your own classes and objects and use them in your programs.
+</p>
+<p>
+    <strong>5.2.2 Introduction to string Objects</strong>
+</p>
+<p>
+    <a name="iddle2172"></a>
+    <a name="iddle2082"></a>
+    <a name="iddle2079"></a>
+    <a name="iddle2077"></a>
+    <a name="iddle1192"></a>
+    We have already studied C-strings, which are character arrays. As we shall see,
+    <tt>
+        string
+    </tt>
+    class objects are much easier, safer, and in many ways, more natural to use than C-strings. It is not important for us to know how
+    <tt>
+        string
+    </tt>
+    objects or the operations on them are implemented. What is important is that you know how to use string objects. This is in contrast to using C-strings
+    where it is very important that we know that such strings are implemented as character arrays.
+</p>
+<p>
+    The
+    <tt>
+        string
+    </tt>
+    class is built into C++, so there is no need to declare it in any way except that to use the class in your programs you must use the following
+    <tt>
+        #include
+    </tt>
+    statement.
+</p>
+<pre>#include &lt;string&gt;</pre>
+<pre></pre>
+<p>
+    <a name="ch10lev1sec2"></a>
+    <a name="ch10lev2sec2"></a>
+</p>
+<h4>
+    5.2.3. Instantiating and Outputting
+    <tt>
+        string
+    </tt>
+    Objects
+</h4>
+<pre>A string object represents a set of characters.  Before we learn how to use <tt>string</tt> objects, we must know how to <a name="ch10term17"></a><strong>instantiate</strong>, or create, them. <strong>Value of the string object</strong> is the set of characters a string object represents.</pre>
+<p>
+    <strong></strong>
+</p>
+<p>
+    <strong>Note first that the word </strong>
+    <tt>
+        <strong>string</strong>
+    </tt>
+    <strong> is not a C++ keyword it is the name of a class.</strong>
+    (You can easily see this in most C++ editors because the word
+    <tt>
+        string
+    </tt>
+    will not be highlighted or color-coded as a keyword.)
+</p>
+<p>
+    In C++, any class, including string, is a valid data type. Therefore, you can declare string objects in much the same way as you declare numeric data
+    types. Consider the following declarations.
+</p>
+<p>
+    Example 1
+</p>
+<p>
+    string str1;
+</p>
+<p>
+    The first declaration defines
+    <tt>
+        str1
+    </tt>
+    as an empty, or null, a string that contains no characters. Therefore, an uninitialized
+    <tt>
+        string
+    </tt>
+    object is set to the empty string by default. This is in contrast to declaring an uninitialized integer or character pointer, which has a garbage value.
+    When an object is created, it executes a special method, called a <a name="ch10term31"></a><strong>constructor</strong>. The main role of a constructor is
+to initialize the object. Because no initial value is specified in the first declaration, the object <a name="iddle2083"></a><a name="iddle1424"></a><a name="iddle1343"></a><a name="iddle1334"></a><a name="iddle1325"></a>executes the so-called <a name="ch10term19"></a>    <strong>no-argument constructor</strong>, which initializes the string's value to the empty string. It is called the no-argument constructor because we do
+    not provide any argument (string literal).
+</p>
+<p>
+    <strong>
+        Note: A string that is uninitialized in its declaration is automatically set to the empty, or null, string, that is, a string with no characters.
+    </strong>
+    <strong></strong>
+</p>
+<p>
+    Example 2 and 3
+</p>
+<p>
+    string str2 = "Hello"; //uses a one-argument constructor method
+</p>
+<p>
+    string str3("Hello"); //uses a one-argument constructor method
+</p>
+<p>
+The second and third declarations define str2 and str3 as a string object having the value "Hello" (without the quotation marks). In both of these cases, a    <a name="ch10term21"></a><strong>one-argument constructor</strong> initializes the value of the string to "Hello". Note how enclosing the string "Hello" in
+    parentheses in the third declaration is similar to a function call, although str3 is not the name of a function.
+</p>
+<p>
+    You might wonder if the string literal that you use to initialize a string object has too many characters to fit in the string's value. Although there is a
+    limit to the number of characters that can be stored in a string object, that number is very large. Therefore, there is no practical limit to the number of
+    characters that a string object can store.
+</p>
+<p>
+    Example 4
+</p>
+<p>
+    string str4(25, '*'); // uses a two-argument string constructor
+</p>
+<p>
+    The fourth declaration defines
+    <tt>
+        str4
+    </tt>
+    as a string of 25 asterisks (*). This declaration uses a <a name="ch10term23"></a><strong>two-argument constructor</strong> to initialize the value of the
+    string. The first argument (an integer) is the number of times the second argument (a character) is to be repeated in the string's value.
+</p>
+<p>
+    <a name="ch10note01"></a>
+    We see from these declarations that it is possible to instantiate and initialize a
+    <tt>
+        string
+    </tt>
+    object in several ways by using different
+    <tt>
+        string
+    </tt>
+    constructors.
+</p>
+<h4>
+    5.2.4 What is a Constructor?
+</h4>
+<p>
+    Constructors are important in instantiating an object. It is a function (method) where all the initializations are placed.
+</p>
+<p>
+    The following are the properties of a constructor:
+</p>
+<ul>
+    <li>
+        <strong>Constructors have the same name as the class</strong>
+    </li>
+    <li>
+        <strong>
+            A constructor is just like an ordinary function(method), however only the following information can be placed in the header of the constructor,
+        </strong>
+    </li>
+    <li>
+        <strong>Constructors does not have any return value</strong>
+    </li>
+</ul>
+<p>
+    <strong></strong>
+</p>
+<p>
+    <strong>Note: You can output the value of a </strong>
+    <tt>
+        <strong>string</strong>
+    </tt>
+    <strong> object by sending the object to </strong>
+    <tt>
+        <strong>cout</strong>
+    </tt>
+    <strong> using the </strong>
+    <tt>
+        <strong>&lt;&lt;</strong>
+    </tt>
+    <strong> operator.</strong>
+</p>
+<p>
+    <a name="iddle2075"></a>
+    The program dem051-1.cpp demonstrates the preceding declarations.
+</p>
+<table border="0" cellpadding="0" width="675">
+    <tbody>
+        <tr>
+            <td valign="top">
+                <p align="right">
+                    1
+                    <br/>
+                    2
+                    <br/>
+                    3
+                    <br/>
+                    4
+                    <br/>
+                    5
+                    <br/>
+                    6
+                    <br/>
+                    7
+                    <br/>
+                    8
+                    <br/>
+                    9
+                    <br/>
+                    10
+                    <br/>
+                    11
+                    <br/>
+                    12
+                    <br/>
+                    13
+                    <br/>
+                    14
+                    <br/>
+                    15
+                    <br/>
+                    16
+                    <br/>
+                    17
+                    <br/>
+                    18
+                    <br/>
+                    19
+                    <br/>
+                    20
+                    <br/>
+                    21
+                    <br/>
+                    22
+                </p>
+            </td>
+            <td width="295" valign="top">
+                <pre>//dem051-0.cpp</pre>
+                <pre>//This program demonstrates //different ways to declare</pre>
+                <pre>//string objects and how to output //string objects.</pre>
+                <pre></pre>
+                <pre>#include &lt;iostream&gt;</pre>
+                <pre>#include &lt;string&gt;</pre>
+                <pre>using namespace std;</pre>
+                <pre>int main()</pre>
+                <pre>{</pre>
+                <pre></pre>
+                <pre>  string str1;</pre>
+                <pre>  string str2 = "Hello";</pre>
+                <pre>  string str3("Hello");</pre>
+                <pre>  string str4(25, '*');</pre>
+                <pre></pre>
+                <pre>  cout &lt;&lt; "str1 = " &lt;&lt; str1 &lt;&lt; endl;</pre>
+                <pre>  cout &lt;&lt; "str2 = " &lt;&lt; str2 &lt;&lt; endl;</pre>
+                <pre>  cout &lt;&lt; "str3 = " &lt;&lt; str3 &lt;&lt; endl;</pre>
+                <pre>  cout &lt;&lt; "str4 = " &lt;&lt; str4 &lt;&lt; endl;</pre>
+                <pre>  return 0;</pre>
+                <pre>}</pre>
+            </td>
+            <td width="351" valign="top">
+                <pre>str1 =</pre>
+                <pre>str2 = Hello</pre>
+                <pre>str3 = Hello</pre>
+                <pre>str4 = *************************</pre>
+            </td>
+            <td valign="top">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    5.2.5. String Input
+</h4>
+<p>
+    You can also input a
+    <tt>
+        string
+    </tt>
+    object's value using
+    <tt>
+        cin
+    </tt>
+    and the
+    <tt>
+        &gt;&gt;
+    </tt>
+    operator. For example, the following asks for a person's first name and stores it in the
+    <tt>
+        string
+    </tt>
+    object
+    <tt>
+        first_name
+    </tt>
+    .
+</p>
+<pre>string first_name;</pre>
+<pre>cout &lt;&lt; "Enter your first name: ";</pre>
+<pre>cin &gt;&gt; first_name;</pre>
+<pre></pre>
+<p>
+    Program dem051-2.cpp shows how this works.
+</p>
+<table border="0" cellpadding="0" width="675">
+    <tbody>
+        <tr>
+            <td valign="top">
+                <p align="right">
+                    1
+                    <br/>
+                    2
+                    <br/>
+                    3
+                    <br/>
+                    4
+                    <br/>
+                    5
+                    <br/>
+                    6
+                    <br/>
+                    7
+                    <br/>
+                    8
+                    <br/>
+                    9
+                    <br/>
+                    10
+                    <br/>
+                    11
+                    <br/>
+                    12
+                    <br/>
+                    13
+                    <br/>
+                    14
+                    <br/>
+                    15
+                    <br/>
+                    16
+                    <br/>
+                    17
+                    <br/>
+                    18
+                    <br/>
+                    19
+                    <br/>
+                    20
+                    <br/>
+                    21
+                    <br/>
+                    22
+                </p>
+                <p align="right">
+                    23
+                </p>
+                <p align="right">
+                    24
+                </p>
+                <p align="right">
+                    25
+                </p>
+                <p align="right">
+                    26
+                </p>
+                <p align="right">
+                    27
+                </p>
+                <p align="right">
+                    28
+                </p>
+                <p align="right">
+                    29
+                </p>
+                <p align="right">
+                    30
+                </p>
+            </td>
+            <td width="295" valign="top">
+                <pre>//dem051-2.cpp</pre>
+                <pre></pre>
+                <pre>//This program uses cin to input a first and last name into a program.</pre>
+                <pre></pre>
+                <pre>#include &lt;iostream&gt;</pre>
+                <pre>#include &lt;string&gt;</pre>
+                <pre></pre>
+                <pre>using namespace std;</pre>
+                <pre></pre>
+                <pre>int main()</pre>
+                <pre>{</pre>
+                <pre>  string first_name;</pre>
+                <pre>  string last_name;</pre>
+                <pre></pre>
+                <pre>  cout &lt;&lt; "Enter your first name: ";</pre>
+                <pre>  cin &gt;&gt; first_name;</pre>
+                <pre></pre>
+                <pre>  cout &lt;&lt; endl;</pre>
+                <pre>  cout &lt;&lt; "Enter your last name: ";</pre>
+                <pre>  cin &gt;&gt; last_name;</pre>
+                <pre></pre>
+                <pre>  cout &lt;&lt; endl &lt;&lt; endl;</pre>
+                <pre>  cout &lt;&lt; "Welcome, " &lt;&lt; first_name &lt;&lt; " " &lt;&lt; last_name &lt;&lt; endl;</pre>
+                <pre></pre>
+                <pre>  return 0;</pre>
+                <pre>}</pre>
+            </td>
+            <td width="351" valign="top">
+                <pre><strong>Program Output</strong></pre>
+                <pre></pre>
+                <pre>Enter your first name: John</pre>
+                <pre></pre>
+                <pre>Enter your last name: Molluzzo</pre>
+                <pre></pre>
+                <pre>Welcome, John Molluzzo</pre>
+                <pre></pre>
+                <pre></pre>
+                <pre></pre>
+                <pre></pre>
+                <pre></pre>
+                <pre></pre>
+            </td>
+            <td valign="top">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<pre></pre>
+<p>
+    In the last
+    <tt>
+        cout
+    </tt>
+    statement, we place a space as a string literal,"", into the output stream between the first and last names.
+</p>
+<pre>Now, what happens if I enter my first name and my middle initial when prompted to enter my first name? The following shows the output when I do that.</pre>
+<pre></pre>
+<table border="1" cellspacing="0" cellpadding="0">
+    <thead>
+        <tr>
+            <td valign="top">
+                <p>
+                    <strong>Program Output When Entering Two-Word First Name</strong>
+                </p>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td valign="top">
+                <p>
+                    Enter your first name: John C.
+                </p>
+                <p>
+                    Enter your last name:
+                </p>
+                <p>
+                    Welcome, John C.
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<pre></pre>
+<p>
+    When hitting the enter key after entering John C., the program does not wait for me to enter my last name, but just goes on to display the welcome message.
+    The program behaves like this because when entering string data, cin uses white space (a blank, an enter, or a tab) to delimit strings. That is, cin can be
+    used to input only one word at a time. It cannot be used to input a multi-word string.
+</p>
+<p>
+    To input a multi-word string, we must use the function getline. Suppose we want to ask the user in what state he or she lives. Because some province names,
+    such as North Cotabato, are two words, we have to use getline() to extract the state name from the input stream. The following code will do that.
+</p>
+<p>
+    string state;
+</p>
+<p>
+    cout &lt;&lt; "Enter your state of residence: ";
+</p>
+<p>
+    getline(cin,state);
+</p>
+<pre>Think of the getline() statement as saying the following: "Get a line of text from the cin input stream and place it into the value of the string object state." The getline() function asks cin to retrieve one line from the input stream that is, everything you type until you hit the enter key. The text you typed (not including the enter character) is then given to the string object state, which takes the text as its value. Note that getline() is not a method of the string class. Following is the program dem10-3.cpp, which demonstrates these concepts.</pre>
+<pre></pre>
+<p>
+    When running the program, multi-word responses are made to the two prompts. In each case,
+    <tt>
+        getline()
+    </tt>
+    retrieves the entire line entered and passes a copy of the line to the corresponding
+    <tt>
+        string
+    </tt>
+    object.
+</p>
+<p>
+    <a name="ch10note03"></a>
+</p>
+<p>
+    Note: Use
+    <tt>
+        cin &gt;&gt; str1
+    </tt>
+    to input one word into the string variable
+    <tt>
+        str1
+    </tt>
+    . Use
+    <tt>
+        getline
+    </tt>
+    (
+    <tt>
+        cin
+    </tt>
+    ,
+    <tt>
+        str1
+    </tt>
+    ) to input one line from
+    <tt>
+        cin
+    </tt>
+    into the string variable
+    <tt>
+        str1
+    </tt>
+    .
+</p>
+<p>
+    Program dem051-3.cpp shows how this works.
+</p>
+<pre></pre>
+<table border="0" cellpadding="0" width="675">
+    <tbody>
+        <tr>
+            <td valign="top">
+                <p align="right">
+                    1
+                    <br/>
+                    2
+                    <br/>
+                    3
+                    <br/>
+                    4
+                    <br/>
+                    5
+                    <br/>
+                    6
+                    <br/>
+                    7
+                    <br/>
+                    8
+                    <br/>
+                    9
+                    <br/>
+                    10
+                    <br/>
+                    11
+                    <br/>
+                    12
+                    <br/>
+                    13
+                    <br/>
+                    14
+                    <br/>
+                    15
+                    <br/>
+                    16
+                    <br/>
+                    17
+                    <br/>
+                    18
+                    <br/>
+                    19
+                    <br/>
+                    20
+                    <br/>
+                    21
+                    <br/>
+                    22
+                </p>
+                <p align="right">
+                    23
+                </p>
+                <p align="right">
+                    24
+                </p>
+                <p align="right">
+                    25
+                </p>
+                <p align="right">
+                    26
+                </p>
+                <p align="right">
+                    27
+                </p>
+                <p align="right">
+                    28
+                </p>
+                <p align="right">
+                    29
+                </p>
+                <p align="right">
+                    30
+                </p>
+                <p align="right">
+                    31
+                </p>
+                <p align="right">
+                    32
+                </p>
+                <p align="right">
+                    33
+                </p>
+            </td>
+            <td width="295" valign="top">
+                <pre>//dem051-3.cpp</pre>
+                <pre></pre>
+                <pre>//This program illustrates the use of getline()</pre>
+                <pre>//to input multi-word strings.</pre>
+                <pre></pre>
+                <pre>#include &lt;iostream&gt;</pre>
+                <pre>#include &lt;string&gt;</pre>
+                <pre></pre>
+                <pre>using namespace std;</pre>
+                <pre></pre>
+                <pre>int main()</pre>
+                <pre>{</pre>
+                <pre>  string full_name;</pre>
+                <pre>  string state_name;</pre>
+                <pre></pre>
+                <pre>  cout &lt;&lt; "Enter your full name: ";</pre>
+                <pre>  getline(cin,full_name);</pre>
+                <pre></pre>
+                <pre>  cout &lt;&lt; endl;</pre>
+                <pre>  cout &lt;&lt; "Enter your state of residence: ";</pre>
+                <pre>  getline(cin,state_name);</pre>
+                <pre></pre>
+                <pre>  cout &lt;&lt; endl &lt;&lt; endl;</pre>
+                <pre>  cout &lt;&lt; "Welcome, " &lt;&lt; full_name &lt;&lt; endl;</pre>
+                <pre>  cout &lt;&lt; state_name &lt;&lt; " is a nice place to live." &lt;&lt; endl;</pre>
+                <pre></pre>
+                <pre>  return 0;</pre>
+                <pre> }</pre>
+            </td>
+            <td width="351" valign="top">
+                <pre>Enter your full name: John C. Molluzzo</pre>
+                <pre></pre>
+                <pre>Enter your state of residence: New York</pre>
+                <pre></pre>
+                <pre>Welcome, John C. Molluzzo</pre>
+                <pre>New York is a nice place to live.</pre>
+            </td>
+            <td valign="top">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h3>
+    <strong>5.2.5 </strong>
+    Operations on
+    <tt>
+        string
+    </tt>
+    Objects
+</h3>
+<p>
+    <a name="iddle2081"></a>
+    <a name="iddle2071"></a>
+    <a name="iddle2068"></a>
+    <a name="iddle1839"></a>
+    The
+    <tt>
+        string
+    </tt>
+    class has many methods that allow you to get information about a string and to manipulate a
+    <tt>
+        string
+    </tt>
+    object's value. Also, you can use many familiar operators on
+    <tt>
+        string
+    </tt>
+    objects in much the same way as you use them on numeric data types.
+</p>
+<p>
+    <strong>5.2.6 String Assignment</strong>
+</p>
+<p>
+    It is legal to assign one string object to another as follows.
+</p>
+<table border="1" cellspacing="0" cellpadding="0" width="624">
+    <tbody>
+        <tr>
+            <td width="210" valign="top">
+                <p>
+                    String assignments
+                </p>
+            </td>
+            <td width="414" valign="top">
+            </td>
+        </tr>
+        <tr>
+            <td width="210" valign="top">
+                <pre>string str1 = "Hello";</pre>
+                <pre>string str2;</pre>
+                <pre></pre>
+                <pre>str2 = str1;</pre>
+            </td>
+            <td width="414" valign="top">
+                <p>
+                    The value of the
+                    <tt>
+                        string
+                    </tt>
+                    object
+                    <tt>
+                        str2
+                    </tt>
+                    is a copy of the value of the
+                    <tt>
+                        string
+                    </tt>
+                    object
+                    <tt>
+                        str1
+                    </tt>
+                    . Therefore, assigning one
+                    <tt>
+                        string
+                    </tt>
+                    object to another copies the value of the string on the right of the assignment to the value of the string on the left.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="210" valign="top">
+                <pre>string str1 = "Hello";</pre>
+                <pre>string str2 = str1;</pre>
+            </td>
+            <td width="414" valign="top">
+                <p>
+                    You can also initialize one
+                    <tt>
+                        string
+                    </tt>
+                    object to another in a declaration.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="210" valign="top">
+                <pre>string str1 = "Hello";</pre>
+                <pre>string str2(str1);</pre>
+            </td>
+            <td width="414" valign="top">
+                <p>
+                    You can also initialize one
+                    <tt>
+                        string
+                    </tt>
+                    object to another using the this technique
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <strong>5.2.7. Concatenation</strong>
+</p>
+<p>
+    You can also paste (or <a name="ch10term2"></a><strong>concatenate</strong>) two strings together using the + operator, the same operator that we use for
+    the addition of numbers.
+</p>
+<p>
+    In C++, it is possible to make an operator, such as the addition operator (+), do different things depending on the types of data the operator is working
+    on. This is called <a name="ch10term4"></a><strong>operator overloading</strong>. Thus, the addition operator in the expression
+    <tt>
+        i + j
+    </tt>
+    , where
+    <tt>
+        i
+    </tt>
+    and
+    <tt>
+        j
+    </tt>
+    are integers, will work differently than the addition operator in the expression
+    <tt>
+        str1
+    </tt>
+    +
+    <tt>
+        str2
+    </tt>
+    of the previous example. In the first case, the + is operating on integers. Therefore, C++ does integer addition. In the second case, the + is operating on
+    <tt>
+        string
+    </tt>
+    <a name="iddle2076"></a>
+    objects. Therefore, C++ does concatenation. Overloading addition is not done automatically for any combination of objects. The overloading must be coded
+    somewhere. In the case of the
+    <tt>
+        string
+    </tt>
+    class, the overload is coded in the
+    <tt>
+        &lt;string&gt;
+    </tt>
+    header file.
+</p>
+<p>
+    The += operator also has meaning (that is, is overloaded) for string objects and has the effect of appending the value of the string on the right of += to
+    the value of the string on the left of +=.
+</p>
+<p>
+    You can read the += when operating on strings as "is appended with." The following code has the same result as the previous example.
+</p>
+<table border="1" cellspacing="0" cellpadding="0" width="624">
+    <tbody>
+        <tr>
+            <td width="624" colspan="2" valign="top">
+                <p>
+                    Concatenator
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="210" valign="top">
+                <pre>string str1 = "Hello, "</pre>
+                <pre>string str2 = "World!"</pre>
+                <pre>string str3 = str1 + str2;</pre>
+            </td>
+            <td width="414" valign="top">
+                <p>
+                    Declares the string str1 with an initial value of “Hello”, the same with str2 which assigns a value “World”. After which it declare the
+                    string str3 that assigns the concatenated value of str2 and str1.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="210" valign="top">
+                <p>
+                    string str3 = "Hello, ";
+                </p>
+                <p>
+                    str3 += "World!";
+                </p>
+                <pre></pre>
+            </td>
+            <td width="414" valign="top">
+                <p>
+                    The declaration initializes str3 to the string "Hello, ". The second statement is equivalent to the assignment str3 = str3 + "World!";.
+                    Thus, the string "World!" is appended to the end of the existing string, which results in str3 containing the string "Hello, World!".
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0" width="624">
+    <tbody>
+        <tr>
+            <td width="624" colspan="2" valign="top">
+                <p>
+                    Overloaded operators for string Objects
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="240" valign="top">
+                <p>
+                    = (assignment operator)
+                </p>
+            </td>
+            <td width="384" valign="top">
+                <p>
+                    The assignment operator assigns the value of one string to the value of another.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="240" valign="top">
+                <p>
+                    + operator
+                </p>
+            </td>
+            <td width="384" valign="top">
+                <p>
+                    The
+                    <tt>
+                        +
+                    </tt>
+                    operator concatenates together the string values of its operands.
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="240" valign="top">
+                <p>
+                    += (compound assignment operator)
+                </p>
+            </td>
+            <td width="384" valign="top">
+                <p>
+                    The compound assignment operator
+                    <tt>
+                        +=
+                    </tt>
+                    appends the value of the string on the right of the operator to the end of the value of the string on the left of the operator.
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <strong>5.2.8. Applying a Class Method</strong>
+</p>
+<p>
+    To apply a class method to an object, use the <strong>dot (.) operator</strong> as follows:
+</p>
+<p>
+    <tt>
+        class_object.method_name()
+    </tt>
+</p>
+<p>
+    This sends a message, namely
+    <tt>
+        method_name
+    </tt>
+    , to the object
+    <tt>
+        class_object
+    </tt>
+    , which in turn executes the method.
+</p>
+<p>
+    For example, to find the number of characters in the value of a string object (that is, the length of the string), use the <a name="ch10term6"></a>length()
+    method, which is a method of the string class. Recall that a method represents a message, or request, that is sent to an object to do something. To apply a
+    method to an object, you must use the <a name="ch10term8"></a><strong>dot (.) operator</strong> as follows.
+</p>
+<p>
+    str1.length()
+</p>
+<p>
+    This statement sends the length() message to the string object str1: "Compute your length and return its value."
+</p>
+<p>
+    In this section, we discuss some useful
+    <tt>
+        string
+    </tt>
+    class methods that allow you to manipulate
+    <tt>
+        string
+    </tt>
+    objects.
+</p>
+<p>
+    Recall that the character positions in a
+    <tt>
+        string
+    </tt>
+object's value are numbered from 0 to one less than the number of characters in the string's value.    <a href="mk:@MSITStore:D:\Subjects\C++\C++%20for%20Business%20Programming,%20Second%20Edition.chm::/0130467006/ch10lev1sec6.html#ch10fig02">Figure 1</a>
+    shows a
+    <tt>
+        string
+    </tt>
+    object's value with the character positions numbered.
+</p>
+<h5 align="center">
+    <a name="ch10fig02"></a>
+    Figure 1
+</h5>
+<p>
+    <a name="452"></a>
+    <a name="iddle2123"></a>
+    <a name="iddle2087"></a>
+    We will now discuss several
+    <tt>
+        string
+    </tt>
+class methods that we will use to manipulate the string in    <a href="mk:@MSITStore:D:\Subjects\C++\C++%20for%20Business%20Programming,%20Second%20Edition.chm::/0130467006/ch10lev1sec6.html#ch10fig02">Figure </a>1.
+</p>
+<table border="1" cellspacing="0" cellpadding="0" width="634">
+    <tbody>
+        <tr>
+            <td width="138" valign="top">
+                <p align="center">
+                    string Class method
+                </p>
+            </td>
+            <td width="115" valign="top">
+                <p align="center">
+                    Meaning
+                </p>
+            </td>
+            <td width="96" colspan="2" valign="top">
+                <p align="center">
+                    Syntax
+                </p>
+            </td>
+            <td width="118" valign="top">
+                <p align="center">
+                    Example
+                </p>
+                <p align="center">
+                    Declaration
+                </p>
+            </td>
+            <td width="166" valign="top">
+                <p align="center">
+                    Output
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="138" valign="top">
+                <p>
+                    length()
+                </p>
+            </td>
+            <td width="115" valign="top">
+                <p>
+                    Return the numeric length of string.
+                </p>
+            </td>
+            <td width="96" colspan="2" valign="top">
+                <p>
+                    length()
+                </p>
+            </td>
+            <td width="118" valign="top">
+                <pre>string str=”This is an example string”</pre>
+            </td>
+            <td width="166" valign="top">
+                <p>
+                    cout &lt;&lt; str.length(); will return 15
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="138" valign="top">
+                <pre>replace()</pre>
+            </td>
+            <td width="115" valign="top">
+                <pre>Allows to replace one substring by another.</pre>
+            </td>
+            <td width="96" colspan="2" valign="top">
+                <pre>replace(int,int,string)</pre>
+                <pre></pre>
+                <pre>where: it replace no. of characters in the second argument beginning at location in the first argument by the string in the third argument</pre>
+            </td>
+            <td width="118" valign="top">
+                <pre>string str=”This is an example string”</pre>
+                <pre></pre>
+            </td>
+            <td width="166" valign="top">
+                <pre>str.replace(0,4,”Here”)</pre>
+                <pre>cout&lt;&lt;str;</pre>
+                <pre>will return “Here is an example of string”</pre>
+                <pre></pre>
+                <pre>str.replace(18,0,”of a “);</pre>
+                <pre>cout&lt;&lt;str;</pre>
+                <pre>will return “This is an example of a string”</pre>
+            </td>
+        </tr>
+        <tr>
+            <td width="138" valign="top">
+                <pre>insert()</pre>
+            </td>
+            <td width="115" valign="top">
+                <pre>Places a string at a certain location in another string with the characters that follow being moved to the right. </pre>
+            </td>
+            <td width="96" colspan="2" valign="top">
+                <pre>insert(int,string)</pre>
+            </td>
+            <td width="118" valign="top">
+                <pre>string str=”This is an example string”</pre>
+            </td>
+            <td width="166" valign="top">
+                <pre>str.insert(19,”of a “);</pre>
+                <pre>will return “This is an example of a string” as it moved the word “string” that is at position 19 and insert “of a “ before it. (Start counting at left and 0 as you first index position) </pre>
+            </td>
+        </tr>
+        <tr>
+            <td width="138" valign="top">
+                <pre>append()</pre>
+            </td>
+            <td width="115" valign="top">
+                <pre>Allows you to add a string to the end of the string to which you apply the method.</pre>
+            </td>
+            <td width="96" colspan="2" valign="top">
+                <pre>append(string)</pre>
+            </td>
+            <td width="118" valign="top">
+                <pre>string str=”This is an example string”</pre>
+            </td>
+            <td width="166" valign="top">
+                <pre>str.append(“.”)</pre>
+                <pre>will return “This is an example string.”</pre>
+                <pre></pre>
+                <pre>Note that “.” is already appended at the end of the string.</pre>
+                <pre></pre>
+            </td>
+        </tr>
+        <tr>
+            <td width="138" valign="top">
+                <pre>erase()</pre>
+            </td>
+            <td width="115" valign="top">
+                <pre>Erase a substring from a string.</pre>
+            </td>
+            <td width="95" valign="top">
+                <pre>erase(int,int)</pre>
+                <pre></pre>
+                <pre>where:</pre>
+                <pre>first int argument is the starting position and second int argument is the number of characters to erase.</pre>
+            </td>
+            <td width="120" colspan="2" valign="top">
+                <pre>string str=”This is an example string”</pre>
+            </td>
+            <td width="166" valign="top">
+                <pre>str.erase(5,3);</pre>
+                <pre>will return “This an example of string” as it remove the “is “(including the space after is) because it start erasing at position 5 and deletes 3 characters.</pre>
+            </td>
+        </tr>
+        <tr>
+            <td width="138" valign="top">
+                <p>
+                    <tt>
+                        empty()
+                    </tt>
+                </p>
+            </td>
+            <td width="115" valign="top">
+                <p>
+                    Returns true if string is empty otherwise returns false
+                </p>
+            </td>
+            <td width="96" colspan="2" valign="top">
+                <p>
+                    empty()
+                </p>
+            </td>
+            <td width="118" valign="top">
+                <p>
+                    string str1;
+                </p>
+                <p>
+                    string str2=”Hello”;
+                </p>
+            </td>
+            <td width="166" valign="top">
+                <p>
+                    str1.empty() will return true
+                </p>
+                <p>
+                    str2.empty() will return false
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="138" valign="top">
+                <pre>find_first_of()</pre>
+            </td>
+            <td width="115" valign="top">
+                <pre>Find and return the index location of the first occurrence of any of a set of characters. It return -1 if it does not find any in the set of characters.</pre>
+            </td>
+            <td width="96" colspan="2" valign="top">
+                <pre>find_first_of(string,[int])</pre>
+                <pre></pre>
+                <pre>Note: int argument is optional that refers where to start the searching.</pre>
+            </td>
+            <td width="118" valign="top">
+                <pre>string str=”Hello, how are you today?”;</pre>
+                <pre></pre>
+                <pre>string punc=”.,!?:;”;</pre>
+            </td>
+            <td width="166" valign="top">
+                <pre>str.find_first_of(punc); will return 5 since “,” is the first punctuation found in the set that is in the string</pre>
+                <pre></pre>
+                <pre>str.find_first_of(punc,7); will return 24 since “?” is next punctuation in the set that is in the string</pre>
+            </td>
+        </tr>
+        <tr>
+            <td width="138" valign="top">
+                <pre>substr()</pre>
+            </td>
+            <td width="115" valign="top">
+                <pre>Extracts strings starting from the 1<sup>st</sup> argument, the number of characters to extracts depends on the 2<sup>nd</sup>  argument specified </pre>
+            </td>
+            <td width="96" colspan="2" valign="top">
+                <pre>substr(int,int)</pre>
+            </td>
+            <td width="118" valign="top">
+                <pre>string str=”C++ Programming”</pre>
+                <pre></pre>
+            </td>
+            <td width="166" valign="top">
+                <pre>str.substr(0,3);</pre>
+                <pre>will return “C++”</pre>
+                <pre></pre>
+                <pre>str.substr(7,4); will return “gram”</pre>
+                <pre></pre>
+                <pre>str.substr(12,2);</pre>
+                <pre>will return “in”</pre>
+            </td>
+        </tr>
+        <tr>
+            <td width="138" valign="top">
+                <pre>find()<tt></tt></pre>
+            </td>
+            <td width="115" valign="top">
+                <pre>Find first occurrence in string and returns it index position.  If the string is not found it returns -1.<tt></tt></pre>
+            </td>
+            <td width="96" colspan="2" valign="top">
+                <pre>find(string)</pre>
+            </td>
+            <td width="118" valign="top">
+                <pre>string str=”C++ Programming”</pre>
+            </td>
+            <td width="166" valign="top">
+                <pre>str.find(“+”);</pre>
+                <pre>will return 1</pre>
+                <pre></pre>
+                <pre>str.find(“Programs”); will return -1 since Programs is not found in str</pre>
+            </td>
+        </tr>
+        <tr>
+            <td width="138" valign="top">
+                <p>
+                    at()
+                </p>
+            </td>
+            <td width="115" valign="top">
+                <p>
+                    Retrieve or change an individual character in a string object
+                </p>
+            </td>
+            <td width="96" colspan="2" valign="top">
+                <p>
+                    at(int) where:
+                </p>
+                <p>
+                    int represents index in string starting at 0 up to size - 1
+                </p>
+            </td>
+            <td width="118" valign="top">
+                <p>
+                    string str=”C++ Programming”
+                </p>
+            </td>
+            <td width="166" valign="top">
+                <p>
+                    cout &lt;&lt; str.at(4);
+                </p>
+                <p>
+                    will return P
+                </p>
+                <p>
+                    str.at(7) = “Z”
+                </p>
+                <p>
+                    cout &lt;&lt; str;
+                </p>
+                <p>
+                    will return C++ ProZramming; replace the letter “g” with letter “Z”
+                </p>
+            </td>
+        </tr>
+        <tr height="0">
+            <td width="134">
+            </td>
+            <td width="121">
+            </td>
+            <td width="229">
+            </td>
+            <td width="1">
+            </td>
+            <td width="110">
+            </td>
+            <td width="222">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>
+    5.2.9 Program dem051-4.cpp
+</h4>
+<p>
+    Program dem051-4.cpp illustrates all of the methods discussed in this section.
+</p>
+<table border="0" cellpadding="0" width="932">
+    <tbody>
+        <tr>
+            <td valign="top">
+                <pre><code>1</code><br/>
+  <code>2</code><br/>
+  <code>3</code><br/>
+  <code>4</code><br/>
+  <code>5</code><br/>
+  <code>6</code><br/>
+  <code>7</code><br/>
+  <code>8</code><br/>
+  <code>9</code><br/>
+  <code>10</code><br/>
+  <code>11</code><br/>
+  <code>12</code><br/>
+  <code>13</code><br/>
+  <code>14</code><br/>
+  <code>15</code><br/>
+  <code>16</code><br/>
+  <code>17</code><br/>
+  <code>18</code><br/>
+  <code>19</code><br/>
+  <code>20</code><br/>
+  <code>21</code><br/>
+  <code>22</code><br/>
+  <code>23</code></pre>
+                <pre><code>24</code></pre>
+                <pre><code>25</code></pre>
+                <pre><code>26</code></pre>
+                <pre><code>27</code></pre>
+                <pre><code>28</code></pre>
+                <pre><code>29</code></pre>
+                <pre><code>30</code></pre>
+                <pre><code>31</code></pre>
+                <pre><code>32</code></pre>
+                <pre><code>33</code></pre>
+                <pre><code>34</code></pre>
+                <pre><code>35</code></pre>
+                <pre><code>36</code></pre>
+                <pre><code>37</code></pre>
+                <pre><code>38</code></pre>
+                <pre><code>39</code></pre>
+                <pre><code>40</code></pre>
+                <pre><code>41</code></pre>
+                <pre><code>42</code></pre>
+                <pre><code>43</code></pre>
+                <pre><code>44</code></pre>
+                <pre><code>45</code></pre>
+                <pre><code>46</code></pre>
+                <pre><code>47</code></pre>
+                <pre><code>48</code></pre>
+                <pre><code>49</code></pre>
+                <pre><code>50</code></pre>
+                <pre><code>51</code></pre>
+                <pre><code>52</code></pre>
+                <pre><code>53</code></pre>
+                <pre><code>54</code></pre>
+                <pre><code>55</code></pre>
+                <pre><code>56</code></pre>
+                <pre><code>57</code></pre>
+                <pre><code>58</code></pre>
+                <pre><code>59</code></pre>
+                <pre><code>60</code></pre>
+                <pre><code>61</code></pre>
+                <pre><code>62</code></pre>
+                <pre><code>63</code></pre>
+                <pre><code>64</code></pre>
+                <pre><code>65</code></pre>
+                <pre><code>66</code></pre>
+                <pre><code>67</code></pre>
+                <pre><code>68</code></pre>
+                <pre><code>69</code></pre>
+                <pre><code>70</code></pre>
+                <pre><code>71</code></pre>
+                <pre><code>72</code></pre>
+                <pre><code>73</code></pre>
+                <pre><code>74</code></pre>
+                <pre><code>75</code></pre>
+                <pre><code>76</code></pre>
+                <pre><code>77</code></pre>
+                <pre><code>78</code></pre>
+                <pre><code>79</code></pre>
+                <pre><code>80</code></pre>
+                <pre><code>81</code></pre>
+                <pre><code>82</code></pre>
+                <pre>83</pre>
+                <pre>84</pre>
+                <pre>85</pre>
+            </td>
+            <td width="637" valign="top">
+                <pre>//dem051-4.cpp</pre>
+                <pre></pre>
+                <pre>//This program illustrates some of methods that are available</pre>
+                <pre>//to manipulate string objects.</pre>
+                <pre></pre>
+                <pre>#include &lt;iostream&gt;</pre>
+                <pre>#include &lt;string&gt;</pre>
+                <pre></pre>
+                <pre>using namespace std;</pre>
+                <pre></pre>
+                <pre>int main()</pre>
+                <pre>{</pre>
+                <pre>    string str1 = "This is an example string";</pre>
+                <pre>    string str2 = "sample";</pre>
+                <pre>    string str3;</pre>
+                <pre>    string punctuation = ".,:;!?";</pre>
+                <pre></pre>
+                <pre>    int position;</pre>
+                <pre></pre>
+                <pre>    cout &lt;&lt; "The original string, str1, is : "</pre>
+                <pre>         &lt;&lt; str1 &lt;&lt; endl &lt;&lt; endl;</pre>
+                <pre></pre>
+                <pre>    //Finds the first occurrence of "is" in str1</pre>
+                <pre>    position = str1.find("is");</pre>
+                <pre></pre>
+                <pre>    cout &lt;&lt; "The first occurrence of \"is\" is at position "</pre>
+                <pre>         &lt;&lt; position &lt;&lt; endl &lt;&lt; endl;</pre>
+                <pre></pre>
+                <pre>    //Finds the first occurrence of "is" in str1 after position 3</pre>
+                <pre>    position = str1.find("is", 3);</pre>
+                <pre></pre>
+                <pre>    cout &lt;&lt; "The first occurrence of \"is\" after position 3 is "</pre>
+                <pre>         &lt;&lt; "at position " &lt;&lt; position &lt;&lt; endl &lt;&lt; endl;</pre>
+                <pre></pre>
+                <pre>    //Finds the first occurrence of "is" from the end of str1</pre>
+                <pre>    position = str1.rfind("is");</pre>
+                <pre></pre>
+                <pre>    cout &lt;&lt; "The first occurrence of \"is\" from the end of str1 is "</pre>
+                <pre>         &lt;&lt; "at position " &lt;&lt; position &lt;&lt; endl &lt;&lt; endl;</pre>
+                <pre></pre>
+                <pre>    //Try to find a substring that is not in str1.</pre>
+                <pre>    position = str1.find("Hello");</pre>
+                <pre></pre>
+                <pre>    if (position == -1)</pre>
+                <pre>        cerr &lt;&lt; "The substring \"Hello\" was not found in str1."</pre>
+                <pre>             &lt;&lt; endl &lt;&lt; endl;</pre>
+                <pre></pre>
+                <pre>    //Extracts a 8-character substring from str1 beginning at position 11</pre>
+                <pre>    str3 = str1.substr(11, 8);</pre>
+                <pre>    cout &lt;&lt; "The 8-charater substring of str1 beginning at position 11 is: "</pre>
+                <pre>         &lt;&lt; str3 &lt;&lt; endl &lt;&lt; endl;</pre>
+                <pre></pre>
+                <pre>    //Replace 7 characters beginning at position 11 with the string str2</pre>
+                <pre>    str1.replace(11, 7, str2);</pre>
+                <pre></pre>
+                <pre>    cout &lt;&lt; "After replacing the word \"example\" " &lt;&lt; endl</pre>
+                <pre>         &lt;&lt; "by the word \"sample\", in str1 the string is: "</pre>
+                <pre>         &lt;&lt; str1 &lt;&lt; endl &lt;&lt; endl;</pre>
+                <pre></pre>
+                <pre>    //Erases a 7-character substring from str1 beginning at position 11</pre>
+                <pre>    str1.erase(11, 7);</pre>
+                <pre></pre>
+                <pre>    cout &lt;&lt; "After erasing the word \"sample \", in str1 the string is: "</pre>
+                <pre>         &lt;&lt; str1 &lt;&lt; endl &lt;&lt; endl;</pre>
+                <pre></pre>
+                <pre>    //Insert the string "example " into the string beginning at position 11</pre>
+                <pre>    str1.insert(11, "example ");</pre>
+                <pre></pre>
+                <pre>    cout &lt;&lt; "After putting back the word \"example \", in str1 the string is: "</pre>
+                <pre>         &lt;&lt; endl &lt;&lt; str1 &lt;&lt; endl &lt;&lt; endl;</pre>
+                <pre></pre>
+                <pre>    //Append a period at the end of the string</pre>
+                <pre>    str1.append(".");</pre>
+                <pre></pre>
+                <pre>    cout &lt;&lt; "After appending a period, the string str1 is: "</pre>
+                <pre>         &lt;&lt; str1 &lt;&lt; endl &lt;&lt; endl;</pre>
+                <pre></pre>
+                <pre>    //Finds the first occurrence of a punctuation mark in str1</pre>
+                <pre>    position =     str1.find_first_of(punctuation);</pre>
+                <pre></pre>
+                <pre>    cout &lt;&lt; "The first punctuation mark in str1 is "</pre>
+                <pre>         &lt;&lt; "at position " &lt;&lt; position &lt;&lt; endl &lt;&lt; endl;</pre>
+                <pre>    return 0;</pre>
+                <pre>}</pre>
+            </td>
+            <td width="257" valign="top">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <a name="457"> </a>
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+    <thead>
+        <tr>
+            <td width="509" valign="top">
+                <p>
+                    <strong>Program Output</strong>
+                </p>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td width="509" valign="top">
+                <pre><a name="PLID18"></a></pre>
+                <pre>The original string, str1, is : This is an example</pre>
+                <pre>
+   
+   
+   string</pre>
+                <pre></pre>
+                <pre>The first occurrence of "is" is at position 2</pre>
+                <pre></pre>
+                <pre>The first occurrence of "is" after position 3 is</pre>
+                <pre>
+   
+   
+   at position 5</pre>
+                <pre></pre>
+                <pre>The first occurrence of "is" from the end of str1</pre>
+                <pre>
+   
+   
+   is at position 5</pre>
+                <pre></pre>
+                <pre>The substring "Hello" was not found in str1.</pre>
+                <pre></pre>
+                <pre>The 8-charater substring of str1 beginning at</pre>
+                <pre>
+   
+   
+   position 11 is: example</pre>
+                <pre></pre>
+                <pre>After replacing the word "example"</pre>
+                <pre>by the word "sample", in str1 the string is: This</pre>
+                <pre>
+   
+   
+   is an sample string</pre>
+                <pre></pre>
+                <pre>After erasing the word "sample ", in str1 the</pre>
+                <pre>
+   
+   
+   string is: This is an string</pre>
+                <pre></pre>
+                <pre>After putting back the word "example ", in str1</pre>
+                <pre>
+   
+   
+   the string is:</pre>
+                <pre>This is an example string</pre>
+                <pre></pre>
+                <pre>After appending a period, the string str1 is: This</pre>
+                <pre>
+   
+   
+   is an example string.</pre>
+                <pre></pre>
+                <pre>The first punctuation mark in str1 is at position 25</pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    The program comments and output explain the code. Note that the program uses the escape sequence
+    <tt>
+        \"
+    </tt>
+    several times to allow
+    <tt>
+        cout
+    </tt>
+    to display the quotes character,
+    <tt>
+        "
+    </tt>
+    , inside a quoted string.
+</p>
+<br clear="all"/>

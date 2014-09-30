@@ -57,12 +57,13 @@
 					<div class="panel-body">
 						<div class="content-chapter">
 							<?php 
-							if (File::exists($sub_lessons[4]->content))
+							if (File::exists($dir."/lesson-content/".$sub_lessons[16]->content))
 							{
 								echo File::get($dir."/lesson-content/".$sub_lessons[16]->content);
 							}
 							else{
 								echo "No Content!";
+
 							} 
 							?>
 						</div>

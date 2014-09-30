@@ -28,3 +28,12 @@
     </script>
 </body>
 </html>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    console.log('ready');
+    $result = $('body').find('.score').html();    
+    $('body').find('.here-score').html("<code>SCORE:"+ $result);
+  });
+</script>
+
