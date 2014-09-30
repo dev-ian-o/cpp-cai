@@ -1,0 +1,90 @@
+[
+{ 
+  intro: "String 1"
+},
+{
+  id: "1",
+  element: '.line3',
+  intro: 'Load the iostream preprocessor directive to the program.  It contains information about the object cout and cin.',
+  position: 'bottom'
+},
+{
+  id: "2",
+  element: '.line4',
+  intro: 'Load the string preprocessor directive to the program.  It contains information about the object string and its associated method like getline().',
+  position: 'bottom'
+},
+{
+  id: "3",
+  element: '.line6',
+  intro: 'Allows us to code in our programs cout (and later cin) without having to qualify these by coding std::cout (and std::cin).',
+  position: 'bottom'
+},
+{
+  id: "4",
+  element: '.line8',
+  intro: 'Begins execution and controls the C++ program by executing C++ statements and other functions.',
+  position: 'bottom'
+},
+{
+  id: "5",
+  element: '.line10',
+  intro: ' declares an empty string object named first_name',
+  position: 'bottom'
+},
+{
+  id: "6",
+  element: '.line11',
+  intro: 'declares an empty string object named last_name',
+  position: 'bottom'
+},
+{
+  id: "7",
+  element: '.line13',
+  intro: 'Enter your first name : ',
+  position: 'bottom'
+},
+{
+  id: "8",
+  element: '.line14',
+  intro: ' ask for an input and assigned/stored to object first_name.  Assuming you input "Emily".  Since we’re using cin for inputting string data, If you   tried to input 2 words separated by space it  will be considered input already for the second cin which is for the variable last_name. Therefore, no name will be   assigned to variable last_name',
+  position: 'bottom'
+},
+{
+  id: "9",
+  element: '.line16',
+  intro: 'Move the cursor to the next line',
+  position: 'bottom'
+},
+{
+  id: "10",
+  element: '.line17',
+  intro: 'Enter your last name :',
+  position: 'bottom'
+},
+{
+  id: "11",
+  element: '.line18',
+  intro: 'ask for an input and assigned/stored to object last_name.  Assuming you input "Sicat"',
+  position: 'bottom'
+},
+{
+  id: "12",
+  element: '.line20',
+  intro: 'Move the cursor to the next line twice',
+  position: 'bottom'
+},
+{
+  id: "13",
+  element: '.line21',
+  intro: ' Welcome, Emily Sicat',
+  position: 'bottom'
+},
+{
+  id: "14",
+  element: '.line23',
+  intro: 'Ends the execution of main() and sends the integer value 0 back to the operating system to indicate that the program ended normally.',
+  position: 'bottom'
+},
+
+]			

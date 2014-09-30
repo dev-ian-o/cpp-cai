@@ -1,0 +1,125 @@
+[
+{ 
+  intro: "String 3"
+},
+{
+  id: "1",
+  element: '.line3',
+  intro: 'Load the iostream preprocessor directive to the program.  It contains information about the object cout and cin.',
+  position: 'bottom'
+},
+{
+  id: "2",
+  element: '.line4',
+  intro: 'Load the string preprocessor directive to the program.   It contains information about the object string and its associated method like getline().',
+  position: 'bottom'
+},
+{
+  id: "3",
+  element: '.line6',
+  intro: 'Allows us to code in our programs cout (and later cin) without having to qualify these by coding std::cout (and std::cin).',
+  position: 'bottom'
+},
+{
+  id: "4",
+  element: '.line8',
+  intro: 'Begins execution and controls the C++ program by executing C++ statements and other functions.',
+  position: 'bottom'
+},
+{
+  id: "5",
+  element: '.line10',
+  intro: '  declares a string OBJECT named str1 with "This is an example string" as the initial value',
+  position: 'bottom'
+},
+{
+  id: "6",
+  element: '.line11',
+  intro: 'declares a string OBJECT named str2 with "sample" as the initial value',
+  position: 'bottom'
+},
+{
+  id: "7",
+  element: '.line12',
+  intro: 'declares an empty string OBJECT named str3 ',
+  position: 'bottom'
+},
+{
+  id: "8",
+  element: '.line13',
+  intro: ' declares a string OBJECT named punctuation with ".,:;!?" as the initial value',
+  position: 'bottom'
+},
+{
+  id: "9",
+  element: '.line15',
+  intro: 'declares an integer VARIABLE named position. This will represent the position of the punctuation in str1',
+  position: 'bottom'
+},
+{
+  id: "10",
+  element: '.block1',
+  intro: ' Prints " The original string, str1, is : This is an example string" and move the cursor two line after',
+  position: 'bottom'
+},
+{
+  id: "11",
+  element: '.line20',
+  intro: ' Prints "The length of str is 25 characters.", counting the length of str1 using the length()',
+  position: 'bottom'
+},
+{
+  id: "12",
+  element: '.line22',
+  intro: 'evaluate condition, in this case it returns false because str2 is not empty, it has assigned value of "sample"',
+  position: 'bottom'
+},
+{
+  id: "13",
+  element: '.line25',
+  intro: ' Prints "str2 is not empty. It has the value "sample"".',
+  position: 'bottom'
+},
+{
+  id: "14",
+  element: '.line27',
+  intro: 'Extracts a 8-character substring from str1 beginning at position 11 and store it to variable str3.  Therefore str3 has the value "example"',
+  position: 'bottom'
+},
+{
+  id: "15",
+  element: '.block2',
+  intro: ' Prints "The 8-charater substring of str1 beginning at position 11 is: example"',
+  position: 'bottom'
+},
+{
+  id: "16",
+  element: '.line32',
+  intro: ' Replace 7 characters beginning at position 11 with the string str2',
+  position: 'bottom'
+},
+{
+  id: "17",
+  element: '.block3',
+  intro: 'After REPLACING the word "example" by the word "sample", in str1 the string is: This is an sample string',
+  position: 'bottom'
+},
+{
+  id: "18",
+  element: '.line38',
+  intro: ' Finds the first occurrence of a punctuation mark in str1.  In this case the value of variable position is -1 since ther is no punctuation in str1',
+  position: 'bottom'
+},
+{
+  id: "19",
+  element: '.block4',
+  intro: ' Prints "The first punctuation mark in str1 is at position -1"',
+  position: 'bottom'
+},
+{
+  id: "20",
+  element: '.line44',
+  intro:' Ends the execution of main() and sends the integer value 0 back to the operating system to indicate that the program ended normally.',
+  position: 'bottom'
+},
+]		
