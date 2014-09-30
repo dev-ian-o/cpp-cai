@@ -5,7 +5,8 @@ $(document).ready(function(){
 		e.preventDefault();
 		form = "#form-exam";
 		// init("form-exam");
-		console.log($(form).serialize());	
+		console.log($(form).serialize());
+		debugger;	
 		return false;
 	});
 

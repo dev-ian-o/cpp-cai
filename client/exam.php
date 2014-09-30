@@ -8,7 +8,7 @@
 
 
 <?php require_once 'header-footer/footer.php';?>
-	<script src="../includes/scripts-ajax/script-exam.js"></script>   	
+	<!-- // <script src="../includes/scripts-ajax/script-exam.js"></script>   	 -->
     <script type="text/javascript">
     $(document).ready(function(){
     	$('.carousel').carousel({
