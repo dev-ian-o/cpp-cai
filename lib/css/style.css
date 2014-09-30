@@ -223,3 +223,11 @@
   font-weight: bold;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
 }
+
+.introjs-skipbutton{
+  display: none!important;
+}
+.introjs-tooltip{
+  min-width: 400px!important;
+  max-width: 600px!important;
+}

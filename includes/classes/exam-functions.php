@@ -218,6 +218,27 @@ function fetch_sub_lesson_id($conn,$id,$print = true){
 	if ($print) print_r($row); else return $row;
 }
 
+
+function fetch_exam_by_lesson($conn,$id,$print = true){
+	$stmt = $conn->prepare("SELECT * 
+		FROM tbl_exam_items
+		WHERE lesson_sub_id = :lesson_sub_id
+		ORDER BY RAND()
+	");
+	
+	$stmt->execute(array(
+		"lesson_sub_id" => $id,
+	));
+
+	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	$row = json_encode($row);
+
+	if ($print) print_r($row); else return $row;
+}
+
+// fetch_exam_by_lesson($conn,17,true);
+
 function query_lessons($conn, $row, $print=true){
 	$stmt = $conn->prepare("SELECT * 
 		FROM tbl_lessons_chapters

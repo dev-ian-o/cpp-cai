@@ -1,0 +1,13 @@
+#include<iostream>
+#include<stdio.h>
+
+using namespace std;
+
+int main ()
+{
+    int a = 0;
+cout<<a++;
+
+getchar(); //freezes the screen
+}
+    			
