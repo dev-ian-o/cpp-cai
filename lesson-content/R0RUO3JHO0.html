@@ -1,10 +1,10 @@
 <h3> 5.1 User-Define Data Types using Structure </h3>
-<p class="mL10">  5.1.1 Structure</p>
+<p class="mL10"> <b> 5.1.1 Structure</b> </p>
 <p class="mL15">
 	Arrays allow the programmer to define variables that combine several data items of the same kind. For example, an array of five integers combines five
 	integer values that can be treated as a unit. In this section, we introduce the structure, which allows you to combine data items of different kinds.
 </p>
-<p class="mL10">5.1.2 Defining Structure</p>
+<p class="mL10"><b>5.1.2 Defining Structure</b></p>
 <p class="mL15">
 	A <i>data structure</i> is a group of data elements grouped together under one name. These data elements, known as <i>members</i>, can have different
 	types and different lengths. Data structures can be declared in C++ using the following syntax:
@@ -38,121 +38,33 @@
 <p class="mL15">
 	For example:
 </p>
-<table border="0" cellpadding="0">
-	<tbody>
-		<tr>
-			<td valign="top">
-				<p align="right">
-					1
-					<br/>
-					2
-					<br/>
-					3
-					<br/>
-					4
-					<br/>
-					5
-					<br/>
-					6
-					<br/>
-					7
-				</p>
-				<p align="right">
-					8
-				</p>
-				<p align="right">
-					9
-				</p>
-				<p align="right">
-					10
-				</p>
-			</td>
-			<td valign="top">
-				<p>
-					struct PART_STRUCT
-				</p>
-				<p>
-					{
-				</p>
-				<p>
-					string part_no;
-				</p>
-				<p>
-					int quantity_on_hand;
-				</p>
-				<p>
-					double unit_price;
-				</p>
-				<p>
-					} keyboard;
-				</p>
-				<p>
-					<br/>
-					main()
-				</p>
-				<p>
-					{
-				</p>
-				<p>
-					PART_STRUCT mouse, monitor;
-				</p>
-				<p>
-					}
-				</p>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top">
-			</td>
-			<td valign="top">
-				<p>
-					<strong>Note</strong>: the <strong>keyboard</strong> <strong>variable</strong> is created as the structure <strong>PART_STRUCT </strong>is defined, whereas the<strong>mouse</strong> and <strong>monitor</strong> <strong>variables</strong> are created inside the main using the structure					<strong>PART_STRUCT</strong>
-				</p>
-			</td>
-		</tr>
-		<tr>
-			<td valign="top">
-			</td>
-			<td valign="top">
-				<p>
-					Therefore, we can actually <strong>define</strong> the structure and <strong>create</strong> all the <strong>variables</strong> separated
-					by comma after the close curly braces (}) of the <strong>struc</strong> keyword before ending it with semicolon(;). For example,
-				</p>
-				<p>
-					struct PART_STRUCT
-				</p>
-				<p>
-					{
-				</p>
-				<p>
-					string part_no;
-				</p>
-				<p>
-					int quantity_on_hand;
-				</p>
-				<p>
-					double unit_price;
-				</p>
-				<p>
-					} keyboard, mouse, monitor;
-				</p>
-				<p>
-With this <strong>keyboard</strong>, <strong>mouse</strong> and <strong>monitor</strong> are variables, that is of the data type					<strong>PART_STRUCT</strong>. Internally, the variables <strong>keyboard</strong>, <strong>mouse</strong>, and <strong>monitor</strong> has
-					the structure that we define in the <strong>struct</strong> keyword
-				</p>
-			</td>
-		</tr>
-	</tbody>
-</table>
+<pre class="code"><code>struct PART_STRUCT
+{
+  string   part_no;
+  int    quantity_on_hand;
+  double unit_price;
+} keyboard;
+
+
+main()
+{
+  PART_STRUCT mouse, monitor;
+}</code></pre>
+<pre><code><b>Note:</b> the <b>keyboard variable</b> is created as the  structure  <tt><b>PART_STRUCT</b></tt>  is defined, whereas the <b>mouse</b> and <b>monitor variables</b> are created inside the main using the structure <b>PART_STRUCT</b>
+
+Therefore, we can actually <b>define</b> the structure and <b>create</b> all the <b>variables</b> separated by comma after the close curly braces (}) of the <b>struc</b>  keyword before ending it with semicolon(;).  For example,
+
+struct PART_STRUCT
+{
+  string   part_no;
+  int    quantity_on_hand;
+  double unit_price;
+} keyboard, mouse, monitor;
+
+With this <b>keyboard, mouse</b> and <b>monitor</b> are variables, that is of the data type <b>PART_STRUCT</b>.  Internally, the variables <b>keyboard, mouse,</b> and <b>monitor</b> has the structure that we define in the <b>struct</b> keyword
+</code></pre>
 <p class="mL15">
-	The definition begins with the keyword
-	<tt>struct</tt>. The identifier<tt>PART_STRUCT</tt>gives a name to the structure. (We place the suffix<tt>_struct</tt>
-	at the end of a structure name to remind us that the identifier is a structure. This is not required by C++, but is a useful programming practice.)
-	Following the structure name are the <a name="ch09term6"></a>structure members enclosed in braces. The structure members are the parts of the structure and
-	they are declared in the same way as ordinary variables although they are not variables. The <tt>PART_STRUCT</tt>structure has three members. The first member,
-	<tt>part_no</tt>, is a character array. The second member,
-	<tt>quantity_on_hand</tt>, is an integer. The third member,
-	<tt>unit_price</tt>, is a <tt>double</tt>. Note that the definition of the structure ends in a semicolon.
+The definition begins with the keyword struct. The identifier PART_STRUCT gives a name to the structure. (We place the suffix _struct at the end of a structure name to remind us that the identifier is a structure. This is not required by C++, but is a useful programming practice.) Following the structure name are the structure members enclosed in braces. The structure members are the parts of the structure and they are declared in the same way as ordinary variables although they are not variables. The PART_STRUCT structure has three members. The first member, part_no, is a character array. The second member, quantity_on_hand, is an integer. The third member, unit_price, is a double. Note that the definition of the structure ends in a semicolon.
 </p>
 <p class="mL15">
 	Note:
@@ -164,7 +76,7 @@ With this <strong>keyboard</strong>, <strong>mouse</strong> and <strong>monitor<
 	<tt>PART_STRUCT</tt>variables. The <tt>struct</tt> statement actually defines another data type. By itself it does not declare a variable. Also, the 
 	<tt>part_no</tt>,<tt>quantity_on_hand</tt> , and <tt>unit_price</tt> members of the structure are merely names for the members of the structure and are not variables.
 </p>
-<p>
+<p class="mL15">
 	Figure 1 shows how we can think of the
 	<tt>
 		PART_STRUCT
@@ -191,25 +103,25 @@ With this <strong>keyboard</strong>, <strong>mouse</strong> and <strong>monitor<
 	<a name="ch09fig01"></a>
 </p>
 <br clear="all"/>
-<p class="text-center">
+<p class="text-center mL15">
 	<img src="../uploads/images/c5-1/1.png">
 	Figure 1
 </p>
-<p>
+<p class="mL15">
 	To declare a variable that is of the PART_STRUCT type, we can code the following.
 </p>
-<p align="center">
+<p class="text-center mL15">
 	PART_STRUCT keyboard, mouse, monitor;
 </p>
-<p>
+<p class="mL15">
 	This declaration define the variables, keyboard, mouse, monitor, that is of data type PART_STRUCT. Internally, the variable keyboard, mouse or monitor has
 	the structure that we defined in the struct statement for PART_STRUCT. Figure 2 shows the variables keyboard, mouse and monitor.
 </p>
-<p class="text-center">
+<p class="text-center mL15">
 	<img src="../uploads/images/c5-1/2.png">
 	Figure 2
 </p>
-<p>
+<p class="mL15">
 	Although the
 	<tt>
 		PART_STRUCT
@@ -224,74 +136,24 @@ With this <strong>keyboard</strong>, <strong>mouse</strong> and <strong>monitor<
 	</tt>
 	requires whatever amount of storage is necessary to store an eight-character array, an integer, and a double.
 </p>
-<p>
-	5.1.3 Accessing Structure Members or simply Member
+<p class="mL10">
+	<b>5.1.3 Accessing Structure Members or simply Member</b>
 </p>
-<p>
+<p class="mL15">
 	Once the three objects of a determined structure type are declared (<code>keyboard</code>, <code>mouse</code>, and <code>monitor</code>) its members can be
 	accessed directly. The syntax for that is simply to insert a dot (<code>.</code>), which is what we called a <strong>member operator, </strong>between the
 	object name and the member name. The member operator is coded as a period between the structure variable name and the structure member that we wish to
 	access. For example, we could operate with any of these elements as if they were standard variables of their respective types:
 </p>
-<table border="0" cellpadding="0">
-	<tbody>
-		<tr>
-			<td valign="top">
-				<p align="right">
-					1
-					<br/>
-					2
-					<br/>
-					3
-					<br/>
-					4
-					<br/>
-					5
-					<br/>
-					6
-				</p>
-				<p align="right">
-					7
-				</p>
-				<p align="right">
-					8
-				</p>
-				<p align="right">
-					9
-				</p>
-			</td>
-			<td valign="top">
-				<p>
-					keyboard.part_no
-				</p>
-				<p>
-					keyboard.quantity_on_hand
-				</p>
-				<p>
-					keyboard.unit_price
-				</p>
-				<p>
-					mouse.part_no
-				</p>
-				<p>
-					mouse.quantity_on_hand
-				</p>
-				<p>
-					mouse.unit_price
-				</p>
-				<p>
-					monitor.part_no
-				</p>
-				<p>
-					monitor.quantity_on_hand
-				</p>
-				<p>
-					monitor.unit_price
-				</p>
-			</td>
-		</tr>
-	</tbody>
-</table>
+<pre class="code"><code>keyboard.part_no
+keyboard.quantity_on_hand
+keyboard.unit_price
+mouse.part_no
+mouse.quantity_on_hand
+mouse.unit_price
+monitor.part_no
+monitor.quantity_on_hand
+monitor.unit_price</code></pre>
 <p>
 	To assign the value 62, 27 and 13 to the
 	<tt>
@@ -354,7 +216,7 @@ With this <strong>keyboard</strong>, <strong>mouse</strong> and <strong>monitor<
 <p>
 	The following program, dem05-1.cpp, shows how to access the members of a structure.
 </p>
-<table border="0" cellpadding="0" width="694">
+<!-- <table border="0" cellpadding="0" width="694">
 	<tbody>
 		<tr>
 			<td width="27" valign="top">
@@ -528,7 +390,79 @@ With this <strong>keyboard</strong>, <strong>mouse</strong> and <strong>monitor<
 			</td>
 		</tr>
 	</tbody>
-</table>
+</table> -->
+<div class="row">
+	<div class="col-xs-6">
+		<pre class="code"><code>// example about structures
+// Filename: demo05-1.cpp
+
+// This program illustrates the 
+// declaration and use of structure
+// variables and the member operator to // access structure
+// variable members.
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+struct PART_STRUCT
+{
+  string part_no;
+  int    quantity_on_hand;
+  double unit_price;
+} mouse;
+
+int main()
+{
+  PART_STRUCT keyboard;
+
+  mouse.part_no = "KB12345"; 	
+  mouse.quantity_on_hand = 10;
+  mouse.unit_price =1499.75; 
+	
+  cout &lt;&lt; "Enter the seven-character part number: ";
+  getline(cin,keyboard.part_no);
+
+  cout &lt;&lt; endl;
+  cout &lt;&lt; "Enter the quantity on hand: ";
+  cin >> keyboard.quantity_on_hand;
+
+  cout &lt;&lt; endl;
+  cout &lt;&lt; "Enter the unit price: ";
+  cin >> keyboard.unit_price;
+
+  cout &lt;&lt; endl;
+  cout &lt;&lt; "You entered the following information for the variable keyboard of data type PART_STRUCT:" &lt;&lt; endl &lt;&lt; endl;
+  cout &lt;&lt; "Part Number:      " &lt;&lt; 
+	   keyboard.part_no &lt;&lt; endl;
+  cout &lt;&lt; "Quantity On Hand: " 
+	&lt;&lt; keyboard.quantity_on_hand
+       &lt;&lt; endl;
+  cout &lt;&lt; "Unit Price:       "  
+	&lt;&lt; keyboard.unit_price &lt;&lt; endl;
+
+  
+cout &lt;&lt; endl;
+  cout &lt;&lt; "You assigned the following information for the variable mouse of data type PART_STRUCT:" &lt;&lt; endl &lt;&lt; endl;
+  cout &lt;&lt; "Part Number:      " &lt;&lt; 
+	   mouse.part_no &lt;&lt; endl;
+  cout &lt;&lt; "Quantity On Hand: " 
+	&lt;&lt; mouse.quantity_on_hand
+       &lt;&lt; endl;
+  cout &lt;&lt; "Unit Price:       "  
+	&lt;&lt; mouse.unit_price &lt;&lt; endl;
+
+
+   return 0;
+}
+Note: Notice that the keyboard object for the structure PART_STRUCT is created as the structure is define. Unlike the mouse object for the structure PART_STRUCT is created inside the main using the declaration PART_STRUCT mouse;.  With this we can create several object
+</code></pre>
+	</div>
+	<div class="col-xs-6">
+	</div>
+</div>
+
 <p>
 	The program begins with the definition of the structure type that we discussed earlier. In
 	<tt>
@@ -587,9 +521,7 @@ as shown in	<a href="mk:@MSITStore:D:\Subjects\C++\C++%20for%20Business%20Progra
 	<img src="../uploads/images/c5-1/4.png">
 	Figure 4
 </h5>
-<p>
-	5.1.4 Initializing a Structure Variable
-</p>
+<p class="mL10"> <b>5.1.4 Initializing a Structure Variable</b> </p>
 <p>
 	You can initialize a structure variable similarly to the way in which you initialize an array. For example, using the
 	<tt>

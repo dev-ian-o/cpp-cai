@@ -6,6 +6,41 @@
 
 <?php $lessons = json_decode(fetch_lessons($conn,false)); ?>
 <?php $sub_lessons = json_decode(fetch_sub_lessons($conn,false)); ?>
+	<style type="text/css">
+	pre {
+  background-color:#eee;
+  overflow:auto;
+  margin:0 0 1em;
+  padding:.5em 1em;
+}
+
+pre code,
+pre .line-number {
+  /* Ukuran line-height antara teks di dalam tag <code> dan <span class="line-number"> harus sama! */
+  font:normal normal 12px/14px "Courier New",Courier,Monospace;
+  color:black;
+  display:block;
+}
+
+pre .line-number {
+  float:left;
+  margin:0 1em 0 -1em;
+  border-right:1px solid;
+  text-align:right;
+}
+
+pre .line-number span {
+  display:block;
+  padding:0 .5em 0 1em;
+}
+
+pre .cl {
+  display:block;
+  clear:both;
+}
+	</style>
+
+
 <div class="row">
 	<!-- panels -->
 	<div class="col-xs-12 col-md-4">
