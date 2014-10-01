@@ -70,7 +70,7 @@ pre .cl {
 										<input type="hidden" value="<?= $value_sub->lesson_sub_id;?>">
 
 									</a>
-		<?php $filename = "http://".$_SERVER['SERVER_NAME']."/cai_project/uploads/docs/".$value_sub->video_url; ?>
+									<?php $filename = "http://".$_SERVER['SERVER_NAME']."/cai_project/uploads/docs/".$value_sub->video_url; ?>
 
 									<a href="<?= $filename; ?>" style="width: 100%"class="btn btn-danger btn-sm" download>Download</a>
 
