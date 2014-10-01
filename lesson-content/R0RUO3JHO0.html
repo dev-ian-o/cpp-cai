@@ -1,47 +1,41 @@
-<p>
-    5.1 User-Define Data Types using Structure
-</p>
-<p>
-	5.1.1 Structure
-</p>
-<p>
+<h3> 5.1 User-Define Data Types using Structure </h3>
+<p class="mL10">  5.1.1 Structure</p>
+<p class="mL15">
 	Arrays allow the programmer to define variables that combine several data items of the same kind. For example, an array of five integers combines five
 	integer values that can be treated as a unit. In this section, we introduce the structure, which allows you to combine data items of different kinds.
 </p>
-<p>
-	5.1.2 Defining Structure
-</p>
-<p>
-	A <dfn>data structure</dfn> is a group of data elements grouped together under one name. These data elements, known as <em>members</em>, can have different
+<p class="mL10">5.1.2 Defining Structure</p>
+<p class="mL15">
+	A <i>data structure</i> is a group of data elements grouped together under one name. These data elements, known as <i>members</i>, can have different
 	types and different lengths. Data structures can be declared in C++ using the following syntax:
 	<br/>
 	<br/>
-	<code>struct type_name {</code>
+	<code>struct type_name {
 	<br/>
-	<code>member_type1 member_name1;</code>
+	member_type1 member_name1;
 	<br/>
-	<code>member_type2 member_name2;</code>
+	member_type2 member_name2;
 	<br/>
-	<code>member_type3 member_name3;</code>
+	member_type3 member_name3;
 	<br/>
-	<code>.</code>
+	.
 	<br/>
-	<code>.</code>
+	.
 	<br/>
-	<code>} &lt;object_names&gt;;</code>
+	} &lt;object_names&gt;;</code>
 	<br/>
 	<br/>
 	Where <code>type_name</code> is a name for the structure type, <code>object_name</code> can be a set of valid identifiers for objects(optional) that have
 	the type of this structure. Within braces <code>{}</code>, there is a list with the data members, each one is specified with a type and a valid identifier
 	as its name.
 </p>
-<p>
+<p class="mL15">
 	Suppose we want to process inventory information on parts that are stored in a warehouse. For each part, we would like to store the part number (a
 	sevencharacter code), the quantity on hand (an integer), and the unit price (a double). We could declare a variable for each of these quantities. However,
 	doing so does not reflect that the three variables contain values that are associated with a particular part. We need a single variable in which we can
-store all three quantities. Most programming languages use a variable called a record for this purpose. In C++, the <a name="ch09term4"></a>	<strong>structure</strong> can provide this capability<strong>. </strong><strong></strong>
+	store all three quantities. Most programming languages use a variable called a record for this purpose. In C++, the <a name="ch09term4"></a>	<b>structure</b>can provide this capability<b>. </b><b></b>
 </p>
-<p>
+<p class="mL15">
 	For example:
 </p>
 <table border="0" cellpadding="0">
@@ -112,8 +106,7 @@ store all three quantities. Most programming languages use a variable called a r
 			</td>
 			<td valign="top">
 				<p>
-					<strong>Note</strong>
-: the <strong>keyboard</strong> <strong>variable</strong> is created as the structure <strong>PART_STRUCT </strong>is defined, whereas the<strong>mouse</strong> and <strong>monitor</strong> <strong>variables</strong> are created inside the main using the structure					<strong>PART_STRUCT</strong>
+					<strong>Note</strong>: the <strong>keyboard</strong> <strong>variable</strong> is created as the structure <strong>PART_STRUCT </strong>is defined, whereas the<strong>mouse</strong> and <strong>monitor</strong> <strong>variables</strong> are created inside the main using the structure					<strong>PART_STRUCT</strong>
 				</p>
 			</td>
 		</tr>
@@ -151,78 +144,25 @@ With this <strong>keyboard</strong>, <strong>mouse</strong> and <strong>monitor<
 		</tr>
 	</tbody>
 </table>
-<p>
+<p class="mL15">
 	The definition begins with the keyword
-	<tt>
-		struct
-	</tt>
-	. The identifier
-	<tt>
-		PART_STRUCT
-	</tt>
-	gives a name to the structure. (We place the suffix
-	<tt>
-		_struct
-	</tt>
+	<tt>struct</tt>. The identifier<tt>PART_STRUCT</tt>gives a name to the structure. (We place the suffix<tt>_struct</tt>
 	at the end of a structure name to remind us that the identifier is a structure. This is not required by C++, but is a useful programming practice.)
 	Following the structure name are the <a name="ch09term6"></a>structure members enclosed in braces. The structure members are the parts of the structure and
-	they are declared in the same way as ordinary variables although they are not variables. The
-	<tt>
-		PART_STRUCT
-	</tt>
-	structure has three members. The first member,
-	<tt>
-		part_no
-	</tt>
-	, is a character array. The second member,
-	<tt>
-		quantity_on_hand
-	</tt>
-	, is an integer. The third member,
-	<tt>
-		unit_price
-	</tt>
-	, is a
-	<tt>
-		double
-	</tt>
-	. Note that the definition of the structure ends in a semicolon.
+	they are declared in the same way as ordinary variables although they are not variables. The <tt>PART_STRUCT</tt>structure has three members. The first member,
+	<tt>part_no</tt>, is a character array. The second member,
+	<tt>quantity_on_hand</tt>, is an integer. The third member,
+	<tt>unit_price</tt>, is a <tt>double</tt>. Note that the definition of the structure ends in a semicolon.
 </p>
-<p>
-	<a name="iddle2115"></a>
-	<a name="iddle2113"></a>
-	<a name="iddle1767"></a>
-</p>
-<p>
+<p class="mL15">
 	Note:
 </p>
-<p>
+<p class="mL15">
 	It is important to realize that the definition of the
-	<tt>
-		PART_STRUCT
-	</tt>
-	structure <strong>does not declare a variable</strong>. It, therefore, <strong>does not reserve any space in computer storage</strong>. A structure
+	<tt>PART_STRUCT</tt>structure <b>does not declare a variable</b>. It, therefore, <b>does not reserve any space in computer storage</b>. A structure
 	definition defines a template for the compiler to use when we declare
-	<tt>
-		PART_STRUCT
-	</tt>
-	variables. The
-	<tt>
-		struct
-	</tt>
-	statement actually defines another data type. By itself it does not declare a variable. Also, the
-	<tt>
-		part_no
-	</tt>
-	,
-	<tt>
-		quantity_on_hand
-	</tt>
-	, and
-	<tt>
-		unit_price
-	</tt>
-	members of the structure are merely names for the members of the structure and are not variables.
+	<tt>PART_STRUCT</tt>variables. The <tt>struct</tt> statement actually defines another data type. By itself it does not declare a variable. Also, the 
+	<tt>part_no</tt>,<tt>quantity_on_hand</tt> , and <tt>unit_price</tt> members of the structure are merely names for the members of the structure and are not variables.
 </p>
 <p>
 	Figure 1 shows how we can think of the
@@ -251,7 +191,8 @@ With this <strong>keyboard</strong>, <strong>mouse</strong> and <strong>monitor<
 	<a name="ch09fig01"></a>
 </p>
 <br clear="all"/>
-<p align="center">
+<p class="text-center">
+	<img src="../uploads/images/c5-1/1.png">
 	Figure 1
 </p>
 <p>
@@ -264,8 +205,8 @@ With this <strong>keyboard</strong>, <strong>mouse</strong> and <strong>monitor<
 	This declaration define the variables, keyboard, mouse, monitor, that is of data type PART_STRUCT. Internally, the variable keyboard, mouse or monitor has
 	the structure that we defined in the struct statement for PART_STRUCT. Figure 2 shows the variables keyboard, mouse and monitor.
 </p>
-<p align="center">
-	<a name="ch09fig02"></a>
+<p class="text-center">
+	<img src="../uploads/images/c5-1/2.png">
 	Figure 2
 </p>
 <p>
@@ -365,9 +306,8 @@ With this <strong>keyboard</strong>, <strong>mouse</strong> and <strong>monitor<
 <pre>mouse.quantity_on_hand = 27;</pre>
 <pre>monitor.quantity_on_hand = 13;</pre>
 <p align="center">
-	<tt>
-		Figure 3
-	</tt>
+	<img src="../uploads/images/c5-1/3.png">
+	Figure 3
 </p>
 <p align="center">
 	<tt>
@@ -644,7 +584,7 @@ With this <strong>keyboard</strong>, <strong>mouse</strong> and <strong>monitor<
 as shown in	<a href="mk:@MSITStore:D:\Subjects\C++\C++%20for%20Business%20Programming,%20Second%20Edition.chm::/0130467006/ch09lev1sec2.html#ch09fig03">Figure </a>4.
 </p>
 <h5 align="center">
-	<a name="ch09fig03"></a>
+	<img src="../uploads/images/c5-1/4.png">
 	Figure 4
 </h5>
 <p>
