@@ -1,73 +1,69 @@
-<p>
-    <strong>5.2 The </strong>
-    <strong>string</strong>
-    <strong> Class: An Introduction to Classes and Objects</strong>
+<h3>5.2 The string Class: An Introduction to Classes and Objects</h3>
+<p class="mL10">
+    <b>5.2.1 Familiar Classes and Objects</b>
 </p>
-<p>
-    <strong>5.2.1 Familiar Classes and Objects</strong>
-</p>
-<p>
+<p class="mL15">
     We have been working with several classes since the first chapter. In <u>Chapter 1</u>, we introduced the standard input and output streams cin and cout.
-The C++ language comes with several predefined classes. Two of these are the input class <a name="ch10term13"></a>istream and the output class    <a name="ch10term15"></a>ostream. The standard input stream cin is an istream class object. The definition of the istream and ostream classes and the
+    The C++ language comes with several predefined classes. Two of these are the input class <a name="ch10term13"></a>istream and the output class    <a name="ch10term15"></a>ostream. The standard input stream cin is an istream class object. The definition of the istream and ostream classes and the
     definitions of cin and cout are contained in the header file iostream.
 </p>
-<p>
+<p class="mL15">
     In a program, we can obtain data from the keyboard by applying the extraction operator &gt;&gt; to the cin object. We can view the statement
 </p>
-<p>
+<p class="mL15">
     cin &gt;&gt; price;
 </p>
-<p>
+<p class="mL15">
     as follows: the statement tells the cin object to extract a number from the input stream and place the number's value into the variable price. Thus, we
     send a message to the cin object and it responds in a certain way to that message. How that message is carried out (that is, the mechanics of extracting
     the characters and converting them into a number), is immaterial to us (information hiding).
 </p>
-<p>
+<p class="mL15">
     <a name="iddle1669"></a>
     <a name="iddle1026"></a>
     Likewise, we can display data on the monitor by applying the insertion operator &lt;&lt; to the cout object. We can view the statement
 </p>
-<p>
+<p class="mL15">
     cout &lt;&lt; "The value is " &lt;&lt; price;
 </p>
-<p>
+<p class="mL15">
     as sending a message to the cout object to display on the monitor screen the string
 </p>
-<p>
+<p class="mL15">
     "The value is" followed by the value of the variable price.
 </p>
-<p>
+<p class="mL15">
     We have used get() with cin as follows, where ch is a variable of type char.
 </p>
-<p>
+<p class="mL15">
     ch = cin.get();
 </p>
-<p>
+<p class="mL15">
     The function get() is a method of the istream class. When we code cin.get(), we are sending the get() message to the cin object. In response to this
     message, the object returns to the program the value of the next character in the input buffer.
 </p>
-<p>
+<p class="mL15">
     Note that we use the same dot operator that we use with structures.
 </p>
-<p>
+<p class="mL15">
     The same is true about getline(). When we code
 </p>
-<p>
+<p class="mL15">
     cin.getline(name, 81);
 </p>
-<p>
+<p class="mL15">
     we are sending the getline() message to the cin object. In response to the message, the cin object extracts an entire line of text from the input buffer
     and places a copy of it into the array name. Again, it is no concern to us how the cin object obtains the line of characters and places them into the
     array. That is the responsibility of the object.
 </p>
-<p>
+<p class="mL15">
     In the remainder of this chapter, we shall illustrate these object-oriented concepts by studying the built-in C++ class string. In the following chapters,
     we shall discuss how you can code your own classes and objects and use them in your programs.
 </p>
-<p>
-    <strong>5.2.2 Introduction to string Objects</strong>
+<p class="mL10">
+    <b>5.2.2 Introduction to string Objects</b>
 </p>
-<p>
+<p class="mL15">
     <a name="iddle2172"></a>
     <a name="iddle2082"></a>
     <a name="iddle2079"></a>
@@ -84,7 +80,7 @@ The C++ language comes with several predefined classes. Two of these are the inp
     objects or the operations on them are implemented. What is important is that you know how to use string objects. This is in contrast to using C-strings
     where it is very important that we know that such strings are implemented as character arrays.
 </p>
-<p>
+<p class="mL15">
     The
     <tt>
         string
@@ -96,23 +92,19 @@ The C++ language comes with several predefined classes. Two of these are the inp
     statement.
 </p>
 <pre>#include &lt;string&gt;</pre>
-<pre></pre>
 <p>
     <a name="ch10lev1sec2"></a>
     <a name="ch10lev2sec2"></a>
 </p>
-<h4>
-    5.2.3. Instantiating and Outputting
+<p class="mL10">
+    <b>5.2.3. Instantiating and Outputting
     <tt>
         string
     </tt>
-    Objects
-</h4>
-<pre>A string object represents a set of characters.  Before we learn how to use <tt>string</tt> objects, we must know how to <a name="ch10term17"></a><strong>instantiate</strong>, or create, them. <strong>Value of the string object</strong> is the set of characters a string object represents.</pre>
-<p>
-    <strong></strong>
+    Objects</b>
 </p>
-<p>
+<pre>A string object represents a set of characters.  Before we learn how to use <tt>string</tt> objects, we must know how to <a name="ch10term17"></a><strong>instantiate</strong>, or create, them. <strong>Value of the string object</strong> is the set of characters a string object represents.</pre>
+<p class="mL15">
     <strong>Note first that the word </strong>
     <tt>
         <strong>string</strong>
@@ -124,17 +116,15 @@ The C++ language comes with several predefined classes. Two of these are the inp
     </tt>
     will not be highlighted or color-coded as a keyword.)
 </p>
-<p>
+<p class="mL15">
     In C++, any class, including string, is a valid data type. Therefore, you can declare string objects in much the same way as you declare numeric data
     types. Consider the following declarations.
 </p>
-<p>
-    Example 1
+<p class="mL15">
+    Example 1 <br>
+    <tt>string str1;</tt>
 </p>
-<p>
-    string str1;
-</p>
-<p>
+<p class="mL15">
     The first declaration defines
     <tt>
         str1
@@ -145,40 +135,38 @@ The C++ language comes with several predefined classes. Two of these are the inp
     </tt>
     object is set to the empty string by default. This is in contrast to declaring an uninitialized integer or character pointer, which has a garbage value.
     When an object is created, it executes a special method, called a <a name="ch10term31"></a><strong>constructor</strong>. The main role of a constructor is
-to initialize the object. Because no initial value is specified in the first declaration, the object <a name="iddle2083"></a><a name="iddle1424"></a><a name="iddle1343"></a><a name="iddle1334"></a><a name="iddle1325"></a>executes the so-called <a name="ch10term19"></a>    <strong>no-argument constructor</strong>, which initializes the string's value to the empty string. It is called the no-argument constructor because we do
-    not provide any argument (string literal).
+    to initialize the object. Because no initial value is specified in the first declaration, the object <a name="iddle2083"></a><a name="iddle1424"></a><a name="iddle1343"></a><a name="iddle1334"></a><a name="iddle1325"></a>executes the so-called <a name="ch10term19"></a>    <strong>no-argument constructor</strong>, which initializes the string's value to the empty string. It is called the no-argument constructor because we do not provide any argument (string literal).
 </p>
-<p>
+<p class="mL15">
     <strong>
         Note: A string that is uninitialized in its declaration is automatically set to the empty, or null, string, that is, a string with no characters.
     </strong>
-    <strong></strong>
 </p>
-<p>
+<p class="mL15">
     Example 2 and 3
 </p>
-<p>
-    string str2 = "Hello"; //uses a one-argument constructor method
+<p class="mL15">
+    <tt>string str2 = "Hello"; //uses a one-argument constructor method</tt>
 </p>
-<p>
-    string str3("Hello"); //uses a one-argument constructor method
+<p class="mL15">
+   <tt> string str3("Hello"); //uses a one-argument constructor method </tt>
 </p>
-<p>
-The second and third declarations define str2 and str3 as a string object having the value "Hello" (without the quotation marks). In both of these cases, a    <a name="ch10term21"></a><strong>one-argument constructor</strong> initializes the value of the string to "Hello". Note how enclosing the string "Hello" in
+<p class="mL15">
+    The second and third declarations define str2 and str3 as a string object having the value "Hello" (without the quotation marks). In both of these cases, a    <a name="ch10term21"></a><strong>one-argument constructor</strong> initializes the value of the string to "Hello". Note how enclosing the string "Hello" in
     parentheses in the third declaration is similar to a function call, although str3 is not the name of a function.
 </p>
-<p>
+<p class="mL15">
     You might wonder if the string literal that you use to initialize a string object has too many characters to fit in the string's value. Although there is a
     limit to the number of characters that can be stored in a string object, that number is very large. Therefore, there is no practical limit to the number of
     characters that a string object can store.
 </p>
-<p>
+<p class="mL15">
     Example 4
 </p>
-<p>
-    string str4(25, '*'); // uses a two-argument string constructor
+<p class="mL15">
+  <tt>  string str4(25, '*'); // uses a two-argument string constructor</tt>
 </p>
-<p>
+<p class="mL15">
     The fourth declaration defines
     <tt>
         str4
@@ -186,7 +174,7 @@ The second and third declarations define str2 and str3 as a string object having
     as a string of 25 asterisks (*). This declaration uses a <a name="ch10term23"></a><strong>two-argument constructor</strong> to initialize the value of the
     string. The first argument (an integer) is the number of times the second argument (a character) is to be repeated in the string's value.
 </p>
-<p>
+<p class="mL15">
     <a name="ch10note01"></a>
     We see from these declarations that it is possible to instantiate and initialize a
     <tt>
@@ -198,16 +186,16 @@ The second and third declarations define str2 and str3 as a string object having
     </tt>
     constructors.
 </p>
-<h4>
-    5.2.4 What is a Constructor?
-</h4>
-<p>
+<p class="mL10">
+    <b>5.2.4 What is a Constructor?</b>
+</p>
+<p class="mL15">
     Constructors are important in instantiating an object. It is a function (method) where all the initializations are placed.
 </p>
-<p>
+<p class="mL15">
     The following are the properties of a constructor:
 </p>
-<ul>
+<ul class="mL15">
     <li>
         <strong>Constructors have the same name as the class</strong>
     </li>
@@ -220,10 +208,7 @@ The second and third declarations define str2 and str3 as a string object having
         <strong>Constructors does not have any return value</strong>
     </li>
 </ul>
-<p>
-    <strong></strong>
-</p>
-<p>
+<p class="mL15">
     <strong>Note: You can output the value of a </strong>
     <tt>
         <strong>string</strong>
@@ -238,98 +223,46 @@ The second and third declarations define str2 and str3 as a string object having
     </tt>
     <strong> operator.</strong>
 </p>
-<p>
+<p class="mL15">
     <a name="iddle2075"></a>
     The program dem051-1.cpp demonstrates the preceding declarations.
 </p>
-<table border="0" cellpadding="0" width="675">
-    <tbody>
-        <tr>
-            <td valign="top">
-                <p align="right">
-                    1
-                    <br/>
-                    2
-                    <br/>
-                    3
-                    <br/>
-                    4
-                    <br/>
-                    5
-                    <br/>
-                    6
-                    <br/>
-                    7
-                    <br/>
-                    8
-                    <br/>
-                    9
-                    <br/>
-                    10
-                    <br/>
-                    11
-                    <br/>
-                    12
-                    <br/>
-                    13
-                    <br/>
-                    14
-                    <br/>
-                    15
-                    <br/>
-                    16
-                    <br/>
-                    17
-                    <br/>
-                    18
-                    <br/>
-                    19
-                    <br/>
-                    20
-                    <br/>
-                    21
-                    <br/>
-                    22
-                </p>
-            </td>
-            <td width="295" valign="top">
-                <pre>//dem051-0.cpp</pre>
-                <pre>//This program demonstrates //different ways to declare</pre>
-                <pre>//string objects and how to output //string objects.</pre>
-                <pre></pre>
-                <pre>#include &lt;iostream&gt;</pre>
-                <pre>#include &lt;string&gt;</pre>
-                <pre>using namespace std;</pre>
-                <pre>int main()</pre>
-                <pre>{</pre>
-                <pre></pre>
-                <pre>  string str1;</pre>
-                <pre>  string str2 = "Hello";</pre>
-                <pre>  string str3("Hello");</pre>
-                <pre>  string str4(25, '*');</pre>
-                <pre></pre>
-                <pre>  cout &lt;&lt; "str1 = " &lt;&lt; str1 &lt;&lt; endl;</pre>
-                <pre>  cout &lt;&lt; "str2 = " &lt;&lt; str2 &lt;&lt; endl;</pre>
-                <pre>  cout &lt;&lt; "str3 = " &lt;&lt; str3 &lt;&lt; endl;</pre>
-                <pre>  cout &lt;&lt; "str4 = " &lt;&lt; str4 &lt;&lt; endl;</pre>
-                <pre>  return 0;</pre>
-                <pre>}</pre>
-            </td>
-            <td width="351" valign="top">
-                <pre>str1 =</pre>
-                <pre>str2 = Hello</pre>
-                <pre>str3 = Hello</pre>
-                <pre>str4 = *************************</pre>
-            </td>
-            <td valign="top">
-            </td>
-        </tr>
-    </tbody>
-</table>
-<h4>
-    5.2.5. String Input
-</h4>
-<p>
+<div class="mL15 row">
+    <div class="col-xs-6">
+        <pre class="code"><code>//dem051-0.cpp
+//This program demonstrates //different ways to declare
+//string objects and how to output //string objects.
+
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+
+  string str1;
+  string str2 = "Hello";
+  string str3("Hello");
+  string str4(25, '*');
+
+  cout &lt;&lt; "str1 = " &lt;&lt; str1 &lt;&lt; endl;
+  cout &lt;&lt; "str2 = " &lt;&lt; str2 &lt;&lt; endl;
+  cout &lt;&lt; "str3 = " &lt;&lt; str3 &lt;&lt; endl;
+  cout &lt;&lt; "str4 = " &lt;&lt; str4 &lt;&lt; endl;
+  return 0;
+}
+</code></pre>
+    </div>
+    <div class="col-xs-6">
+        <pre><code>str1 =
+str2 = Hello
+str3 = Hello
+str4 = *************************</code></pre>
+    </div>
+</div>
+<p class="mL15">
+   <b> 5.2.5. String Input</b>
+</p>
+<p class="mL15">
     You can also input a
     <tt>
         string
@@ -352,146 +285,45 @@ The second and third declarations define str2 and str3 as a string object having
     </tt>
     .
 </p>
-<pre>string first_name;</pre>
-<pre>cout &lt;&lt; "Enter your first name: ";</pre>
-<pre>cin &gt;&gt; first_name;</pre>
-<pre></pre>
-<p>
+<div class="mL15">
+<pre>string first_name;
+cout &lt;&lt; "Enter your first name: ";
+cin &gt;&gt; first_name;</pre>
+</div>
+<p class="mL15">
     Program dem051-2.cpp shows how this works.
 </p>
-<table border="0" cellpadding="0" width="675">
-    <tbody>
-        <tr>
-            <td valign="top">
-                <p align="right">
-                    1
-                    <br/>
-                    2
-                    <br/>
-                    3
-                    <br/>
-                    4
-                    <br/>
-                    5
-                    <br/>
-                    6
-                    <br/>
-                    7
-                    <br/>
-                    8
-                    <br/>
-                    9
-                    <br/>
-                    10
-                    <br/>
-                    11
-                    <br/>
-                    12
-                    <br/>
-                    13
-                    <br/>
-                    14
-                    <br/>
-                    15
-                    <br/>
-                    16
-                    <br/>
-                    17
-                    <br/>
-                    18
-                    <br/>
-                    19
-                    <br/>
-                    20
-                    <br/>
-                    21
-                    <br/>
-                    22
-                </p>
-                <p align="right">
-                    23
-                </p>
-                <p align="right">
-                    24
-                </p>
-                <p align="right">
-                    25
-                </p>
-                <p align="right">
-                    26
-                </p>
-                <p align="right">
-                    27
-                </p>
-                <p align="right">
-                    28
-                </p>
-                <p align="right">
-                    29
-                </p>
-                <p align="right">
-                    30
-                </p>
-            </td>
-            <td width="295" valign="top">
-                <pre>//dem051-2.cpp</pre>
-                <pre></pre>
-                <pre>//This program uses cin to input a first and last name into a program.</pre>
-                <pre></pre>
-                <pre>#include &lt;iostream&gt;</pre>
-                <pre>#include &lt;string&gt;</pre>
-                <pre></pre>
-                <pre>using namespace std;</pre>
-                <pre></pre>
-                <pre>int main()</pre>
-                <pre>{</pre>
-                <pre>  string first_name;</pre>
-                <pre>  string last_name;</pre>
-                <pre></pre>
-                <pre>  cout &lt;&lt; "Enter your first name: ";</pre>
-                <pre>  cin &gt;&gt; first_name;</pre>
-                <pre></pre>
-                <pre>  cout &lt;&lt; endl;</pre>
-                <pre>  cout &lt;&lt; "Enter your last name: ";</pre>
-                <pre>  cin &gt;&gt; last_name;</pre>
-                <pre></pre>
-                <pre>  cout &lt;&lt; endl &lt;&lt; endl;</pre>
-                <pre>  cout &lt;&lt; "Welcome, " &lt;&lt; first_name &lt;&lt; " " &lt;&lt; last_name &lt;&lt; endl;</pre>
-                <pre></pre>
-                <pre>  return 0;</pre>
-                <pre>}</pre>
-            </td>
-            <td width="351" valign="top">
-                <pre><strong>Program Output</strong></pre>
-                <pre></pre>
-                <pre>Enter your first name: John</pre>
-                <pre></pre>
-                <pre>Enter your last name: Molluzzo</pre>
-                <pre></pre>
-                <pre>Welcome, John Molluzzo</pre>
-                <pre></pre>
-                <pre></pre>
-                <pre></pre>
-                <pre></pre>
-                <pre></pre>
-                <pre></pre>
-            </td>
-            <td valign="top">
-            </td>
-        </tr>
-    </tbody>
-</table>
-<pre></pre>
-<p>
+<div class="mL15 row">
+    <div class="col-xs-6">
+        <pre class="code"><code>//dem051-2.cpp
+
+//This program uses cin to input a first and last name into a program.
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+</code></pre>
+    </div>
+    <div class="col-xs-6">
+        <pre><code>Program Output
+
+Enter your first name: John
+
+Enter your last name: Molluzzo
+
+Welcome, John Molluzzo
+</code></pre>
+    </div>
+</div>
+
+<p class="mL15">
     In the last
     <tt>
         cout
     </tt>
     statement, we place a space as a string literal,"", into the output stream between the first and last names.
 </p>
-<pre>Now, what happens if I enter my first name and my middle initial when prompted to enter my first name? The following shows the output when I do that.</pre>
-<pre></pre>
-<table border="1" cellspacing="0" cellpadding="0">
+<pre class="mL15">Now, what happens if I enter my first name and my middle initial when prompted to enter my first name? The following shows the output when I do that.</pre>
+<table class="mL15" border="1" cellspacing="0" cellpadding="0">
     <thead>
         <tr>
             <td valign="top">
@@ -517,28 +349,26 @@ The second and third declarations define str2 and str3 as a string object having
         </tr>
     </tbody>
 </table>
-<pre></pre>
-<p>
+<p class="mL15">
     When hitting the enter key after entering John C., the program does not wait for me to enter my last name, but just goes on to display the welcome message.
     The program behaves like this because when entering string data, cin uses white space (a blank, an enter, or a tab) to delimit strings. That is, cin can be
     used to input only one word at a time. It cannot be used to input a multi-word string.
 </p>
-<p>
+<p class="mL15">
     To input a multi-word string, we must use the function getline. Suppose we want to ask the user in what state he or she lives. Because some province names,
     such as North Cotabato, are two words, we have to use getline() to extract the state name from the input stream. The following code will do that.
 </p>
-<p>
+<tt class="mL15">
     string state;
-</p>
-<p>
+</tt><br>
+<tt class="mL15">
     cout &lt;&lt; "Enter your state of residence: ";
-</p>
-<p>
+</tt>
+<tt class="mL15">
     getline(cin,state);
-</p>
-<pre>Think of the getline() statement as saying the following: "Get a line of text from the cin input stream and place it into the value of the string object state." The getline() function asks cin to retrieve one line from the input stream that is, everything you type until you hit the enter key. The text you typed (not including the enter character) is then given to the string object state, which takes the text as its value. Note that getline() is not a method of the string class. Following is the program dem10-3.cpp, which demonstrates these concepts.</pre>
-<pre></pre>
-<p>
+</tt>
+<p class="mL15">Think of the getline() statement as saying the following: "Get a line of text from the cin input stream and place it into the value of the string object state." The getline() function asks cin to retrieve one line from the input stream that is, everything you type until you hit the enter key. The text you typed (not including the enter character) is then given to the string object state, which takes the text as its value. Note that getline() is not a method of the string class. Following is the program dem10-3.cpp, which demonstrates these concepts.</p>
+<p class="mL15">
     When running the program, multi-word responses are made to the two prompts. In each case,
     <tt>
         getline()
@@ -549,10 +379,7 @@ The second and third declarations define str2 and str3 as a string object having
     </tt>
     object.
 </p>
-<p>
-    <a name="ch10note03"></a>
-</p>
-<p>
+<p class="mL15">
     Note: Use
     <tt>
         cin &gt;&gt; str1
@@ -583,11 +410,10 @@ The second and third declarations define str2 and str3 as a string object having
     </tt>
     .
 </p>
-<p>
-    Program dem051-3.cpp shows how this works.
+<p class="mL10">
+    <b>Program dem051-3.cpp shows how this works.</b>
 </p>
-<pre></pre>
-<table border="0" cellpadding="0" width="675">
+<!-- <table border="0" cellpadding="0" width="675">
     <tbody>
         <tr>
             <td valign="top">
@@ -712,15 +538,53 @@ The second and third declarations define str2 and str3 as a string object having
             </td>
         </tr>
     </tbody>
-</table>
-<h3>
-    <strong>5.2.5 </strong>
+</table> -->
+<div class="ml15 row">
+    <div class="col-xs-6">
+    <pre class="code"><code>
+        //dem051-3.cpp
+
+//This program illustrates the use of getline()
+//to input multi-word strings.
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+  string full_name;
+  string state_name;
+
+  cout << "Enter your full name: ";
+  getline(cin,full_name);
+
+  cout << endl;
+  cout << "Enter your state of residence: ";
+  getline(cin,state_name);
+
+  cout << endl << endl;
+  cout << "Welcome, " << full_name << endl;
+  cout << state_name << " is a nice place to live." << endl;
+
+  return 0;
+ }
+
+    </code></pre>
+    </div>
+    <div class="col-xs-6">
+    <pre><code></code></pre>
+    </div>
+</div>
+<p class="mL10">
+    <strong>5.2.5
     Operations on
     <tt>
         string
-    </tt>
+    </tt></strong
     Objects
-</h3>
+</p class="mL10">
 <p>
     <a name="iddle2081"></a>
     <a name="iddle2071"></a>

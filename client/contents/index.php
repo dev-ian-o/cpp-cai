@@ -87,14 +87,14 @@ pre .cl {
 	<div class="col-xs-12 col-md-8">
 
 			<div class="panel panel-default" id="lesson">
-				<div class="panel-heading lesson-title"><?= $sub_lessons[16]->lesson_sub_description;?></div>
+				<div class="panel-heading lesson-title"><?= $sub_lessons[17]->lesson_sub_description;?></div>
 				<div class="panel">
 					<div class="panel-body">
 						<div class="content-chapter">
 							<?php 
-							if (File::exists($dir."/lesson-content/".$sub_lessons[16]->content))
+							if (File::exists($dir."/lesson-content/".$sub_lessons[17]->content))
 							{
-								echo File::get($dir."/lesson-content/".$sub_lessons[16]->content);
+								echo File::get($dir."/lesson-content/".$sub_lessons[17]->content);
 							}
 							else{
 								echo "No Content!";
