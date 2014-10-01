@@ -87,12 +87,6 @@
   position: 'bottom'
 },
 {
-  id: "15",
-  element: '.block2',
-  intro: ' Goes here',
-  position: 'bottom'
-},
-{
   id: "16",
   element: '.line32',
   intro: ' creates student object named studRec1 that uses the Student() constructor',
@@ -112,7 +106,7 @@
 },
 {
   id: "19",
-  element: '.lin28',
+  element: '.line28',
   intro: '  assign 10 to data member units_enrolled ',
   position: 'bottom'
 },
@@ -122,10 +116,11 @@
   intro:'  assign 125.00 to data member rate_per_unit.',
   position: 'bottom'
 },
+{
 id: "21",
-  element: '.line29',
-  intro:'  assign 125.00 to data member rate_per_unit.',
-  position: 'end of Student() constructor definition'
+  element: '.line30',
+  intro:' end of Student() constructor definition',
+  position: 'bottom'
 },
 {
   id: "22",
@@ -231,7 +226,7 @@ id: "21",
 },
 {
   id: "39",
-  element: '.lin28',
+  element: '.line28',
   intro: ' prints “Name : Emily Sicat” since the object StudRec1 uses the Student() constructor ',
   position: 'bottom'
 },
@@ -247,6 +242,7 @@ id: "21",
   intro:'  compute and returns the total tuition fee using the assigned values in data member units_enrolled and rate_per_unit',
   position: 'bottom'
 },
+{
 id: "42",
   element: '.line29',
   intro:'  end of compute_tfee() constructor definition',
@@ -377,5 +373,5 @@ id: "42",
   element: '.line29',
   intro:' prints “Your total tuition fee to be paid : 1500” since studRec1 uses the Student(string) constructor',
   position: 'bottom'
-},
+}
 ]
