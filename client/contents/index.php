@@ -64,10 +64,17 @@ pre .cl {
 					  	<div class="panel-body">
 					  		<div class="list-group">
 			  					<?php foreach ($sub_lessons as $key_sub => $value_sub) : ?>
+
 			  						<?php if($value->lesson_id == $value_sub->lesson_id ):?>
 									<a href="#" class="<?php if($key_sub === 16){print 'active';}?> list-group-item sub-chapter-link"><?= $value_sub->lesson_sub_description;?>
 										<input type="hidden" value="<?= $value_sub->lesson_sub_id;?>">
+
 									</a>
+		<?php $filename = "http://".$_SERVER['SERVER_NAME']."/cai_project/uploads/docs/".$value_sub->video_url; ?>
+
+									<a href="<?= $filename; ?>" style="width: 100%"class="btn btn-danger btn-sm" download>Download</a>
+
+
 
 									<?php endif;?>
 								<?php endforeach; ?>
@@ -87,14 +94,14 @@ pre .cl {
 	<div class="col-xs-12 col-md-8">
 
 			<div class="panel panel-default" id="lesson">
-				<div class="panel-heading lesson-title"><?= $sub_lessons[17]->lesson_sub_description;?></div>
+				<div class="panel-heading lesson-title"><?= $sub_lessons[16]->lesson_sub_description;?></div>
 				<div class="panel">
 					<div class="panel-body">
 						<div class="content-chapter">
 							<?php 
-							if (File::exists($dir."/lesson-content/".$sub_lessons[17]->content))
+							if (File::exists($dir."/lesson-content/".$sub_lessons[16]->content))
 							{
-								echo File::get($dir."/lesson-content/".$sub_lessons[17]->content);
+								echo File::get($dir."/lesson-content/".$sub_lessons[16]->content);
 							}
 							else{
 								echo "No Content!";

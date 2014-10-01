@@ -301,6 +301,27 @@ cin &gt;&gt; first_name;</pre>
 
 #include &lt;iostream&gt;
 #include &lt;string&gt;
+
+using namespace std;
+
+int main()
+{
+  string first_name;
+  string last_name;
+
+  cout << "Enter your first name: ";
+  cin >> first_name;
+
+  cout << endl;
+  cout << "Enter your last name: ";
+  cin >> last_name;
+
+  cout << endl << endl;
+  cout << "Welcome, " << first_name << " " << last_name << endl;
+
+  return 0;
+}
+
 </code></pre>
     </div>
     <div class="col-xs-6">
@@ -413,136 +434,10 @@ Welcome, John Molluzzo
 <p class="mL10">
     <b>Program dem051-3.cpp shows how this works.</b>
 </p>
-<!-- <table border="0" cellpadding="0" width="675">
-    <tbody>
-        <tr>
-            <td valign="top">
-                <p align="right">
-                    1
-                    <br/>
-                    2
-                    <br/>
-                    3
-                    <br/>
-                    4
-                    <br/>
-                    5
-                    <br/>
-                    6
-                    <br/>
-                    7
-                    <br/>
-                    8
-                    <br/>
-                    9
-                    <br/>
-                    10
-                    <br/>
-                    11
-                    <br/>
-                    12
-                    <br/>
-                    13
-                    <br/>
-                    14
-                    <br/>
-                    15
-                    <br/>
-                    16
-                    <br/>
-                    17
-                    <br/>
-                    18
-                    <br/>
-                    19
-                    <br/>
-                    20
-                    <br/>
-                    21
-                    <br/>
-                    22
-                </p>
-                <p align="right">
-                    23
-                </p>
-                <p align="right">
-                    24
-                </p>
-                <p align="right">
-                    25
-                </p>
-                <p align="right">
-                    26
-                </p>
-                <p align="right">
-                    27
-                </p>
-                <p align="right">
-                    28
-                </p>
-                <p align="right">
-                    29
-                </p>
-                <p align="right">
-                    30
-                </p>
-                <p align="right">
-                    31
-                </p>
-                <p align="right">
-                    32
-                </p>
-                <p align="right">
-                    33
-                </p>
-            </td>
-            <td width="295" valign="top">
-                <pre>//dem051-3.cpp</pre>
-                <pre></pre>
-                <pre>//This program illustrates the use of getline()</pre>
-                <pre>//to input multi-word strings.</pre>
-                <pre></pre>
-                <pre>#include &lt;iostream&gt;</pre>
-                <pre>#include &lt;string&gt;</pre>
-                <pre></pre>
-                <pre>using namespace std;</pre>
-                <pre></pre>
-                <pre>int main()</pre>
-                <pre>{</pre>
-                <pre>  string full_name;</pre>
-                <pre>  string state_name;</pre>
-                <pre></pre>
-                <pre>  cout &lt;&lt; "Enter your full name: ";</pre>
-                <pre>  getline(cin,full_name);</pre>
-                <pre></pre>
-                <pre>  cout &lt;&lt; endl;</pre>
-                <pre>  cout &lt;&lt; "Enter your state of residence: ";</pre>
-                <pre>  getline(cin,state_name);</pre>
-                <pre></pre>
-                <pre>  cout &lt;&lt; endl &lt;&lt; endl;</pre>
-                <pre>  cout &lt;&lt; "Welcome, " &lt;&lt; full_name &lt;&lt; endl;</pre>
-                <pre>  cout &lt;&lt; state_name &lt;&lt; " is a nice place to live." &lt;&lt; endl;</pre>
-                <pre></pre>
-                <pre>  return 0;</pre>
-                <pre> }</pre>
-            </td>
-            <td width="351" valign="top">
-                <pre>Enter your full name: John C. Molluzzo</pre>
-                <pre></pre>
-                <pre>Enter your state of residence: New York</pre>
-                <pre></pre>
-                <pre>Welcome, John C. Molluzzo</pre>
-                <pre>New York is a nice place to live.</pre>
-            </td>
-            <td valign="top">
-            </td>
-        </tr>
-    </tbody>
-</table> -->
+
 <div class="ml15 row">
     <div class="col-xs-6">
-    <pre class="code"><code>
-        //dem051-3.cpp
+    <pre class="code"><code>//dem051-3.cpp
 
 //This program illustrates the use of getline()
 //to input multi-word strings.
@@ -574,7 +469,15 @@ int main()
     </code></pre>
     </div>
     <div class="col-xs-6">
-    <pre><code></code></pre>
+    <pre><code>
+Enter your full name: John C. Molluzzo
+
+Enter your state of residence: New York
+
+Welcome, John C. Molluzzo
+New York is a nice place to live.
+
+    </code></pre>
     </div>
 </div>
 <p class="mL10">
@@ -623,10 +526,9 @@ int main()
         </tr>
         <tr>
             <td width="210" valign="top">
-                <pre>string str1 = "Hello";</pre>
-                <pre>string str2;</pre>
-                <pre></pre>
-                <pre>str2 = str1;</pre>
+<pre>string str1 = "Hello";
+string str2;
+str2 = str1;</pre>
             </td>
             <td width="414" valign="top">
                 <p>
@@ -686,14 +588,14 @@ int main()
         </tr>
     </tbody>
 </table>
-<p>
-    <strong>5.2.7. Concatenation</strong>
+<p class="mL10">
+    <b>5.2.7. Concatenation</b>
 </p>
-<p>
+<p class="mL15">
     You can also paste (or <a name="ch10term2"></a><strong>concatenate</strong>) two strings together using the + operator, the same operator that we use for
     the addition of numbers.
 </p>
-<p>
+<p class="mL15">
     In C++, it is possible to make an operator, such as the addition operator (+), do different things depending on the types of data the operator is working
     on. This is called <a name="ch10term4"></a><strong>operator overloading</strong>. Thus, the addition operator in the expression
     <tt>
@@ -731,11 +633,11 @@ int main()
     </tt>
     header file.
 </p>
-<p>
+<p class="mL15">
     The += operator also has meaning (that is, is overloaded) for string objects and has the effect of appending the value of the string on the right of += to
     the value of the string on the left of +=.
 </p>
-<p>
+<p class="mL15">
     You can read the += when operating on strings as "is appended with." The following code has the same result as the previous example.
 </p>
 <table border="1" cellspacing="0" cellpadding="0" width="624">
