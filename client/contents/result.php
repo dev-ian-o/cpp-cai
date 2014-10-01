@@ -1,6 +1,7 @@
 <?php $dir = $_SERVER['DOCUMENT_ROOT'] .'cai_project'; ?>
 <?php require_once $dir . '/includes/database/database.php';?>
 <?php require_once $dir . '/includes/classes/exam-functions.php';?>
+<?php require_once $dir . '/includes/classes/file.php';?>
 
 <?php $lessons = json_decode(fetch_lessons($conn,false)); ?>
 <?php $sub_lessons = json_decode(fetch_sub_lessons($conn,false)); ?>
@@ -38,30 +39,38 @@
 				{
 					$item = json_decode(query_item($conn,$key,false));
 					echo "<p>".$a++.')'.$item[0]->lesson_question."</p>";
-					echo "<p>".$item[0]->lesson_answer." ";
-					echo "<b>&nbsp;&nbsp;incorrect</b><br></p>";
+					echo "<p><b>incorrect&nbsp;&nbsp;</b>".$item[0]->lesson_answer." ";
+					echo "<br></p>";
 					$tally['lesson_id'] =  $item[0]->lesson_id;
 					$tally['lesson_sub_id'] = $item[0]->lesson_sub_id;
 					$tally['exam_item_id'] = $item[0]->exam_item_id;
 					$tally['correct'] = 0;
 					$tally['wrong'] = 1;
-					add_tally($tally, $conn);
+					$tally['exam_date'] = date('yyyy-mm-dd hh:mm');
 
+					add_tally($tally, $conn);
+					$file =  $dir.'/db/dbtally.txt';
+					File::put($file, implode(";", $tally), true);
 					// print_r($item);
 				}
 				else{
 					$item = json_decode(query_correct_id($conn,$row,false));
 
 					echo "<p>".$a++.')'.$item[0]->lesson_question."</p>";
-					echo "<p>".$item[0]->lesson_answer."";
-					echo "&nbsp;&nbsp;<b>correct</b><br></p>";
+					echo "<p><b>correct&nbsp;&nbsp;</b>";
+					echo "<br></p>";
 					$score++;
 					$tally['lesson_id'] =  $item[0]->lesson_id;
 					$tally['lesson_sub_id'] = $item[0]->lesson_sub_id;
 					$tally['exam_item_id'] = $item[0]->exam_item_id;
 					$tally['correct'] = 1;
 					$tally['wrong'] = 0;
+					$tally['exam_date'] = date('yyyy-mm-dd hh:mm');
 					add_tally($tally, $conn);
+
+					$file =  $dir.'/db/dbtally.txt';
+					// echo $file;
+					File::put($file, implode(";", $tally), true);
 				}
 
 
@@ -82,8 +91,8 @@
 				{
 					$item = json_decode(query_item($conn,$key,$print = false));
 					echo "<p>".$a++.')'.$item[0]->lesson_question."</p>";
-					echo "<p>".$item[0]->lesson_answer." ";
-					echo "<b>&nbsp;&nbsp;incorrect</b><br></p>";
+					echo "<p><b>incorrect&nbsp;&nbsp;</b>".$item[0]->lesson_answer." ";
+					echo "<br></p>";
 
 					// print_r($item);
 				}
@@ -91,8 +100,8 @@
 					$item = json_decode(query_correct_id($conn,$row,$print = false));
 					$score++;
 					echo "<p>".$a++.')'.$item[0]->lesson_question."</p>";
-					echo "<p>".$item[0]->lesson_answer."";
-					echo "&nbsp;&nbsp;<b>correct</b><br></p>";
+					echo "<p><b>correct&nbsp;&nbsp;</b>";
+					echo "<br></p>";
 				}
 
 
@@ -100,6 +109,9 @@
 
 		}
 
+	}
+	else{
+		echo "<script>window.location='exam.php'</script>";
 	}
 ?>
 <?php

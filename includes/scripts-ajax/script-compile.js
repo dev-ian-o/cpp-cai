@@ -35,7 +35,7 @@ function init(form){
 	$(".loader").fadeIn('fast');
 	form = $('#'+form);
 	$.ajax({
-		url: 'http://localhost/cai_project/includes/requests/request-compile.php',
+		url: '../includes/requests/request-compile.php',
 		type: 'POST',
 		data: form.serialize(),
 		dataType: 'json',

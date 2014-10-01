@@ -39,9 +39,9 @@ class File{
 			: $default;
 	}
 
-	public static function append($file, $default = null)
+	public static function append($file, $data = null)
 	{
-		return static::put($file,$data,true);
+		return static::put($file,$data);
 	}
 
 	public static function put($file, $data, $append = false)
