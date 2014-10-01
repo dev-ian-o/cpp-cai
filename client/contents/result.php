@@ -50,7 +50,7 @@
 
 					add_tally($tally, $conn);
 					$file =  $dir.'/db/dbtally.txt';
-					File::put($file, implode(";", $tally), true);
+					File::put($file, json_encode($tally), true);
 					// print_r($item);
 				}
 				else{
@@ -70,7 +70,7 @@
 
 					$file =  $dir.'/db/dbtally.txt';
 					// echo $file;
-					File::put($file, implode(";", $tally), true);
+					File::put($file, json_encode($tally), true);
 				}
 
 
