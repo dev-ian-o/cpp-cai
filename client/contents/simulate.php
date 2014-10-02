@@ -27,7 +27,7 @@
 		"2" => "String Program 1",
 		"3" => "String Program 2",
 		"4" => "String Program 3",
-		"5" => "Class Program 1",
+		"5" => "Class Program 3",
 	);
 
 	if(isset($_GET['html']) && isset($_GET['json'])){
