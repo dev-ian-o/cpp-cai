@@ -94,7 +94,7 @@ function query_item($conn,$row,$print = false)
 
 	$stmt = $conn->prepare("SELECT * 
 		FROM tbl_exam_items
-		WHERE exam_item_id =:exam_item_id 
+		WHERE exam_item_id =:exam_item_id
 	");
 	
 	$stmt->execute(array(
@@ -279,7 +279,7 @@ function fetch_exam_by_lesson($conn,$id,$print = true){
 	$stmt = $conn->prepare("SELECT * 
 		FROM tbl_exam_items
 		WHERE lesson_sub_id = :lesson_sub_id
-		ORDER BY RAND()
+		ORDER BY RAND() LIMIT 10
 	");
 	
 	$stmt->execute(array(
@@ -297,7 +297,7 @@ function fetch_exam_by_chapter($conn,$id,$print = true){
 	$stmt = $conn->prepare("SELECT * 
 		FROM tbl_exam_items
 		WHERE lesson_id = :lesson_id
-		ORDER BY RAND()
+		ORDER BY RAND() LIMIT 10
 	");
 	
 	$stmt->execute(array(
@@ -386,17 +386,41 @@ function query_sub_lessons($conn,$id = 1,$print = true){
 
 
 
+// function add_tally($row,$conn){
+
+// 	$stmt = $conn->prepare("INSERT INTO tbl_tally(
+// 		lesson_id,
+// 		lesson_sub_id,
+// 		exam_item_id,
+// 		correct,
+// 		wrong,
+// 		exam_date
+// 		) 
+// 		VALUES(:lesson_id,:lesson_sub_id,:exam_item_id,:correct,:wrong,now())
+// 	");
+
+// 	$stmt->execute(array(
+// 		"lesson_id" => $row["lesson_id"],
+// 		"lesson_sub_id" => $row["lesson_sub_id"],
+// 		"exam_item_id" => $row["exam_item_id"],
+// 		"correct" => $row["correct"],
+// 		"wrong" => $row["wrong"]
+// 	));
+	
+// 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);	
+// }
+$row['lesson_id'] = 1;
+					$row['lesson_sub_id'] = 1;
+					$row['exam_item_id'] = 1;
+					$row['correct'] = 0;
+					$row['wrong'] = 1;
+
+add_tally($row,$conn);
 function add_tally($row,$conn){
 
-	$stmt = $conn->prepare("INSERT INTO tbl_tally(
-		lesson_id,
-		lesson_sub_id,
-		exam_item_id,
-		correct,
-		wrong
-		) 
-		VALUES(:lesson_id,:lesson_sub_id,:exam_item_id,:correct,:wrong)
-	");
+	$stmt = $conn->prepare("INSERT INTO `tbl_tally`
+		( `lesson_id`, `lesson_sub_id`, `exam_item_id`, `correct`, `wrong`, `date_exam`) 
+		VALUES (:lesson_id,:lesson_sub_id, :exam_item_id, :correct,:wrong ,now())");
 
 	$stmt->execute(array(
 		"lesson_id" => $row["lesson_id"],
@@ -406,9 +430,10 @@ function add_tally($row,$conn){
 		"wrong" => $row["wrong"]
 	));
 	
-	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);	
+	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		
+	return $row;
 }
-
 
 
 function add_results($row,$conn){

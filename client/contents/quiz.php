@@ -14,7 +14,7 @@
 		}
 		else if ($_GET['type'] === "lesson_test")
 		{
-			$items = json_decode(fetch_exam_by_lesson($conn,$id-1,false));
+			$items = json_decode(fetch_exam_by_lesson($conn,$id,false));
 		}
 	}
 	else
@@ -32,17 +32,17 @@
 		<div class="panel panel-default">
 			<div class="panel-heading clearfix">EXAM
 				<div class="pull-right">
-					<!-- <a class="right btn-right btn btn-danger btn-sm" href="#test-page" data-slide="next"> -->
-						<!-- <span class="icon-next"></span> -->
-						<!-- Next -->
-					<!-- </a> -->
+					<a class="right btn-right btn btn-danger btn-sm" href="#test-page" data-slide="next">
+						<span class="icon-next"></span>
+						Next
+					</a>
 				</div>
 			</div>
 			<form id="form-exam" method="post" action="result.php">
 			<input type="hidden" name="form" value="form-exam">
 			<div class="panel-body">
-				<div id="test-page" class="test-page ">
-					<div class="">
+				<div id="test-page" class="test-page carousel slide bs-docs-carousel-example">
+					<div class="carousel-inner">
 						<form id="form-quiz" method="post">
 						<input type="hidden" name="type" value="<?= $_GET['type']?>">
 						<input type="hidden" name="lesson_id" value="<?= $_GET['lesson_id']?>">
