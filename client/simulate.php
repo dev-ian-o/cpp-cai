@@ -24,11 +24,11 @@
 	</script>
 
 	<script type="text/javascript">
-		<?php include $dir . '/simulate/js/js-lesson1.js';?>
+		<?php include '../simulate/js/js-lesson1.js';?>
 		function startSimulate(){
 			var intro = introJs();
 			var stepsLine = {
-				steps: <?php include $dir . '/simulate/json/'.$jsonPage;?>
+				steps: <?php include '../simulate/json/'.$jsonPage;?>
 			};
 			intro.setOptions({ steps: stepsLine.steps });
 

@@ -1,3 +1,8 @@
+<?php
+function code($val){
+    echo "<code><pre>".$val."</code></pre>";
+}
+?>
 <h3>
     <strong>Chapter 5.3 Programmer-Defined Classes and Objects</strong>
 </h3>
@@ -38,54 +43,29 @@
     executable program. For now, however, we shall stay with the simple program structure described.
 </p>
 </div>
-<p>
+<p class="mL10">
    <b> 5.3.2. Defining a Class</b>
 </p>
+<div class="mL15">
 <p>
     Classes are defined using either keyword class or keyword struct, with the following syntax:
 </p>
-<br clear="all"/>
-<table border="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td valign="top">
-                <p>
-                    class Class_Name {
-                </p>
-                <p>
-                    access_specifier_1:
-                </p>
-                <p>
-                    member1;
-                </p>
-                <p>
-                    access_specifier_2:
-                </p>
-                <p>
-                    member2;
-                </p>
-                <p>
-                    ...
-                </p>
-                <p>
-                    public class method declarations;
-                </p>
-                <p>
-                    public class method declaration and definition;
-                </p>
-                <p>
-                    ...
-                </p>
-                <p>
-                    } &lt;object_names&gt;;
-                </p>
-                <p>
-                    public class method definitions for class methods that are only declared inside the class
-                </p>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<pre><code>
+class Class_Name {
+  access_specifier_1:
+    member1;
+  access_specifier_2:
+    member2;
+  ... 
+  public class method declarations;
+  public class method declaration and definition;
+  ... 
+
+} &lt;object_names&gt;;
+
+public class method definitions for class methods that are only declared inside the class
+
+</code></pre>
 <p>
     <br/>
     Where class_name is a valid identifier for the class, object_names is an <em>optional</em> list of names for objects of this class. The body of the
@@ -106,59 +86,29 @@
 <p>
     For example:
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        class <strong>Triangle</strong> {
-                    </p>
-                    <p>
-                        access_specifier_1:
-                    </p>
-                    <p>
-                        member1;
-                    </p>
-                    <p>
-                        access_specifier_2:
-                    </p>
-                    <p>
-                        member2;
-                    </p>
-                    <p>
-                        ...
-                    </p>
-                    <p>
-                        } &lt;object_names&gt;;
-                    </p>
-                </td>
-                <td valign="top">
-                    <p>
-                        class <strong>Student_Record</strong> {
-                    </p>
-                    <p>
-                        access_specifier_1:
-                    </p>
-                    <p>
-                        member1;
-                    </p>
-                    <p>
-                        access_specifier_2:
-                    </p>
-                    <p>
-                        member2;
-                    </p>
-                    <p>
-                        ...
-                    </p>
-                    <p>
-                        } &lt;object_names&gt;;
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<div class="row">
+    <div class="col-xs-6">
+        <pre class="mL50"><code>
+class Triangle {
+  access_specifier_1:
+    member1;
+  access_specifier_2:
+    member2;
+  ...
+} &lt;object_names&gt;;
+        </code></pre>
+    </div>
+    <div class="col-xs-6">
+        <pre class="mR50"><code>
+class Student_Record {
+  access_specifier_1:
+    member1;
+  access_specifier_2:
+    member2;
+  ...
+} &lt;object_names&gt;;
+        </code></pre>
+    </div>
 </div>
 <p>
     <strong>Note</strong>
@@ -196,39 +146,23 @@ Classes have the same format as plain <em>data structures</em>, except that they
 <p>
     Syntax for declaring <strong>instance variable</strong> (one of the class members) of a class, usually have a <strong>private</strong> access specifier.
 </p>
-<table border="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td valign="top">
-                <pre>&lt;access specifier&gt; :</pre>
-                <pre>        &lt;type&gt; &lt;attribute name&gt;;</pre>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<pre><code>&lt;access specifier&gt; :
+        &lt;type&gt; &lt;attribute name&gt;;</code></pre>
 <p>
     Or
 </p>
 <p>
     Syntax for declaring <strong>class method (another class member)</strong>, usually have a <strong>public</strong> access specifier.
 </p>
-<table border="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td valign="top">
-                <pre>&lt;access specifier&gt; :</pre>
-                <pre>        &lt;type&gt; &lt;class method name&gt;(&lt;optional argument list&gt;);</pre>
-                <pre>        &lt;type&gt; &lt;class method name&gt;(&lt;optional argument list&gt;)</pre>
-                <pre>        {  </pre>
-                <pre>          Method definition…</pre>
-                <pre>        };</pre>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<p>
-    <strong></strong>
-</p>
+
+<pre><code>&lt;access specifier&gt; :
+    &lt;type&gt; &lt;class method name&gt;(&lt;optional argument list&gt;);
+    &lt;type&gt; &lt;class method name&gt;(&lt;optional argument list&gt;)
+        {  
+          Method definition…
+        };
+</code></pre>
+
 <p>
     <strong>Note: Coding Guidelines</strong>
 </p>
@@ -250,239 +184,94 @@ Classes have the same format as plain <em>data structures</em>, except that they
 <p>
     For example:
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        <var>class</var>
-                        <strong>Triangle</strong>
-                        {
-                    </p>
-                    <p>
-                        <strong>private</strong>
-                        :
-                    </p>
-                    <p>
-                        <var>int</var>
-                        base;
-                    </p>
-                    <p>
-                        <var>int</var>
-                        height;
-                    </p>
-                    <p>
-                        <strong>public</strong>
-                        :
-                    </p>
-                    <pre>    Triangle();</pre>
-                    <pre>    void set_base(int);</pre>
-                    <pre>    int get_base();</pre>
-                    <p>
-                        int area();
-                    </p>
-                    <p>
-                        <code>}<strong>;</strong></code>
-                    </p>
-                </td>
-                <td valign="top">
-                    <p>
-                        class <strong>Student_Record</strong> {
-                    </p>
-                    <p>
-                        <strong>private</strong>
-                        :
-                    </p>
-                    <p>
-                        string stud_no;
-                    </p>
-                    <p>
-                        string stud_name;
-                    </p>
-                    <p>
-                        <var>int</var>
-                        units_enrolled;
-                    </p>
-                    <p>
-                        <var>double</var>
-                        rate_per_unit;
-                    </p>
-                    <p>
-                        <strong>public</strong>
-                        :
-                    </p>
-                    <pre>    Student_Record();</pre>
-                    <p>
-                        double compute_tfee();
-                    </p>
-                    <p>
-                        };
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" valign="top">
-                    <p>
-                        <strong>Note:</strong>
-                        <em> </em>
-                    </p>
-                    <p>
-                        <em>base</em>
-and <em>height</em><strong> </strong>are the <strong>private class members</strong> for class <em>Triangle</em> and<em>stud_no, stud_name,units_enrolled while rate_per_unit </em>are <strong>private class members</strong> for class                        <strong>Student_Record. </strong>
-                    </p>
-                    <p>
-                        <strong></strong>
-                    </p>
-                    <p>
-                        <strong>
-                            Triangle(), set_base(), get_base() and area() are the public class members for the class Triangle while Student_Record() and
-                            compute_tfee() are the public class members for the class Student_Record.
-                        </strong>
-                    </p>
-                    <p>
-                        <strong></strong>
-                    </p>
-                    <p>
-                        <strong>Public class members (usually class methods) will be more elaborated on the next discussion.</strong>
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<div class="row">
+    <div class="col-xs-6">
+        <pre class="mL80"><code>
+class Triangle{
+  private:
+    int base;
+    int height;
+  public:
+    Triangle();
+    void set_base(int);
+    int get_base();
+    int area();
+};
+
+        </code></pre>
+    </div>
+    <div class="col-xs-6">
+        <pre class="mR80"><code>
+class Student_Record {
+  private:
+    string stud_no;
+    string stud_name;
+    int units_enrolled;
+    double rate_per_unit;
+  public:
+    Student_Record();
+    double compute_tfee();
+};
+
+        </code></pre>
+    </div>
+     <div class="col-xs-12 ">
+    <pre class="mL80 mR80"><code>
+Note: <i>base</i> and <i>height</i> are the <b>private class members</b> for class <i>Triangle</i> and <i>stud_no</i>, <i>stud_name</i>,<i>units_enrolled</i> while <i>rate_per_unit</i> are <b>private class members</b> for class <b>Student_Record</b>.  
+<b>
+Triangle(), set_base(), get_base() and area() are the public class members for the class Triangle while Student_Record() and compute_tfee() are the public class members for the class Student_Record.
+<br>
+Public class members (usually class methods) will be more elaborated on the next discussion.
+</b></code></pre>
+    </div>
 </div>
-<p>
-    5.3.4<strong> Declaring Objects</strong>
-</p>
-<p>
-    Defining a class does not create any actual objects. A class is just an abstract descriptions of what an object will be like if any objects are ever
-    actually instantiated.
-</p>
-<p>
-    Like the discussion in string to declare a string object is:
-</p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        <var>string str;</var>
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </div>
-<p>
-    where:
+<p class="mL10"><b>5.3.4 Declaring Objects</b></p>
+<div class="mL15">
+<p>Defining a class does not create any actual objects.  A class is just an abstract descriptions of what an object will be like if any objects are ever actually instantiated.  
+<br>
+Like the discussion in string to declare a string object is:
 </p>
+<p class="text-center"><pre><code>string str;</code></pre></p>
+<i>where:</i>
 <ul>
-    <li>
-        string is a built-in class in C++
-    </li>
-    <li>
-        str is an object declared out of the string class
-    </li>
+    <li>string is a built-in class in C++</li>
+    <li>str is an object declared out of the string class</li>
 </ul>
+<p>Therefore, the syntax in declaring objects out of the user-defined class is</p>
+<p class="text-center"><pre><code>&lt;user-define class_name&gt; &lt;object_names&gt;;</code></pre></p>
+<p>For example, using the Triangle class, we can declare object as</p>
+
+<p class="text-center"><pre><code>Triangle triA;
+Triangle triB;
+</code></pre></p>
+<p>We can also declare objects upon defining the class by specifying the object_names (list by comma if more than one) like,</p>
+<p><pre><code>class Triangle{
+  private:
+    int base;
+    int height;
+  public:
+    Triangle();
+    void set_base(int b);
+    int get_base();
+    int area();
+}triA,triB;
+</code></pre></p>
 <p>
-    Therefore, the syntax in declaring objects out of the user-defined class is
+    <strong>Wherein, objects triA and TriB are created(declared) upon defining the class Triangle.</strong>
 </p>
-<p>
-    <var></var>
-</p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        <var>&lt;user-define class_name&gt; &lt;object_names&gt;;</var>
-                        <var></var>
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<p>
-    For example, using the Triangle class, we can declare object as
-</p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        <var>Triangle triA;</var>
-                    </p>
-                    <p>
-                        <var>Triangle triB;</var>
-                        <var></var>
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<p>
-    We can also declare objects upon defining the class by specifying the object_names (list by comma if more than one) like,
-</p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        <var>class</var>
-                        Triangle{
-                    </p>
-                    <p>
-                        private:
-                    </p>
-                    <p>
-                        <var>int</var>
-                        base;
-                    </p>
-                    <p>
-                        <var>int</var>
-                        height;
-                    </p>
-                    <p>
-                        public:
-                    </p>
-                    <p>
-                        Triangle();
-                    </p>
-                    <pre>    void set_base(int b);</pre>
-                    <pre>    int get_base();</pre>
-                    <p>
-                        int area();
-                    </p>
-                    <p>
-                        <code>}<strong>triA</strong>,<strong>triB;</strong></code>
-                        <strong></strong>
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<p>
-    <code><strong></strong></code>
-</p>
-<p>
-    <code><strong>Wherein, objects triA and TriB are created(declared) upon defining the class Triangle.</strong></code>
-</p>
+
 <p>
     Note:
 </p>
 <p>
     · We can declare object inside the main or upon defining the class itself.
 </p>
-<p>
-    5.3.<strong>5 Class Methods</strong>
+</div>
+<p class="mL10">
+    <strong>5.3.5 Class Methods</strong>
 </p>
+<div class="mL15">
 <p>
     A <strong>class method</strong> (also known as member function) of a class is a function that has its definition or its prototype within the class
     definition like any other variable. It operates on any object of the class of which it is a member, and has access to all the members of a class for that
@@ -511,45 +300,15 @@ class definition (declaration). And any method that is defined outside the class
 <p>
     For example, we have a class definition such as,
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        <var>class</var>
-                        Triangle{
-                    </p>
-                    <p>
-                        private:
-                    </p>
-                    <p>
-                        <var>int</var>
-                        base;
-                    </p>
-                    <p>
-                        <var>int</var>
-                        height;
-                    </p>
-                    <p>
-                        public:
-                    </p>
-                    <p>
-                        void set_base(int b);
-                    </p>
-                    <pre>    int get_base();</pre>
-                    <p>
-                        int area();
-                    </p>
-                    <p>
-                        <code>}<strong>triA</strong>,<strong>triB;</strong></code>
-                        ;<strong></strong>
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<pre><code>class Triangle{
+  private:
+    int base;
+    int height;
+  public:
+    void set_base(int b);
+    int get_base();
+    int area();
+}triA,triB;</code></pre>
 <p>
     Where <strong>set_base(int), get_base() and area()</strong> are class methods for the class Triangle.
 </p>
@@ -557,95 +316,31 @@ class definition (declaration). And any method that is defined outside the class
     Therefore we should have the definition of the class methods <strong>set_base(int), get_base() and area() </strong>outeside the class definition using the
     scope resolution operator (::), such as,
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        <var>class</var>
-                        Triangle{
-                    </p>
-                    <p>
-                        private:
-                    </p>
-                    <p>
-                        <var>int</var>
-                        base;
-                    </p>
-                    <p>
-                        <var>int</var>
-                        height;
-                    </p>
-                    <p>
-                        public:
-                    </p>
-                    <p>
-                        //class method declaration
-                    </p>
-                    <p>
-                        void set_base(int);
-                    </p>
-                    <pre>    int get_base();</pre>
-                    <p>
-                        int area();
-                    </p>
-                    <p>
-                        <code>}<strong>triA</strong>,<strong>triB;</strong></code>
-                    </p>
-                    <p>
-                        <code><strong></strong></code>
-                    </p>
-                    <p>
-                        <code><strong>//class method definition for set_base(int)</strong></code>
-                    </p>
-                    <p>
-                        <code><strong>void Triangle::set_base(int b){</strong></code>
-                    </p>
-                    <p>
-                        <code><strong> base = b;</strong></code>
-                    </p>
-                    <p>
-                        <code><strong>}</strong></code>
-                    </p>
-                    <p>
-                        <code><strong></strong></code>
-                    </p>
-                    <p>
-                        <code><strong>//class method definition for get_base()</strong></code>
-                    </p>
-                    <p>
-                        <code><strong>int Triangle::get_base(){</strong></code>
-                    </p>
-                    <p>
-                        <code><strong> return base;</strong></code>
-                    </p>
-                    <p>
-                        <code><strong>}</strong></code>
-                    </p>
-                    <p>
-                        <code><strong></strong></code>
-                    </p>
-                    <p>
-                        <code><strong>//class method definition for area()</strong></code>
-                    </p>
-                    <p>
-                        <code><strong>int Triangle::area(){</strong></code>
-                    </p>
-                    <p>
-                        <code><strong> return (base * height) / 2;</strong></code>
-                    </p>
-                    <p>
-                        <code><strong>}</strong></code>
-                    </p>
-                    <p>
-                        <code><strong></strong></code>
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<pre><code>class Triangle{
+  private:
+    int base;
+    int height;
+  public:
+    //class method declaration
+    void set_base(int);
+    int get_base();
+    int area();
+}triA,triB;
+
+//class method definition for set_base(int)
+void Triangle::set_base(int b){
+    base = b;
+}
+
+//class method definition for get_base()
+int Triangle::get_base(){
+    return base;
+}
+
+//class method definition for area()
+int Triangle::area(){
+    return (base * height) / 2;
+}</code></pre>
 <p>
     Why is the scope resolution operator necessary? There are situations in which it is necessary to declare several classes. In this case, it is possible that
     two or more of the classes will have methods with the same name. Suppose, for example, that we also declare a
@@ -690,308 +385,93 @@ methods of the two classes are defined inside their respective class definitions
 <p>
     For example:
 </p>
-<div align="center">
-    <table border="0" cellpadding="0" width="654">
-        <tbody>
-            <tr>
-                <td width="344" valign="top">
-                    <p>
-                        <var><strong>Example 1</strong></var>
-                        <var><strong></strong></var>
-                    </p>
-                </td>
-                <td width="304" valign="top">
-                    <p>
-                        <strong>Example 2</strong>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="344" valign="top">
-                    <p>
-                        <var>class</var>
-                        Triangle{
-                    </p>
-                    <p>
-                        private:
-                    </p>
-                    <p>
-                        <var>int</var>
-                        base;
-                    </p>
-                    <p>
-                        <var>int</var>
-                        height;
-                    </p>
-                    <p>
-                        <strong>public</strong>
-                        :
-                    </p>
-                    <p>
-                        //class method declaration
-                    </p>
-                    <pre>    <var>void</var><code> set_base(</code><var>int</var><code>);</code></pre>
-                    <pre><code>    int get_base();</code></pre>
-                    <pre><var>    double</var><code> area ();</code></pre>
-                    <p>
-                        <code>};</code>
-                    </p>
-                    <p>
-                        //set_base() definition
-                    </p>
-                    <p>
-                        <var>void</var>
-                        <code> Triangle::set_base(</code>
-                        <var>int b</var>
-                        <code>){</code>
-                    </p>
-                    <p>
-                        <code> base = b;</code>
-                    </p>
-                    <p>
-                        <code>}</code>
-                    </p>
-                    <p>
-                        //get_base() definition
-                    </p>
-                    <p>
-                        <var>int</var>
-                        <code> Triangle::get_base(){</code>
-                    </p>
-                    <p>
-                        <code> base = b;</code>
-                    </p>
-                    <p>
-                        <code>}</code>
-                    </p>
-                    <p>
-                        <code></code>
-                    </p>
-                    <p>
-                        //area() definition
-                    </p>
-                    <pre><var>double</var><code> Triangle::area (){</code></pre>
-                    <pre><var>return</var><code> (base*height)/2;</code></pre>
-                    <pre><code>}</code></pre>
-                </td>
-                <td width="304" valign="top">
-                    <p>
-                        <var>class</var>
-                        Circle{
-                    </p>
-                    <p>
-                        private:
-                    </p>
-                    <p>
-                        <var>int</var>
-                        radius;
-                    </p>
-                    <p>
-                        <strong>public</strong>
-                        :
-                    </p>
-                    <p>
-                        //class method declaration
-                    </p>
-                    <pre>    <var>void</var><code> set_values (</code><var>int</var><code>);</code></pre>
-                    <pre><code>    </code><var>double</var><code> area ();</code></pre>
-                    <p>
-                        <code>};</code>
-                    </p>
-                    <p>
-                        //set_values() definition
-                    </p>
-                    <p>
-                        <var>void</var>
-                        <code> Circle::set_values (</code>
-                        <var>int r</var>
-                        <code>){</code>
-                    </p>
-                    <p>
-                        <code> radius = r;</code>
-                    </p>
-                    <p>
-                        <code>}</code>
-                    </p>
-                    <p>
-                        <code></code>
-                    </p>
-                    <p>
-                        <code></code>
-                    </p>
-                    <p>
-                        //area() definition
-                    </p>
-                    <p>
-                        <var>double</var>
-                        <code> Circle::area() {</code>
-                    </p>
-                    <p>
-                        <var>return</var>
-                        <code> 3.1416 * (radius * radius);</code>
-                    </p>
-                    <p>
-                        <code>}</code>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td width="650" colspan="2" valign="top">
-                    <p>
-                        <strong>NOTE:</strong>
-                        <em> </em>
-                        In both examples,<em> </em>there is<em> </em><strong>set_base(),get_base() </strong>and<strong> area() class methods </strong>for
-classes <strong>Triangle</strong> and <strong>Circle</strong><em>. </em>Notice<strong> </strong>that both the                        <strong>set_value()</strong> and <strong>area()</strong> class methods are <em>defined</em> outside the class, this why is the scope
-                        resolution operator is necessary. Because we will know who possess’ the method. As in the definition
-                        <tt>
-                            <strong>Triangle::set_values()</strong>
-                        </tt>
-                        would be for
-                        <strong>
-                            “
-                            <tt>
-                                Triangle's set_values()”
-                            </tt>
-                        </strong>
-                        method, and the definition
-                        <tt>
-                            <strong>Circle::set_values()</strong>
-                        </tt>
-                        would be for
-                        <strong>
-                            “
-                            <tt>
-                                Circle's set_values()”
-                            </tt>
-                        </strong>
-                        method.
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<div class="row">
+    <div class="col-xs-6">
+    <pre>Example 1</pre>
+<pre><code>class Triangle{
+  private:
+    int base;
+    int height;
+  public:
+    //class method declaration
+    void set_base(int);
+    int get_base();
+    double area ();
+};
+
+//set_base() definition
+void Triangle::set_base(int b){
+    base = b;
+}
+//get_base() definition
+int Triangle::get_base(){
+    base = b;
+}
+
+//area() definition
+double Triangle::area (){
+return (base*height)/2;
+}</code></pre>
+    </div>
+    <div class="col-xs-6">
+    <pre>Example 2</pre>
+<pre><code>class Circle{
+  private:
+    int radius;
+
+  public:
+    //class method declaration
+    void set_values (int);
+    double area ();
+};
+
+//set_values() definition
+void Circle::set_values (int r){
+    radius = r;
+}
+
+
+//area() definition
+double Circle::area() {
+return 3.1416 * (radius * radius);
+}
+</code></pre>
+    </div>
+<div class="col-xs-12"><pre><code>NOTE: In both examples, there is <b>set_base()</b>,<b>get_base()</b> and <b>area()</b> class methods for classes Triangle and Circle. Notice that both the set_value() and area() class methods are defined outside the class, this why is the scope resolution operator is necessary. Because we will know who possess’ the method. As in the definition <b>Triangle::set_values()</b> would be for <b>“Triangle's set_values()”</b> method, and the definition <b>Circle::set_values()</b> would be for <b>“Circle's set_values()”</b> method.
+</code></pre></div>
+    <div class="col-xs-12">
+    <pre><code>Example 3</code></pre>
+        <pre><code>class Student_Record {
+  private:
+    string stud_no;
+    string stud_name;
+    int units_enrolled;
+    double rate_per_unit;
+  public:
+    void set_stud_no(string);
+    void set_stud_name(string);
+    double compute_tfee(int,double);
+}
+
+void Student_Record::set_stud_no(string num){
+    stud_no = num;
+}
+
+void Student_Record::set_stud_name(string name){
+    stud_name = name;
+}
+
+double Student_Record::compute_tfee(int units, double rate){
+    return units * rate;
+}</code></pre>
+    </div>
+    <div class="col-xs-12"><pre><code>Note:  In this example, the set_studno(), set_stud_name() and compute_tfee() are all Student_Record class method.</code></pre></div>
 </div>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        <var><strong>Example 3</strong></var>
-                        <var><strong></strong></var>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td valign="top">
-                    <p>
-                        class Student_Record {
-                    </p>
-                    <p>
-                        private:
-                    </p>
-                    <p>
-                        string stud_no;
-                    </p>
-                    <p>
-                        string stud_name;
-                    </p>
-                    <p>
-                        <var>int</var>
-                        units_enrolled;
-                    </p>
-                    <p>
-                        <var>double</var>
-                        rate_per_unit;
-                    </p>
-                    <p>
-                        <strong>public</strong>
-                        :
-                    </p>
-                    <p>
-                        <var>void</var>
-                        set_stud_no(string);
-                    </p>
-                    <p>
-                        <var>void</var>
-                        set_stud_name(string);
-                    </p>
-                    <p>
-                        <var>double</var>
-                        compute_tfee(int,double);
-                    </p>
-                    <p>
-                        }
-                    </p>
-                    <p>
-                        <var>void</var>
-                        <code> Student_Record::set_stud_no(</code>
-                        <var>string num</var>
-                        <code>){</code>
-                    </p>
-                    <p>
-                        <code> stud_no = num;</code>
-                    </p>
-                    <p>
-                        <code>}</code>
-                    </p>
-                    <p>
-                        <code></code>
-                    </p>
-                    <p>
-                        <var>void</var>
-                        <code> Student_Record::set_stud_name(</code>
-                        <var>string name</var>
-                        <code>){</code>
-                    </p>
-                    <p>
-                        <code> stud_name = name;</code>
-                    </p>
-                    <p>
-                        <code>}</code>
-                    </p>
-                    <p>
-                        <code></code>
-                    </p>
-                    <p>
-                        <var>double</var>
-                        <code> Student_Record::compute_tfee(</code>
-                        <var>int </var>
-                        <var>units</var>
-                        <code>, </code>
-                        <var>double</var>
-                        <var> </var>
-                        <var>rate</var>
-                        <code>){</code>
-                    </p>
-                    <p>
-                        <code> return units * rate;</code>
-                    </p>
-                    <p>
-                        <code>}</code>
-                    </p>
-                    <p>
-                        <code></code>
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td valign="top">
-                    <p>
-                        Note: In this example, the set_studno(), set_stud_name() and compute_tfee() are all Student_Record class method.
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td valign="top">
-                </td>
-            </tr>
-        </tbody>
-    </table>
 </div>
-<p>
-    5.3.<strong>6 Accessing Class Method</strong>
+<p class="mL10">
+    <strong>5.3.6 Accessing Class Method</strong>
 </p>
+<div class="mL15">
 <p>
     To call a class method( also known as function method) of a particular object we use the <strong>dot (.) member operator.</strong>
 </p>
@@ -999,129 +479,42 @@ classes <strong>Triangle</strong> and <strong>Circle</strong><em>. </em>Notice<s
     Therefore, the syntax for accessing class method, use the following:
 </p>
 <p>
-    <var></var>
+    <pre><code>&lt;object_names&gt;<strong>.</strong>&lt;class_method&gt;</code></pre>
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        <var>&lt;object_names&gt;<strong>.</strong>&lt;class_method&gt;</var>
-                        <var></var>
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
 <p>
     For example:
 </p>
 <p>
     Assuming we have created an object triA out of the Triangle class, like
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        Triangle triA;
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    <pre><code>Triangle triA;</code></pre>
 <p>
     And we have a method named set_values() which requires an int argument, get_values() which returns an int and area() that returns double, like
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        void set_base(int b){
-                    </p>
-                    <p>
-                        base = b;
-                    </p>
-                    <p>
-                        }
-                    </p>
-                    <p>
-                        int get_base(){
-                    </p>
-                    <p>
-                        return base;
-                    </p>
-                    <p>
-                        }
-                    </p>
-                    <p>
-                        double area(){
-                    </p>
-                    <p>
-                        return (base * height) / 2;
-                    </p>
-                    <p>
-                        }
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<pre><code>void set_base(int b){
+    base = b;
+}
+
+int get_base(){
+    return base;
+}
+
+double area(){
+    return (base * height) / 2;
+}
+</code></pre>
 <p>
     Then to call the class method area() for the object triA, we do the ff
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        triA<strong>.</strong>area();
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<pre><code>triA.area();</code></pre>
 <p>
     And to call the class method set_base(int)for the object triA, we do the ff
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        triA<strong>.</strong>set_base(12);
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<pre><code>triA<strong>.</strong>set_base(12);</code></pre>
 <p>
     And to call the class method get_base() for the object triA, we do the ff
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        triA<strong>.</strong>get_base();
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<pre><code> triA<strong>.</strong>get_base();</code></pre>
 <p>
     the dot(.) member operator is separator for object and method.
 </p>
@@ -1135,9 +528,11 @@ classes <strong>Triangle</strong> and <strong>Circle</strong><em>. </em>Notice<s
     · All instance variables of a class are accessible inside all methods of the class. Therefore, you can code a class method as though the class instance
     variables have been declared inside the method definition.
 </p>
-<p>
-    5.3.7 A More Useful Class Accessor and Mutator Methods
+</div>
+<p class="mL10">
+    <b>5.3.7 A More Useful Class Accessor and Mutator Methods</b>
 </p>
+<div class="mL15">
 <p>
     A class method is divided into 3 classifications: accessor, mutator and constructor.
 </p>
@@ -1158,44 +553,16 @@ A method whose only purpose is to access the value of a private instance variabl
 <p>
     Syntax of defining an accessor method
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        &lt;return-type&gt; ClassNiame::&lt;<strong>get</strong>AccessorMethodName&gt;(){
-                    </p>
-                    <p>
-                        &lt;accessor-method-definition&gt;;
-                    </p>
-                    <p>
-                        ……
-                    </p>
-                    <p>
-                        }
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+
+<pre><code>&lt;return-type&gt;   ClassNiame::&lt;getAccessorMethodName&gt;(){
+         &lt;accessor-method-definition&gt;;
+         ……
+}
+</code></pre>
 <p>
     For example:
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        int get_base();
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<?php code("int get_base();");?> 
 <p>
     To recall, we have two private int class member in the
     <tt>
@@ -1212,7 +579,7 @@ A method whose only purpose is to access the value of a private instance variabl
     ,
 </p>
 <p align="center">
-    <img src="../uploads/images/c5-3/accessormutator1.png">
+    <img src="../uploads/images/c5-3/AccessorMutator1.png">
 </p>
 <p>
     Therefore, to include an accessor method to access(retrieve) the value of the private data member base, we should include the accessor method declaration
@@ -1277,21 +644,9 @@ A method whose only purpose is to access the value of a private instance variabl
     <tt>
     </tt>
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        <tt>
-                            int get_base();
-                        </tt>
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+
+<?php code("int get_base();")?>
+
 <p>
     And the definition of the accessor method outside the class always has the keyword
     <tt>
@@ -1305,7 +660,7 @@ A method whose only purpose is to access the value of a private instance variabl
 </p>
 <br clear="all"/>
 <p class="text-center">
-   <img src="../uploads/images/c5-3/accessor3.png">
+   <img src="../uploads/images/c5-3/Accessor3.png">
 </p>
 <p>
     Of course, we have to follow the use of scope resolution operator ::
@@ -1313,91 +668,36 @@ A method whose only purpose is to access the value of a private instance variabl
 <p>
     For more elaboration, for example, we have a private data member in the class such as
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        string name;
-                    </p>
-                    <p>
-                        int age;
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<?php code("string name;
+int age;")?>
 <p>
     Therefore the accessor method declaration for the name and age data members respectively should be:
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        //declaration of accessor method for name data member
-                    </p>
-                    <p>
-                        string get_name();
-                    </p>
-                    <p>
-                        and
-                    </p>
-                    <p>
-                        //declaration of accessor method for age data member
-                    </p>
-                    <p>
-                        int get_age();
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<?php code("//declaration of accessor method for name data member
+string get_name(); 
+and
+//declaration of accessor method for age data member
+int get_age();
+")?>
 <p>
     And the accessor method definition for each will be, <strong>assuming the class name is Sample</strong>:
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        //definition of accessor method for name data member
-                    </p>
-                    <p>
-                        string Sample::get_name(){
-                    </p>
-                    <p>
-                        return name;
-                    </p>
-                    <p>
-                        }
-                    </p>
-                    <p>
-                        //definition of accessor method for age data member
-                    </p>
-                    <p>
-                        int Sample::get_age(){
-                    </p>
-                    <p>
-                        return age;
-                    </p>
-                    <p>
-                        }
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<?php code("
+//definition of accessor method for  name  data member
+string Sample::get_name(){
+      return name;     
+}
+
+//definition of accessor method for  age data member
+int Sample::get_age(){
+      return age;
+}")?>
+
 <p>
     <strong>Mutator Method</strong>
 </p>
 <p>
+
     A method that changes the value or assign a value of an instance variable (data member) is called <strong>mutator method.</strong> <strong> </strong> The
     <tt>
         set_base()
@@ -1411,44 +711,15 @@ A method whose only purpose is to access the value of a private instance variabl
 <p>
     Syntax of defining an mutator method
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        &lt;return-type&gt; ClassNiame::&lt;<strong>set</strong>AccessorMethodName&gt;(&lt;data-type&gt; identifier){
-                    </p>
-                    <p>
-                        &lt;mutator-method-definition&gt;;
-                    </p>
-                    <p>
-                        ……
-                    </p>
-                    <p>
-                        }
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<?php code("&lt;return-type&gt;   ClassNiame::&lt;setAccessorMethodName&gt;(&lt;data-type&gt; identifier){
+         &lt;mutator-method-definition&gt;;
+         ……
+}
+")?>
 <p>
     For example:
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        void set_base(int b);
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<?php code("void set_base(int b);"); ?>
 <p>
     To recall, we have two private int class member in the
     <tt>
@@ -1465,7 +736,7 @@ A method whose only purpose is to access the value of a private instance variabl
     ,
 </p>
 <p align="center">
-   <img src="../uploads/images/c5-3/accessormutator1.png">
+   <img src="../uploads/images/c5-3/AccessorMutator1.png">
 </p>
 <p>
     Therefore, to include an mutator method to change(assign) the value of the private data member base, we should include the mutator method declaration
@@ -1473,7 +744,7 @@ A method whose only purpose is to access the value of a private instance variabl
 </p>
 <br clear="all"/>
 <p align="center">
-   <img src="../uploads/images/c5-3/MUTATOR2.PNG">
+   <img src="../uploads/images/c5-3/Mutator2.png">
 </p>
 <p>
     Explanation of the example:
@@ -1531,21 +802,7 @@ A method whose only purpose is to access the value of a private instance variabl
         followed by any identifier that will accept the data you will pass. So the complete declaration for the mutator is
     </li>
 </ul>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        <tt>
-                            void set_base(int b);
-                        </tt>
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<?php code("void set_base(int b);");?>
 <p>
     And the definition of the mutator method outside the class always assigns the value pass to the argument to data member in the class, for example, the
     method method declaration
@@ -1555,7 +812,7 @@ A method whose only purpose is to access the value of a private instance variabl
     will have a method definition
 </p>
 <p align="center">
-   <img src="../uploads/images/c5-3/MUTATOR3.PNG">
+   <img src="../uploads/images/c5-3/Mutator3.png">
 </p>
 <p>
     Of course, we have to follow the use of scope resolution operator ::
@@ -1563,90 +820,38 @@ A method whose only purpose is to access the value of a private instance variabl
 <p>
     For more elaboration, for example, we have a private data member in the class such as
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        string name;
-                    </p>
-                    <p>
-                        int age;
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<?php code("string name;
+int age;");?>
 <p>
     Therefore the mutator method declaration for the name and age data members respectively should be:
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        //declaration of mutator method for name data member
-                    </p>
-                    <p>
-                        void set_name(string n);
-                    </p>
-                    <p>
-                        and
-                    </p>
-                    <p>
-                        //declaration of mutator method for age data member
-                    </p>
-                    <p>
-                        void set_age(int a);
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<?php code("//declaration of mutator method for name data member
+void set_name(string n); 
+and
+//declaration of mutator method for age data member
+void set_age(int a);
+;
+");?>
+                    
+                    
+                    
 <p>
     And the mutator method definition for each will be, <strong>assuming the class name is Sample</strong>:
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        //definition of mutator method for name data member
-                    </p>
-                    <p>
-                        void Sample::set_name(string n){
-                    </p>
-                    <p>
-                        name=n;
-                    </p>
-                    <p>
-                        }
-                    </p>
-                    <p>
-                        //definition of mutator method for age data member
-                    </p>
-                    <p>
-                        void Sample::set_age(int a){
-                    </p>
-                    <p>
-                        age=a;
-                    </p>
-                    <p>
-                        }
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<?php code("//definition of mutator method for  name  data member
+void Sample::set_name(string n){
+      name=n;     
+}
+
+//definition of mutator method for  age data member
+void Sample::set_age(int a){
+      age=a;
+}");?>
 </div>
-<p>
+<p class="mL10">
     5.3.<strong>7. The Class Constructor</strong>
 </p>
+<div class="mL15">
 <p>
     What would happen in <em>Triangle</em> class if we called the member function <code>area</code> before having called <code>set_values</code>? An
     undetermined result, since the members <code>base</code> and <code>height</code> had never been assigned a value.
@@ -1688,249 +893,94 @@ A method whose only purpose is to access the value of a private instance variabl
 <p>
     If we have a class definition, such as,
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        <var>class</var>
-                        Triangle{
-                    </p>
-                    <p>
-                        private:
-                    </p>
-                    <p>
-                        <var>int</var>
-                        base;
-                    </p>
-                    <p>
-                        <var>int</var>
-                        height;
-                    </p>
-                    <p>
-                        <strong>public</strong>
-                        :
-                    </p>
-                    <p>
-                        //class method declaration
-                    </p>
-                    <pre>    <var>void</var><code> set_values (</code><var>int</var><code>,</code><var>int</var><code>);</code></pre>
-                    <pre><var>    double</var><code> area ();</code></pre>
-                    <p>
-                        <code>};</code>
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<?php code("class Triangle{
+  private:
+    int base;
+    int height;
+  public:
+    //class method declaration
+    void set_values (int,int);
+    double area ();
+};
+");?>
+
 <p>
     The constructor name will be
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        Triangle()
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<?php code("Triangle()");?>
+
 <p>
     Therefore, we can modify the class definition to
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        <var>class</var>
-                        Triangle{
-                    </p>
-                    <p>
-                        private:
-                    </p>
-                    <p>
-                        <var>int</var>
-                        base;
-                    </p>
-                    <p>
-                        <var>int</var>
-                        height;
-                    </p>
-                    <p>
-                        public:
-                    </p>
-                    <p>
-                        <strong> //class constructor</strong>
-                    </p>
-                    <p>
-                        <strong> Triangle();</strong>
-                    </p>
-                    <p>
-                        //class method declaration
-                    </p>
-                    <pre>    <var>void</var><code> set_base(</code><var>int</var><code>);</code></pre>
-                    <pre><code>    int get_base();</code></pre>
-                    <pre><var>    double</var><code> area ();</code></pre>
-                    <p>
-                        <code>};</code>
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<?php code("class Triangle{
+  private:
+    int base;
+    int height;
+  public:
+    //class constructor
+    Triangle();
+
+    //class method declaration
+    void set_base(int);
+    int get_base();
+    double area ();
+};");?>
+
 <p>
     And we can have the definition of the Triangle() constructor by using the scope resolution operator (::)
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <p>
-                        <var>class</var>
-                        Triangle{
-                    </p>
-                    <p>
-                        private:
-                    </p>
-                    <p>
-                        <var>int</var>
-                        base;
-                    </p>
-                    <p>
-                        <var>int</var>
-                        height;
-                    </p>
-                    <p>
-                        public:
-                    </p>
-                    <p>
-                        <strong> //class constructor</strong>
-                    </p>
-                    <p>
-                        <strong> Triangle();</strong>
-                    </p>
-                    <p>
-                        //class method declaration
-                    </p>
-                    <pre>    <var>void</var><code> set_values (</code><var>int</var><code>,</code><var>int</var><code>);</code></pre>
-                    <pre><var>    double</var><code> area ();</code></pre>
-                    <p>
-                        <code>};</code>
-                    </p>
-                    <p>
-                        Triangle::Triangle(){
-                    </p>
-                    <p>
-                        base = 10;
-                    </p>
-                    <p>
-                        height = 20;
-                    </p>
-                    <p>
-                        }
-                    </p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<?php code("class Triangle{
+  private:
+    int base;
+    int height;
+  public:
+    //class constructor
+    Triangle();
+
+    //class method declaration
+    void set_values (int,int);
+    double area ();
+};
+
+Triangle::Triangle(){
+    base = 10;
+    height = 20;
+}
+");?>
+
 <p>
     For example:
 </p>
-<table border="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td valign="top">
-                <p>
-                    <var>#include &lt;iostream&gt;</var>
-                    <var></var>
-                </p>
-                <p>
-                    <var>#include &lt;string&gt;</var>
-                    <var></var>
-                </p>
-                <p>
-                    <var></var>
-                </p>
-                <p>
-                    <var>using namespace std;</var>
-                    <var></var>
-                </p>
-                <p>
-                    <var></var>
-                </p>
-                <p>
-                    <var>class</var>
-                    Triangle{
-                </p>
-                <p>
-                    private:
-                </p>
-                <p>
-                    <var>int</var>
-                    base;
-                </p>
-                <p>
-                    <var>int</var>
-                    height;
-                </p>
-                <p>
-                    <strong>public</strong>
-                    :
-                </p>
-                <p>
-                    //Constructor declaration
-                </p>
-                <pre>    <var>Triangle</var><code>();</code></pre>
-                <pre><code>    </code><var>double</var><code> area () {</code><var>return</var><code> (base*height)/2;}</code></pre>
-                <p>
-                    <code>};</code>
-                </p>
-                <p>
-                    //constructor definition
-                </p>
-                <p>
-                    <code>Triangle::Triangle(){</code>
-                </p>
-                <p>
-                    <code> base = 10;</code>
-                </p>
-                <p>
-                    <code> height = 50;</code>
-                </p>
-                <pre><code>}</code></pre>
-                <pre><code> </code></pre>
-                <pre><code>int main()</code></pre>
-                <pre>{</pre>
-                <pre><code>   Triangle triA;//uses the Triangle() constructor that assigns 10 and 50 to  data members base and height  </code></pre>
-                <pre><code>   cout &lt;&lt; </code><kbd>"triA area: "</kbd><code> &lt;&lt; triA.area() &lt;&lt; endl;</code></pre>
-                <pre><code>  </code><var>return</var><code> 0;</code></pre>
-                <pre><code>}</code></pre>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top">
-                <p>
-                    <var>
-                        Note: The constructor Triangle(), notice that it is the same name as the class name, is defined outside the Triangle class there it
-                        must use the scope resolution operator ::.
-                    </var>
-                    <var></var>
-                </p>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<?php code('#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+class Triangle{
+  private:
+    int base;
+    int height;
+  public:
+    //Constructor declaration
+    Triangle();
+    double area () {return (base*height)/2;}
+};
+
+//constructor definition
+Triangle::Triangle(){
+    base = 10;
+    height = 50;
+}
+
+int main()
+{
+   Triangle triA;//uses the Triangle() constructor that assigns 10 and 50 to  data members base and height  
+   cout &lt;&lt; "triA area: " &lt;&lt; triA.area() &lt;&lt; endl;
+  return 0;
+}
+
+');?>
+<i><?php code('Note:  The constructor Triangle(), notice that it is the same name as the class name, is defined outside the Triangle class there it must use the scope resolution operator ::.');?></i>
 <p>
     `
 </p>
@@ -1947,9 +997,11 @@ A method whose only purpose is to access the value of a private instance variabl
     This constructor function is declared just like a regular member function, but with a name that matches the class name and without any return type; not
     even <code>void</code>.
 </p>
-<p>
-    5.3.<strong>8. Constructor Overloading</strong>
+</div>
+<p class="mL10">
+    <strong>5.3.8. Constructor Overloading</strong>
 </p>
+<div class="mL15">
 <p>
     In the previous topic, we used a no-argument constructor, the Triangle(), in the definition of the
     <tt>
@@ -1974,30 +1026,20 @@ A method whose only purpose is to access the value of a private instance variabl
     might also want a constructor that allows us to create a Triangle by giving both the base and height. You must declare all three constructors in the class
     definition as follows.
 </p>
-<table border="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td valign="top">
-                <pre>class Triangle</pre>
-                <pre>{</pre>
-                <pre>  .</pre>
-                <pre>  .</pre>
-                <pre>  .</pre>
-                <pre>  public:</pre>
-                <pre>    Triangle(); //no argument, will give default value for base and height</pre>
-                <pre>    Triangle(int);//argument represents the base and height has a default value of 100</pre>
-                <pre>    Triangle(int, int); //arguemnts represents base and height respectively</pre>
-                <pre>  .</pre>
-                <pre>  .</pre>
-                <pre>  .</pre>
-                <pre>};<var></var></pre>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<p>
-    <a name="497"></a>
-</p>
+<?php code('class Triangle
+{
+  .
+  .
+  .
+  public:
+    Triangle(); //no argument, will give default value for base and height
+    Triangle(int);//argument represents the base and height has a default value of 100
+    Triangle(int, int); //arguemnts represents base and height respectively
+  .
+  .
+  .
+};
+');?>
 <p>
     <a name="iddle1337"></a>
     <a name="iddle1335"></a>
@@ -2008,125 +1050,72 @@ A method whose only purpose is to access the value of a private instance variabl
     </tt>
     object declaration. The three constructor definitions follow.
 </p>
-<table border="0" cellpadding="0">
-    <tbody>
-        <tr>
-            <td valign="top">
-                <p>
-                    <var>#include &lt;iostream&gt;</var>
-                    <var></var>
-                </p>
-                <p>
-                    <var>#include &lt;string&gt;</var>
-                    <var></var>
-                </p>
-                <p>
-                    <var></var>
-                </p>
-                <p>
-                    <var>using namespace std;</var>
-                    <var></var>
-                </p>
-                <p>
-                    <var></var>
-                </p>
-                <p>
-                    <var>class</var>
-                    Triangle{
-                </p>
-                <p>
-                    private:
-                </p>
-                <p>
-                    <var>int</var>
-                    base;
-                </p>
-                <p>
-                    <var>int</var>
-                    height;
-                </p>
-                <p>
-                    <strong>public</strong>
-                    :
-                </p>
-                <p>
-                    //Constructor declaration
-                </p>
-                <pre>    <var>Triangle</var><code>();</code></pre>
-                <pre>    <var>Triangle</var><code>(int);</code></pre>
-                <pre>    <var>Triangle</var><code>(int, int);</code></pre>
-                <pre><code> </code></pre>
-                <pre><code>    </code><var>double</var><code> area () {</code><var>return</var><code> (base*height)/2;}</code></pre>
-                <p>
-                    <code>};</code>
-                </p>
-                <pre><code> </code></pre>
-                <pre><code> </code></pre>
-                <pre><code>//constructor method definition no-argument</code></pre>
-                <pre><code>Triangle::Triangle () {</code></pre>
-                <pre><code>  base = 50;</code></pre>
-                <pre><code>  height = 100;</code></pre>
-                <pre><code>}</code></pre>
-                <pre><code> </code></pre>
-                <pre><code>//overload constructor method single argument</code></pre>
-                <pre><code>Triangle::Triangle (</code><var>int</var><code> x) {</code></pre>
-                <pre><code>  base = 20;</code></pre>
-                <pre><code>  height = x;</code></pre>
-                <pre><code>}</code></pre>
-                <pre><code> </code></pre>
-                <pre><code>//overload constructor method two argument</code></pre>
-                <pre><code>Triangle::Triangle (</code><var>int</var><code> x, </code><var>int</var><code> y) {</code></pre>
-                <pre><code>  base = x;</code></pre>
-                <pre><code>  height = y;</code></pre>
-                <pre><code>}</code></pre>
-                <pre><code> </code></pre>
-                <pre><code>int main()</code></pre>
-                <pre><code>{</code></pre>
-                <pre><code>   Triangle triA;  </code></pre>
-                <pre><code>   Triangle triB(5);</code></pre>
-                <pre><code>   Triangle triC(13,27);</code></pre>
-                <pre><code>   cout &lt;&lt; </code><kbd>"triA area: "</kbd><code> &lt;&lt; triA.area() &lt;&lt; endl;</code></pre>
-                <pre><code>   cout &lt;&lt; </code><kbd>"triB area: "</kbd><code> &lt;&lt; triB.area() &lt;&lt; endl;</code></pre>
-                <pre><code>   cout &lt;&lt; </code><kbd>"triC area: "</kbd><code> &lt;&lt; triC.area() &lt;&lt; endl;</code></pre>
-                <pre><code>   </code></pre>
-                <pre><code>   return 0;</code></pre>
-                <pre><code>}</code></pre>
-                <pre><var></var></pre>
-            </td>
-            <td valign="top">
-                <p>
-                    <var>triA area: 2500</var>
-                    <var></var>
-                </p>
-                <p>
-                    <var>triB area: 50</var>
-                    <var></var>
-                </p>
-                <p>
-                    <var>triC area: 175</var>
-                    <var></var>
-                </p>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div class="row">
+    <div class="col-xs-7">
+    <?php code('#include &lt;iostream&gt;
+    #include &lt;string&gt;
+
+    using namespace std;
+
+    class Triangle{
+      private:
+        int base;
+        int height;
+      public:
+        //Constructor declaration
+        Triangle();
+        Triangle(int);
+        Triangle(int, int);
+
+        double area () {return (base*height)/2;}
+    };
+    //constructor method definition no-argument
+    Triangle::Triangle () {
+      base = 50;
+      height = 100;
+    }
+
+    //overload constructor method single argument
+    Triangle::Triangle (int x) {
+      base = 20;
+      height = x;
+    }
+
+    //overload constructor method two argument
+    Triangle::Triangle (int x, int y) {
+      base = x;
+      height = y;
+    }
+
+    int main()
+    {
+       Triangle triA;  
+       Triangle triB(5);
+       Triangle triC(13,27);
+       cout << "triA area: " << triA.area() << endl;
+       cout << "triB area: " << triB.area() << endl;
+       cout << "triC area: " << triC.area() << endl;
+       
+       return 0;
+    }
+
+    ');?>
+    </div>
+    <div class="col-xs-5">
+    <?php code('triA area: 2500
+triB area: 50
+triC area: 175
+');?>
+    </div>
+</div>
 <p>
     With the given example above, the C++ compiler distinguishes among the three constructors by the number and type of arguments provided in the declaration
     of an object. With this we created three Triangle objects namely triA, triB and triC as in
 </p>
-<div align="center">
-    <table border="0" cellpadding="0">
-        <tbody>
-            <tr>
-                <td valign="top">
-                    <pre><code>Triangle triA;  </code></pre>
-                    <pre><code>Triangle triB(5);</code></pre>
-                    <pre><code>Triangle triC(13,27);</code><var></var></pre>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<?php code('Triangle triA;  
+Triangle triB(5);
+Triangle triC(13,27);
+');?>
 <p>
     With this, the first declaration uses a no-argument constructor and creates the Triangle triA with a default base of 50 and default height of 100. The
     second declaration creates the Triangle triB with a default base of 20 and a height of 5. The third declaration creates the Triangle triC with a base of 13
@@ -2135,242 +1124,141 @@ A method whose only purpose is to access the value of a private instance variabl
 <p>
     <strong>A complete class example with data members, default constructor, single and two argument constructor.</strong>
 </p>
-<table border="0" cellpadding="0" width="659">
-    <tbody>
-        <tr>
-            <td valign="top">
-                <p>
-                    <var><strong>Program Code</strong></var>
-                    <var><strong></strong></var>
-                </p>
-            </td>
-            <td width="265" valign="top">
-                <p>
-                    <strong>Output</strong>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td valign="top">
-                <p>
-                    <var>#include &lt;iostream&gt;</var>
-                    <var></var>
-                </p>
-                <p>
-                    <var>using namespace std; </var>
-                    <var></var>
-                </p>
-                <p>
-                    <var>class</var>
-                    Triangle{
-                </p>
-                <p>
-                    private: //optional since this is the default
-                </p>
-                <p>
-                    <var>int</var>
-                    base;
-                </p>
-                <p>
-                    <var>int</var>
-                    height;
-                </p>
-                <p>
-                    public:
-                </p>
-                <p>
-                    <code> //class method declaration</code>
-                </p>
-                <pre>    <var>void</var><code> set_values (</code><var>int</var><code>,</code><var>int</var><code>); </code></pre>
-                <pre><code> </code></pre>
-                <p>
-                    <code> //class method declaration and definition</code>
-                </p>
-                <p>
-                    <code> //for area()</code>
-                </p>
-                <pre><code>    </code><var>double</var><code> area() {</code><var>return</var><code> (base*height)/2;}</code></pre>
-                <pre><code>};</code></pre>
-                <pre><code> </code></pre>
-                <pre><code>//class method definition for set_value()</code></pre>
-                <pre><var>void</var><code> Triangle::set_values (</code><var>int</var><code> x, </code><var>int</var><code> y) {</code></pre>
-                <pre><code>  base = x;</code></pre>
-                <pre><code>  height = y;</code></pre>
-                <pre><code>}</code></pre>
-                <pre><code> </code></pre>
-                <pre><var>int</var><code> main(){</code></pre>
-                <pre><code>   Triangle triB;  </code></pre>
-                <pre><code>   triA.set_values(2,5);</code></pre>
-                <pre><code>   triB.set_values(5,10);</code></pre>
-                <pre><code>   cout &lt;&lt; </code><kbd>"triA area: "</kbd><code> &lt;&lt; triA.area() &lt;&lt; endl;</code></pre>
-                <pre><code>  cout &lt;&lt; </code><kbd>"triB area: "</kbd><code> &lt;&lt; triB.area() &lt;&lt; endl;</code></pre>
-                <pre><code>  </code><var>return</var><code> 0;</code></pre>
-                <pre><code>}</code></pre>
-            </td>
-            <td width="265" valign="top">
-                <p>
-                    triA area : 5
-                </p>
-                <p>
-                    triB area : 25
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="655" colspan="2" valign="top">
-                <p>
-                    <strong>NOTE: </strong>
-                    Notice that we use the object <em>triA</em> inside the <em>main()</em> even though it is not instantiated inside the main(). Remember that
-                    in the syntax of defining a class, &lt;object_names&gt; is an optional list of names for object. In this example, we define the class and
-                    instantiated one object for the class named triA. Therefore, object triA can be used anywhere in the main() since it is already created.
-                </p>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<table border="0" cellpadding="0" width="659">
-    <tbody>
-        <tr>
-            <td valign="top">
-                <p>
-                    <var>#include &lt;iostream&gt;</var>
-                    <var></var>
-                </p>
-                <p>
-                    <var>#include &lt;string&gt;</var>
-                    <var></var>
-                </p>
-                <p>
-                    <var>using namespace std; </var>
-                    <var></var>
-                </p>
-                <p>
-                    <var>class</var>
-                    Triangle{
-                </p>
-                <p>
-                    private:
-                </p>
-                <p>
-                    <var>int</var>
-                    base;
-                </p>
-                <p>
-                    <var>int</var>
-                    height;
-                </p>
-                <p>
-                    public:
-                </p>
-                <p>
-                    <code> //constructor method declaration</code>
-                </p>
-                <pre>    <code>Triangle();</code></pre>
-                <p>
-                    <code></code>
-                </p>
-                <p>
-                    <code> //overloaded constructor method declaration</code>
-                </p>
-                <pre><code>    Triangle(</code><var>int)</var><code>;    </code></pre>
-                <pre><code>    Triangle(</code><var>int</var><code><em>, </em></code><var>int</var><code>);</code></pre>
-                <pre><code> </code></pre>
-                <p>
-                    <code> //class method declaration and definition</code>
-                </p>
-                <p>
-                    <code> //for area()</code>
-                </p>
-                <pre><code>    void set_base(int);</code></pre>
-                <pre><code>    void set_height(int);</code></pre>
-                <pre><code>    int get_base();</code></pre>
-                <pre><code>    int get_height();</code></pre>
-                <pre><code>    </code><var>double</var><code> area() {</code><var>return</var><code> (base*height)/2;}</code></pre>
-                <pre><code>}triA;</code></pre>
-                <pre><code> </code></pre>
-                <pre><code>//constructor method definition </code></pre>
-                <pre><code>Triangle::Triangle () {</code></pre>
-                <pre><code>  base = 50;</code></pre>
-                <pre><code>  height = 100;</code></pre>
-                <pre><code>}</code></pre>
-                <pre><code> </code></pre>
-                <pre><code>//overload contructor method single argument</code></pre>
-                <pre><code>Triangle::Triangle (</code><var>int</var><code> x) {</code></pre>
-                <pre><code>  base = 20;</code></pre>
-                <pre><code>  height = x;</code></pre>
-                <pre><code>}</code></pre>
-                <pre><code> </code></pre>
-                <pre><code>//overload contructor method two argument</code></pre>
-                <pre><code>Triangle::Triangle (</code><var>int</var><code> x, </code><var>int</var><code> y) {</code></pre>
-                <pre><code>  base = x;</code></pre>
-                <pre><code>  height = y;</code></pre>
-                <pre><code>}</code></pre>
-                <pre><code> </code></pre>
-                <pre><code>//class method set_base()</code></pre>
-                <pre><code>void Triangle::set_base(int b){</code></pre>
-                <pre><code>    base = b;</code></pre>
-                <pre><code>}</code></pre>
-                <pre><code> </code></pre>
-                <pre><code>//class method get_base()</code></pre>
-                <pre><code>int Triangle::get_base(){</code></pre>
-                <pre><code>    return base;</code></pre>
-                <pre><code>}</code></pre>
-                <pre><code> </code></pre>
-                <pre><code>//class method set_height()</code></pre>
-                <pre><code>void Triangle::set_height(int h){</code></pre>
-                <pre><code>    height = h;</code></pre>
-                <pre><code>}</code></pre>
-                <pre><code> </code></pre>
-                <pre><code> </code></pre>
-                <pre><code>//class method get_height()</code></pre>
-                <pre><code>int Triangle::get_height(){</code></pre>
-                <pre><code>    return height;</code></pre>
-                <pre><code>}</code></pre>
-                <pre><code> </code></pre>
-                <pre><code> </code></pre>
-                <pre><code> </code></pre>
-                <pre><var>int</var><code> main(){</code></pre>
-                <pre><code>   Triangle triB;  </code></pre>
-                <pre><code>   Triangle triC(5);</code></pre>
-                <pre><code>   Triangle triD(10,20);</code></pre>
-                <pre><code> </code></pre>
-                <pre><code>   //override the value of base and height in Triangle() constructor</code></pre>
-                <pre><code>   triA.set_base(1);</code></pre>
-                <pre><code>   triA.set_height(5);</code></pre>
-                <pre><code> </code></pre>
-                <pre><code>   cout &lt;&lt; </code><kbd>"triA area: "</kbd><code> &lt;&lt; triA.area() &lt;&lt; endl;</code></pre>
-                <pre><code>   cout &lt;&lt; </code><kbd>"triB area: "</kbd><code> &lt;&lt; triB.area() &lt;&lt; endl;</code></pre>
-                <pre><code>   cout &lt;&lt; </code><kbd>"triC area: "</kbd><code> &lt;&lt; triC.area() &lt;&lt; endl;</code></pre>
-                <pre><code>   cout &lt;&lt; </code><kbd>"triD area: "</kbd><code> &lt;&lt; triD.area() &lt;&lt; endl;</code></pre>
-                <pre><code> </code></pre>
-                <pre><code>   </code><var>return</var><code> 0;</code></pre>
-                <pre><code>}</code></pre>
-                <pre><code> </code></pre>
-            </td>
-            <td width="265" valign="top">
-                <p>
-                    triA area: 2
-                </p>
-                <p>
-                    triB area: 2500
-                </p>
-                <p>
-                    triC area: 50
-                </p>
-                <p>
-                    triD area: 100
-                </p>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div class="row">
+    <div class="col-xs-7">
+        <?php code('Program Code');?>
+        <?php code('#include &lt;iostream&gt;
+using namespace std; 
+class Triangle{
+  private: //optional since this is the default
+    int base;
+    int height;
+  public:
+    //class method declaration
+    void set_values (int,int); 
+
+    //class method declaration and definition
+    //for area()
+    double area() {return (base*height)/2;}
+};
+
+//class method definition for set_value()
+void Triangle::set_values (int x, int y) {
+  base = x;
+  height = y;
+}
+
+int main(){
+   Triangle triB;  
+   triA.set_values(2,5);
+   triB.set_values(5,10);
+   cout &lt;&lt; "triA area: " &lt;&lt; triA.area() &lt;&lt; endl;
+  cout &lt;&lt; "triB area: " &lt;&lt; triB.area() &lt;&lt; endl;
+  return 0;
+}
+');?>
+    </div>
+    <div class="col-xs-5">
+        <?php code('Output');?>
+        <?php code('triA area : 5
+triB area : 25
+');?>
+
+    </div>
+    <div class="col-xs-12">
+        <p><b>NOTE:</b> Notice that we use the object triA inside the main() even though it is not instantiated inside the main(). Remember that in the syntax of defining a class, &lt;object_names&gt; is an optional list of names for object.  In this example, we define the class and instantiated one object for the class named triA.  Therefore, object triA can be used anywhere in the main() since it is already created.</p>
+    </div>
+    <div class="col-xs-7">
+        <?php code('Program Code');?>
+        <?php code('#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std; 
+class Triangle{
+  private:
+    int base;
+    int height;
+  public:
+    //constructor method declaration
+    Triangle();
+
+    //overloaded constructor method declaration
+    Triangle(int);    
+    Triangle(int, int);
+
+    //class method declaration and definition
+    //for area()
+    void set_base(int);
+    void set_height(int);
+    int get_base();
+    int get_height();
+    double area() {return (base*height)/2;}
+}triA;
+
+//constructor method definition 
+Triangle::Triangle () {
+  base = 50;
+  height = 100;
+}
+
+//overload contructor method single argument
+Triangle::Triangle (int x) {
+  base = 20;
+  height = x;
+}
+
+//overload contructor method two argument
+Triangle::Triangle (int x, int y) {
+  base = x;
+  height = y;
+}
+
+//class method set_base()
+void Triangle::set_base(int b){
+    base = b;
+}
+
+//class method get_base()
+int Triangle::get_base(){
+    return base;
+}
+
+//class method set_height()
+void Triangle::set_height(int h){
+    height = h;
+}
+
+
+//class method get_height()
+int Triangle::get_height(){
+    return height;
+}
+
+
+
+int main(){
+   Triangle triB;  
+   Triangle triC(5);
+   Triangle triD(10,20);
+
+   //override the value of base and height in Triangle() constructor
+   triA.set_base(1);
+   triA.set_height(5);
+');?>
+    </div>
+    <div class="col-xs-5">
+        <?php code('Output');?>
+        <?php code('triA area: 2
+triB area: 2500
+triC area: 50
+triD area: 100
+');?>
+
+    </div>
+</div>
 <p align="center">
     Parts of a programmer-defined classes and objects
 </p>
-<p>
-    <em> </em>
-    <em></em>
-</p>
 <p align="center">
-   <img src="../uploads/images/c5-3/classes.PNG">
+   <img src="../uploads/images/c5-3/classes.png">
 </p>
+</div>
