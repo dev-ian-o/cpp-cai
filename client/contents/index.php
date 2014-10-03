@@ -66,7 +66,7 @@ pre .cl {
 			  					<?php foreach ($sub_lessons as $key_sub => $value_sub) : ?>
 
 			  						<?php if($value->lesson_id == $value_sub->lesson_id ):?>
-									<a href="#" class="<?php if($key_sub === 16){print 'active';}?> list-group-item sub-chapter-link"><?= $value_sub->lesson_sub_description;?>
+									<a href="index.php?page=index&lesson=<?= $key_sub?>" class="list-group-item sub-chapter-link"><?= $value_sub->lesson_sub_description;?>
 										<input type="hidden" value="<?= $value_sub->lesson_sub_id;?>">
 
 									</a>
@@ -94,19 +94,44 @@ pre .cl {
 	<div class="col-xs-12 col-md-8">
 
 			<div class="panel panel-default" id="lesson">
-				<div class="panel-heading lesson-title"><?= $sub_lessons[16]->lesson_sub_description;?></div>
+				
+
+				<?php 
+				if(isset($_GET['lesson'])){
+					if(isset($_GET['lesson']) != "")
+					{	
+						if(isset($sub_lessons[$_GET['lesson']]->content))
+						echo '<div class="panel-heading lesson-title">'. $sub_lessons[$_GET['lesson']]->lesson_sub_description.'</div>';
+				
+					}
+					else
+					{
+						echo '<div class="panel-heading lesson-title">'. $sub_lessons[16]->lesson_sub_description.'</div>';
+					
+					}
+				}
+				else {
+					echo '<div class="panel-heading lesson-title">'. $sub_lessons[16]->lesson_sub_description.'</div>';
+				}
+				?>
 				<div class="panel">
 					<div class="panel-body">
 						<div class="content-chapter">
 							<?php 
-							if (File::exists($dir."/lesson-content/".$sub_lessons[16]->content))
-							{
-								echo File::get($dir."/lesson-content/".$sub_lessons[16]->content);
+							if(isset($_GET['lesson'])){
+								if(isset($_GET['lesson']) != "")
+								{	
+									if(isset($sub_lessons[$_GET['lesson']]->content))
+									include('../lesson-content/'.$sub_lessons[$_GET['lesson']]->content);
+								}
+								else
+								{
+									echo "No Content!";
+								}
 							}
-							else{
-								echo "No Content!";
-
-							} 
+							else {
+								require_once '../lesson-content/'.$sub_lessons[16]->content;
+							}
 							?>
 						</div>
 					</div>
