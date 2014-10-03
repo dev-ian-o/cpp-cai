@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2014 at 09:11 AM
+-- Generation Time: Oct 02, 2014 at 02:51 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `tbl_exam_items` (
   `lesson_choice3` longtext NOT NULL,
   `lesson_choice4` longtext NOT NULL,
   PRIMARY KEY (`exam_item_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `tbl_exam_items`
@@ -66,9 +66,22 @@ INSERT INTO `tbl_exam_items` (`exam_item_id`, `lesson_id`, `lesson_sub_id`, `les
 (7, 5, 17, '"Assuming we have the ff. structure definiton such as struct Student{     string name;     string course;     int age; } studRec1,studRec2;  The studRec1.course and studRec2.course is the same type as the member _____."', 'course', 'name', 'age', 'course', 'all of the choices are correct'),
 (8, 5, 17, '"Assuming we have the ff. structure definiton such as struct Student{     string name;     string course;     int age; }studRec1; What are the member in the structure Student?"', 'all of the choices are correct', 'name', 'age', 'course', 'all of the choices are correct'),
 (9, 5, 17, 'You read the member operator in C++ structure as _____.', 'member of', 'member of', 'part of', 'become', 'none of the choices'),
-(10, 5, 17, '"_______ 10. Assuming we have the following structure declaration/definition struct Triangle{       int base;       int height; };  How can you declare a variable named sample1 of type Triangle and initialize its data member  to 13 and 27 respectively?  "', 'Triangle sample = {13,27};', 'Triangle sample = (13,27);', 'Triangle sample = (27,13);', 'Triangle sample = {13,27};', 'Triangle sample = {27,13};'),
-(11, 5, 18, 'The C++ language comes with several predefined classes. Two of these are the input class _____ and the output class _____. ', 'istream , ostream', 'istream , ostream', 'string', 'conio', 'none of the choices'),
-(12, 5, 18, 'The standard input stream in an istream class object is _____.', 'cin', 'c out', 'c in', 'cout', 'cin');
+(10, 5, 17, ' Assuming we have the following structure declaration/definition struct Triangle{       int base;       int height; };  How can you declare a variable named sample1 of type Triangle and initialize its data member  to 13 and 27 respectively? ', 'Triangle sample = {13,27};', 'Triangle sample = (13,27);', 'Triangle sample = (27,13);', 'Triangle sample = {13,27};', 'Triangle sample = {27,13};'),
+(11, 5, 18, 'Consider the following lines of code: 1:  string str="C++ Programming"; 2:  cout << str.substr(7,4); 3:  cout << str.length();  Line #2 and #3, will return _____, _____ respectively.', 'istream , ostream', 'istream , ostream', 'string', 'conio', 'none of the choices'),
+(12, 5, 18, 'The standard input stream in an istream class object is _____.', 'cin', 'c out', 'c in', 'cout', 'cin'),
+(13, 5, 18, 'string in C++ is a _____.', 'class', 'data type', 'class', 'object', 'method'),
+(14, 5, 19, 'Classes in C++ are defined using the keyword _____.', 'class', 'class', 'method', 'object', 'none of the choices'),
+(15, 5, 18, 'In the declaration string str1; , str1 is a(n) _____.', 'class', 'data type', 'class', 'object', 'method'),
+(16, 5, 18, 'To apply a class method to an object, use the _____.', 'dot (.) operator', 'dot (.) operator', 'comma (,) operator', 'exclamation (!) operator', 'dollar($) operator'),
+(17, 5, 18, 'Which of the following is an example method in a string class?', 'all of the choices are correct', 'length()', 'empty()', 'at()', 'all of the choices are correct'),
+(18, 5, 18, 'It is a function (method) where all the initializations are placed and are important in instantiating object.', 'constructor', 'class', 'object', 'method', 'constructor'),
+(19, 5, 18, 'Function in C++ is also known as _____ in classes.', 'method', 'object', 'method', 'class', 'none of the choices'),
+(20, 5, 18, 'Assuming we have the following declaration: 1: string str1;  2: str1="University of Makati"; 3: cout << str1.length();  In line #3, str1  is a string _____ and length() is a string _____.', 'object, method', 'member, object', 'object, member', 'method, object', 'object, method'),
+(21, 5, 19, 'Class name should start with _____.', 'capital letters', 'small letters', 'capital letters', 'numeric data', 'special characters such as .,!etc'),
+(22, 5, 18, 'To declare a string object that uses a one-argument constructor you use _____.', 'both of the preceding answers are correct', 'string str="UMak";', 'string str("UMak");', 'both of the preceding answers are correct', 'neither of the first two choices is incorrect'),
+(23, 5, 18, 'Consider the following lines of code:\n1:  string str="C++ Programming";\n2:  cout << str.substr(7,4);\n3:  cout << str.length();\n\nLine #2 and #3, will return _____, _____ respectively.', 'gram, 15', '16, gram', '15, gram', 'gram, 16', 'gram, 15'),
+(24, 5, 19, 'By default, all members of a class declared with the class keyword have _____ access for all its members.', 'private', 'private', 'public', 'protected', 'none of the choices'),
+(25, 5, 17, 'A class method is also known as _____.', 'member function', 'mode function', 'partner function', 'member function', 'unit function');
 
 -- --------------------------------------------------------
 
@@ -131,9 +144,9 @@ INSERT INTO `tbl_lessons_sub_chapters` (`lesson_sub_id`, `lesson_id`, `lesson_su
 (14, 4, 'Declaring and Referencing an Array', '4', '', ''),
 (15, 4, 'One-Dimensional Array', '4', '', ''),
 (16, 4, 'Two-Dimensional Array', '4', '', ''),
-(17, 5, 'Structure', '5', '', ''),
-(18, 5, 'The string Class: An Introduction to Classes and Objects', '5', '', ''),
-(19, 5, 'Programmer-Defined Classes and Objects', '5', '', '');
+(17, 5, 'Structure', '5', 'ch5-1-docu.pdf', 'R0RUO3JHO0.html'),
+(18, 5, 'The string Class: An Introduction to Classes and Objects', '5', 'ch5-2-docu.pdf', 'i4HZ5xGf1w.html'),
+(19, 5, 'Programmer-Defined Classes and Objects', '5', 'ch5-3-docu.pdf', 'whlRaENU5t.html');
 
 -- --------------------------------------------------------
 
@@ -162,10 +175,19 @@ CREATE TABLE IF NOT EXISTS `tbl_tally` (
   `exam_item_id` int(10) NOT NULL,
   `correct` int(11) NOT NULL,
   `wrong` int(11) NOT NULL,
+  `date_exam` datetime NOT NULL,
   PRIMARY KEY (`tally_id`),
   UNIQUE KEY `lesson_id` (`lesson_id`),
   UNIQUE KEY `lesson_id_2` (`lesson_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=474 ;
+
+--
+-- Dumping data for table `tbl_tally`
+--
+
+INSERT INTO `tbl_tally` (`tally_id`, `lesson_id`, `lesson_sub_id`, `exam_item_id`, `correct`, `wrong`, `date_exam`) VALUES
+(1, 1, 1, 1, 0, 1, '2014-10-02 01:07:05'),
+(2, 5, 19, 14, 0, 1, '2014-10-02 01:07:35');
 
 -- --------------------------------------------------------
 

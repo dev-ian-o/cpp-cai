@@ -297,7 +297,7 @@ function fetch_exam_by_chapter($conn,$id,$print = true){
 	$stmt = $conn->prepare("SELECT * 
 		FROM tbl_exam_items
 		WHERE lesson_id = :lesson_id
-		ORDER BY RAND() LIMIT 10
+		ORDER BY RAND() LIMIT 30
 	");
 	
 	$stmt->execute(array(
