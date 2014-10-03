@@ -1,7 +1,7 @@
 <?php $dir = $_SERVER['DOCUMENT_ROOT'] .'cai_project'; ?>
-<?php require_once $dir . '/includes/database/database.php';?>
-<?php require_once $dir . '/includes/classes/exam-functions.php';?>
-<?php require_once $dir . '/includes/classes/file.php';?>
+<?php require_once '../includes/database/database.php';?>
+<?php require_once '../includes/classes/exam-functions.php';?>
+<?php //require_once $dir . '/includes/classes/file.php';?>
 
 
 <?php $lessons = json_decode(fetch_lessons($conn,false)); ?>
@@ -119,10 +119,16 @@ pre .cl {
 						<div class="content-chapter">
 							<?php 
 							if(isset($_GET['lesson'])){
-								if(isset($_GET['lesson']) != "")
+								if($_GET['lesson'] != "")
 								{	
-									if(isset($sub_lessons[$_GET['lesson']]->content))
-									include('../lesson-content/'.$sub_lessons[$_GET['lesson']]->content);
+									if(isset($sub_lessons[$_GET['lesson']]->content) && $sub_lessons[$_GET['lesson']]->content != "" )
+									{
+										include('../lesson-content/'.$sub_lessons[$_GET['lesson']]->content);
+									}
+									else
+									{
+										echo "No Content!";
+									}
 								}
 								else
 								{

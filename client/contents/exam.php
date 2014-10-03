@@ -1,6 +1,6 @@
 <?php $dir = $_SERVER['DOCUMENT_ROOT'] .'cai_project'; ?>
-<?php require_once $dir . '/includes/database/database.php';?>
-<?php require_once $dir . '/includes/classes/exam-functions.php';?>
+<?php require_once '../includes/database/database.php';?>
+<?php require_once '../includes/classes/exam-functions.php';?>
 
 <?php $lessons = json_decode(fetch_lessons($conn,false)); ?>
 <?php $sub_lessons = json_decode(fetch_sub_lessons($conn,false)); ?>

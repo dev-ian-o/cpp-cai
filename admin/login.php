@@ -1,8 +1,8 @@
 <?php require_once 'header-footer/header.php';?>
 
 <?php $dir = $_SERVER['DOCUMENT_ROOT'] .'cai_project'; ?>
-<?php require_once $dir . '/includes/database/database.php';?>
-<?php require_once $dir . '/includes/classes/exam-functions.php';?>
+<?php require_once '../includes/database/database.php';?>
+<?php require_once '../includes/classes/exam-functions.php';?>
 <?php session_start();?>
 <?php if( (isset($_SESSION['hash'])) && (isset($_SESSION[$_SESSION['hash']]))  ) { echo "<script>window.location = 'index.php';</script>"; } ?>
 

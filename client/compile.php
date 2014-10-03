@@ -6,7 +6,11 @@
 
 
 <div class="container">
-	<?php require_once 'contents/compile.php';?>
+	<?php //require_once 'contents/compile.php';?>
+	<iframe src="http://cpp.sh/" style="width: 100%; height: 962px;">
+		
+
+	</iframe>
  
 </div> <!-- end-container -->
 

@@ -5,6 +5,36 @@
 
 <?php
 
+function getUserIP() {
+    if( array_key_exists('HTTP_X_FORWARDED_FOR', $_SERVER) && !empty($_SERVER['HTTP_X_FORWARDED_FOR']) ) {
+        if (strpos($_SERVER['HTTP_X_FORWARDED_FOR'], ',')>0) {
+            $addr = explode(",",$_SERVER['HTTP_X_FORWARDED_FOR']);
+            return trim($addr[0]);
+        } else {
+            return $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }
+    }
+    else {
+        return $_SERVER['REMOTE_ADDR'];
+    }
+}
+
+
+function add_visitor($row,$conn){
+
+	$stmt = $conn->prepare("INSERT INTO visitor(
+		ip_address,
+		server,data_visit) values(:ip_address,:server,now())
+	");
+
+	$stmt->execute(array(
+		"ip_address" => $row['ip_address'],
+		"server" => $row['server']
+	));
+	
+	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 
 function add_lesson($row,$conn){
 	$stmt = $conn->prepare("INSERT INTO tbl_lessons_chapters(
@@ -409,18 +439,14 @@ function query_sub_lessons($conn,$id = 1,$print = true){
 	
 // 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);	
 // }
-$row['lesson_id'] = 1;
-					$row['lesson_sub_id'] = 1;
-					$row['exam_item_id'] = 1;
-					$row['correct'] = 0;
-					$row['wrong'] = 1;
-
-add_tally($row,$conn);
 function add_tally($row,$conn){
 
-	$stmt = $conn->prepare("INSERT INTO `tbl_tally`
-		( `lesson_id`, `lesson_sub_id`, `exam_item_id`, `correct`, `wrong`, `date_exam`) 
-		VALUES (:lesson_id,:lesson_sub_id, :exam_item_id, :correct,:wrong ,now())");
+
+	$stmt = $conn->prepare("INSERT INTO tbl_tally(
+		lesson_id,lesson_sub_id,exam_item_id,correct,wrong,date_exam
+		) 
+		VALUES(:lesson_id,:lesson_sub_id,:exam_item_id,:correct,:wrong,now())
+	");
 
 	$stmt->execute(array(
 		"lesson_id" => $row["lesson_id"],

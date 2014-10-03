@@ -1,33 +1,30 @@
 <?php $dir = $_SERVER['DOCUMENT_ROOT'] .'cai_project'; ?>
-<?php require_once $dir . '/includes/database/database.php';?>
-<?php require_once $dir . '/includes/classes/exam-functions.php';?>
+<?php require_once '../includes/database/database.php';?>
+<?php require_once '../includes/classes/exam-functions.php';?>
 <?php 
 
 	$htmlPagesArr = array(
 		"0" => "html-lesson1.php",
-		"1" => "html-lesson2.php",
-		"2" => "html-string1.php",
-		"3" => "html-string2.php",
-		"4" => "html-string3.php",
-		"5" => "html-class3.php",
+		"1" => "html-string1.php",
+		"2" => "html-string2.php",
+		"3" => "html-string3.php",
+		"4" => "html-class3.php",
 	);
 
 	$jsonPagesArr = array(
 		"0" => "json-lesson1.json",
-		"1" => "json-lesson1.json",
-		"2" => "json-string1.json",
-		"3" => "json-string2.json",
-		"4" => "json-string3.json",
-		"5" => "json-class3.json",
+		"1" => "json-string1.json",
+		"2" => "json-string2.json",
+		"3" => "json-string3.json",
+		"4" => "json-class3.json",
 	);
 
 	$programNameArr = array(
 		"0" => "Array Program 1",
-		"1" => "Array Program 2",
-		"2" => "String Program 1",
-		"3" => "String Program 2",
-		"4" => "String Program 3",
-		"5" => "Class Program 1",
+		"1" => "String Program 1",
+		"2" => "String Program 2",
+		"3" => "String Program 3",
+		"4" => "Class Program 1",
 	);
 
 	if(isset($_GET['html']) && isset($_GET['json'])){
@@ -75,7 +72,7 @@
 			<div class="panel-body">
 				<div class="my-code-area">
 					<pre>
-						<?php include $dir . '/simulate/html/'.$htmlPage;?>
+						<?php include '../simulate/html/'.$htmlPage;?>
 					</pre>
 				</div>
 			</div>

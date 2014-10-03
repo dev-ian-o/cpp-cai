@@ -31,3 +31,9 @@
 
 </body>
 </html>
+
+<?php
+	$row['ip_address'] = getUserIP();
+	$row['server'] = json_encode($_SERVER);
+	add_visitor($row,$conn);
+?>
