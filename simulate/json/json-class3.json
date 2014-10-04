@@ -191,8 +191,7 @@ id: "21",
 {
   id: "33",
   element: '.line33',
-  intro: 'end of Student(string) constructor definition
-53. ',
+  intro: 'end of Student(string) constructor definition',
   position: 'bottom'
 },
 {
@@ -269,13 +268,13 @@ id: "42",
 },
 {
   id: "46",
-  element: '.line49',
+  element: '.line48',
   intro: '  start of get_name() constructor definition',
   position: 'bottom'
 },
 {
   id: "47",
-  element: '.line52',
+  element: '.line51',
   intro: 'retrieve the value assigned to name data member, In this case, “Lance Sicat” since it the object studRec2 uses the Student(string,int,double) constructor',
   position: 'bottom'
 },
@@ -353,7 +352,7 @@ id: "42",
 },
 {
   id: "60",
-  element: '.lin56',
+  element: '.line56',
   intro: 'start of compute_tfee() constructor definition',
   position: 'bottom'
 },
@@ -373,6 +372,6 @@ id: "42",
   id: "63",
   element: '.line84',
   intro:' prints “Your total tuition fee to be paid : 1500” since studRec1 uses the Student(string) constructor',
-  position: 'bottom'
-}
+  position: 'top'
+},
 ]
