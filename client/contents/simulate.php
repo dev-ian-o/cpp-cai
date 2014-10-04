@@ -6,28 +6,31 @@
 	$htmlPagesArr = array(
 		"0" => "html-lesson1.php",
 		"1" => "html-lesson2.php",
-		"2" => "html-string1.php",
-		"3" => "html-string2.php",
-		"4" => "html-string3.php",
-		"5" => "html-class3.php",
+		"2" => "html-structure1.php",
+		"3" => "html-string1.php ",
+		"4" => "html-string2.php",
+		"5" => "html-string3.php",
+		"6" => "html-class3.php",
 	);
 
 	$jsonPagesArr = array(
 		"0" => "json-lesson1.json",
 		"1" => "json-lesson1.json",
-		"2" => "json-string1.json",
-		"3" => "json-string2.json",
-		"4" => "json-string3.json",
-		"5" => "json-class3.json",
+		"2" => "json-structure1.json",
+		"3" => "json-string1.json",
+		"4" => "json-string2.json",
+		"5" => "json-string3.json",
+		"6" => "json-class3.json",
 	);
 
 	$programNameArr = array(
 		"0" => "Array Program 1",
 		"1" => "Array Program 2",
-		"2" => "String Program 1",
-		"3" => "String Program 2",
-		"4" => "String Program 3",
-		"5" => "Class Program 3",
+		"2" => "Structure Program 1",
+		"3" => "String Program 1",
+		"4" => "String Program 2",
+		"5" => "String Program 3",
+		"6" => "Class Program 3",
 	);
 
 	if(isset($_GET['html']) && isset($_GET['json'])){

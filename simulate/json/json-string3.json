@@ -112,7 +112,7 @@
 },
 {
   id: "19",
-  element: '.block40',
+  element: '.block4',
   intro: ' Prints "The first punctuation mark in str1 is at position -1"',
   position: 'bottom'
 },
