@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 02, 2014 at 02:51 AM
+-- Generation Time: Oct 02, 2014 at 03:20 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `tbl_exam_items` (
   `lesson_choice3` longtext NOT NULL,
   `lesson_choice4` longtext NOT NULL,
   PRIMARY KEY (`exam_item_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
 
 --
 -- Dumping data for table `tbl_exam_items`
@@ -81,7 +81,14 @@ INSERT INTO `tbl_exam_items` (`exam_item_id`, `lesson_id`, `lesson_sub_id`, `les
 (22, 5, 18, 'To declare a string object that uses a one-argument constructor you use _____.', 'both of the preceding answers are correct', 'string str="UMak";', 'string str("UMak");', 'both of the preceding answers are correct', 'neither of the first two choices is incorrect'),
 (23, 5, 18, 'Consider the following lines of code:\n1:  string str="C++ Programming";\n2:  cout << str.substr(7,4);\n3:  cout << str.length();\n\nLine #2 and #3, will return _____, _____ respectively.', 'gram, 15', '16, gram', '15, gram', 'gram, 16', 'gram, 15'),
 (24, 5, 19, 'By default, all members of a class declared with the class keyword have _____ access for all its members.', 'private', 'private', 'public', 'protected', 'none of the choices'),
-(25, 5, 17, 'A class method is also known as _____.', 'member function', 'mode function', 'partner function', 'member function', 'unit function');
+(26, 5, 19, 'A class method is also known as _____.', 'member function', 'mode function', 'partner function', 'member function', 'unit function'),
+(27, 5, 19, 'The scope resolution operator in C++ classe is _____.', '::', '.', '= =', '::', ':='),
+(28, 5, 19, 'Any method that is defined outside the class declaration must use the _____.', 'scope resolution operator', 'dot (.) operator', 'scope resolution operator', 'command operator', 'none of the choices is correct'),
+(29, 5, 18, 'Which of the following is the correct syntax, if you define a method outside the class definition?', 'return-type ClassName::MethodName(argument-list)', 'return-type ClassName::MethodName(argument-list)', 'return-type ClassName.MethodName(argument-list)', 'return-type ClassName  MethodName(argument-list)', 'none of the choices is correct'),
+(30, 5, 19, 'Type of class specifier where members are accessible from anywhere the object is visible.', 'public', 'private', 'protected', 'public', 'friendly'),
+(31, 5, 19, 'In the syntax in creating class in C++: class Class_Name {   access_specifier_1:     member1;   access_specifier_2:     member2;   ...    public class method declarations;   public class method declaration and definition;   ...   } <object_names>; The <object_name> is _____.', 'optional', 'optional', 'required', 'necessary', 'mandatory'),
+(32, 5, 19, 'C++ allows you to define several constructors for a class. This is called function _____.', 'overloading', 'overriding', 'overloading', 'loading', 'riding'),
+(33, 5, 19, 'Assuming we have the following class definition such as  class Student{     private:         string name;         string course;         int age;    public:         Student();         Student(string); } studRec1;  Where Student() is a constructor with no-argument declared in the class.  Which of the following is the correct definition header of Student() constructor?', 'Student::Student(){    <content-of-constructor>; }', 'Student::Student(){    <content-of-constructor>; }', 'studRec1::Student(){    <content-of-constructor>; }', 'Student()::studRec1{    <content-of-constructor>; }', 'studRec1::studrec1{    <content-of-constructor>; }');
 
 -- --------------------------------------------------------
 
@@ -179,7 +186,7 @@ CREATE TABLE IF NOT EXISTS `tbl_tally` (
   PRIMARY KEY (`tally_id`),
   UNIQUE KEY `lesson_id` (`lesson_id`),
   UNIQUE KEY `lesson_id_2` (`lesson_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=474 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=599 ;
 
 --
 -- Dumping data for table `tbl_tally`
