@@ -1,0 +1,196 @@
+[
+{ 
+  intro: "Structure Program 1"
+},
+{
+  id: "1",
+  element: '.line3',
+  intro: 'Load the iostream preprocessor directive to the program.  It contains information about the object cout and cin.',
+  position: 'bottom'
+},
+{
+  id: "2",
+  element: '.line4',
+  intro: 'Load the string preprocessor directive to the program.  It contains information about the object string and its associated method like getline().',
+  position: 'bottom'
+},
+{
+  id: "3",
+  element: '.line6',
+  intro: 'Allows us to code in our programs cout (and later cin) without having to qualify these by coding std::cout (and std::cin).',
+  position: 'bottom'
+},
+{
+  id: "4",
+  element: '.line8',
+  intro: 'Declares data structure named PART_STRUCT on the memory.',
+  position: 'bottom'
+},
+{
+  id: "5",
+  element: '.line10',
+  intro: ' The first data member of PART_STRUCT structure, part_no, is a string.',
+  position: 'bottom'
+},
+{
+  id: "6",
+  element: '.line11',
+  intro: 'The second data member of PART_STRUCT structure, quantity_on_hand, is an integer.',
+  position: 'bottom'
+},
+{
+  id: "7",
+  element: '.line12',
+  intro: 'The third data member  of PART_STRUCT structure, unit_price, is a double. ',
+  position: 'bottom'
+},
+{
+  id: "8",
+  element: '.line13',
+  intro: ' Note that the definition of the structure ends in a semicolon. In this case it also declares variable, keyboard(optional), that is one of the data type  PART_STRUCT ',
+  position: 'bottom'
+},
+{
+  id: "9",
+  element: '.line15',
+  intro: 'Begins execution and controls the C++ program by executing C++ statements and other functions. ',
+  position: 'bottom'
+},
+{
+  id: "10",
+  element: '.line17',
+  intro: 'This declaration defines a variable, mouse, that is another data type PART_STRUCT that can access its data members(part_no,   quantity_on_hand, and unit_price)',
+  position: 'bottom'
+},
+{
+  id: "11",
+  element: '.line19',
+  intro: '"KB12345 is assigned to the part_no member of keyboard", or as "keyboard&#39;s part_no becomes KB12345."',
+  position: 'bottom'
+},
+{
+  id: "12",
+  element: '.line20',
+  intro: '"10 is assigned to the quantity_on_hand member of keyboard", or as "keyboard&#39;s quantity_on_hand becomes 10."',
+  position: 'bottom'
+},
+{
+  id: "13",
+  element: '.line21',
+  intro: '"1499.75 is assigned to the unit_price member of keyboard", or as "keyboard&#39;s unit_price becomes 1499.75"',
+  position: 'bottom'
+},
+{
+  id: "14",
+  element: '.line22',
+  intro: 'print "Enter the seven-character part number: " on the screen',
+  position: 'bottom'
+},{
+  id: "15",
+  element: '.line23',
+  intro: 'User can now input a value. Assume you input "MS00001". Therefore, "MS000001 is assigned to the part_no member of   mouse", or as "mouse&#39;s part_no ',
+  position: 'bottom'
+},
+{
+  id: "16",
+  element: '.line25',
+  intro: 'Move the cursor to the next line',
+  position: 'bottom'
+},
+{
+  id: "17",
+  element: '.line26',
+  intro: 'print "Enter the quantity on hand: " on the screen',
+  position: 'bottom'
+},
+{
+  id: "18",
+  element: '.line27',
+  intro: ' User can now input a value. Assume you input 13. Therefore, "13 is assigned to the quantity_on_hand member of  mouse", or as "mouse&#39;s',
+  position: 'bottom'
+},
+{
+  id: "19",
+  element: '.line30',
+  intro: 'Move the cursor to the next line',
+  position: 'bottom'
+},
+{
+  id: "20",
+  element: '.line31',
+  intro:'  print "Enter the unit price: " on the screen',
+  position: 'bottom'
+},
+{
+id: "21",
+  element: '.line32',
+  intro:'User can now input a value. Assume you input 27.75. Therefore, "27.75 is assigned to the unit_price member of mouse", or as  "mouse&#39;s unit_price ',
+  position: 'bottom'
+},
+{
+  id: "22",
+  element: '.line34',
+  intro: 'Move the cursor to the next line',
+  position: 'bottom'
+},
+{
+  id: "23",
+  element: '.line35',
+  intro: 'You entered the following   information for the variable mouse of ',
+  position: 'bottom'
+},
+{
+  id: "24",
+  element: '.line37',
+  intro: ' Part Number: MS00001',
+  position: 'bottom'
+},
+{
+  id: "25",
+  element: '.line38 ',
+  intro: '  Quantity On Hand: 13 ',
+  position: 'bottom'
+},
+{
+  id: "26",
+  element: '.line39',
+  intro: ' Unit Price: 27.75',
+  position: 'bottom'
+},
+{
+  id: "27",
+  element: '.line40',
+  intro: 'Move the cursor to the next line',
+  position: 'bottom'
+},
+{
+  id: "28",
+  element: '.line42',
+  intro: 'You assigned the following  information for the variable',
+  position: 'bottom'
+},
+{
+  id: "29",
+  element: '.line43',
+  intro: 'Part Number: KB12345',
+  position: 'bottom'
+},
+{
+  id: "30",
+  element: '.line44',
+  intro: 'Quantity On Hand: 10 ',
+  position: 'bottom'
+},
+{
+  id: "31",
+  element: '.line45',
+  intro: ' Unit Price: 1499.75',
+  position: 'bottom'
+},
+{
+  id: "32",
+  element: '.line46',
+  intro: ' Ends the execution of main() and sends the integer value 0 back to the operating system to indicate that the program ended normally.',
+  position: 'bottom'
+},
+]

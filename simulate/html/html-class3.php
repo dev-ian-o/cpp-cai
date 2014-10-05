@@ -9,9 +9,9 @@
 <div class="line6">6  |</div>
 <div class="line7">7  |class Student{</div>
 <div class="line8">8  |	private:</div>
-<div class="line9">9  |			string name;</div>
+<div class="line9">9  |		string name;</div>
 <div class="line10">10 |		int units_enrolled; </div>
-<div class="line11">11 |				double rate_per_unit; </div>
+<div class="line11">11 |		double rate_per_unit; </div>
 <div class="line12">12 |	</div>
 <div class="line13">13 |	public:</div>
 <div class="line14">14 |		
@@ -25,11 +25,11 @@
 <div class="line22">22 |	</div>
 <div class="line23">23 |	Student::Student(){</div>
 <div class="line24">24 |		name = "Emily Sicat";</div>
-<div class="line25">25 |			spicy = 10;</div>
+<div class="line25">25 |		units_enrolled = 10;</div>
 <div class="line26">26 |		rate_per_unit = 125.00;</div>
-<div class="line27">27 |	</div>
+<div class="line27">27 |	}</div>
 <div class="line28">28 |	</div>
-<div class="line29">29 |	Student::Student(){</div>
+<div class="line29">29 |	Student::Student(string n){</div>
 <div class="line30">30 |		name = n;</div>
 <div class="line31">31 |			units_enrolled = 15;</div>
 <div class="line32">32 |		rate_per_unit = 100.00;</div>

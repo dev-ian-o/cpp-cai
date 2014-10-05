@@ -38,9 +38,9 @@
 <div class="line36">36 |		&lt;&lt; str1 &lt;&lt; endl &lt;&lt; endl; </div></div>
 <div class="line37">37 |	</div>
 <div class="line38">38 |	position =     str1.find_first_of(punctuation);</div>
-<div class="line39">39 |	</div><div class="block4"></div>
+<div class="line39">39 |	</div><div class="block4">
 <div class="line40">40 |	cout &lt;&lt; "The first punctuation mark in str1 is "</div>
 <div class="line41">41 |		&lt;&lt; "at position " &lt;&lt; position &lt;&lt; endl &lt;&lt; endl;</div>
-<div class="line42">42 |	</div>
+<div class="line42">42 |	</div></div>
 <div class="line44">44 |	return 0;</div>
 <div class="line43">43 |}</div>

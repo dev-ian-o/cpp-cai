@@ -21,7 +21,7 @@
 <div class="line19">19 |	</div>
 <div class="line20">20 |	cout << endl << endl;</div>
 <div class="line21">21 |	cout << "Welcome, " << full_name << endl;</div>
-<div class="line22">22 |	cout << state_name <<</div>
+<div class="line22">22 |	cout << state_name <<"is a nice place to live.";</div>
 <div class="line23">23 |	</div>
 <div class="line24">24 |	return 0;</div>
 <div class="line25">25 |}</div>

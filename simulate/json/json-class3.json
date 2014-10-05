@@ -88,7 +88,7 @@
 },
 {
   id: "16",
-  element: '.line32',
+  element: '.line67',
   intro: ' creates student object named studRec1 that uses the Student() constructor',
   position: 'bottom'
 },
@@ -106,272 +106,272 @@
 },
 {
   id: "19",
-  element: '.line28',
+  element: '.line25',
   intro: '  assign 10 to data member units_enrolled ',
   position: 'bottom'
 },
 {
   id: "20",
-  element: '.line29',
+  element: '.line26',
   intro:'  assign 125.00 to data member rate_per_unit.',
   position: 'bottom'
 },
 {
 id: "21",
-  element: '.line30',
+  element: '.line27',
   intro:' end of Student() constructor definition',
   position: 'bottom'
 },
 {
   id: "22",
-  element: '.line65',
+  element: '.line68',
   intro: 'creates student object named studRec2 that uses the Student(string,int,double) constructor',
   position: 'bottom'
 },
 {
   id: "23",
-  element: '.line32',
+  element: '.line41',
   intro: 'start of Student(string, int, double) constructor definition',
   position: 'bottom'
 },
 {
   id: "24",
-  element: '.line33',
+  element: '.line42',
   intro: ' assign the data pass to variable n  to data member name',
   position: 'bottom'
 },
 {
   id: "25",
-  element: '.line40 ',
+  element: '.line43 ',
   intro: '  assign the data pass to variable unit  to data member name units_enrolled',
   position: 'bottom'
 },
 {
   id: "26",
-  element: '.line41',
+  element: '.line44',
   intro: 'assign the data pass to variable rate  to data member name rate_per_unit',
   position: 'bottom'
 },
 {
   id: "27",
-  element: '.line36',
+  element: '.line45',
   intro: 'end of Student(string,int, double) constructor definition',
   position: 'bottom'
 },
 {
   id: "28",
-  element: '.line66',
+  element: '.line69',
   intro: ' creates student object named studRec3 that uses the Student(string) constructor',
   position: 'bottom'
 },
 {
   id: "29",
-  element: '.line16',
+  element: '.line29',
   intro: 'start of Student(string) constructor definition',
   position: 'bottom'
 },
 {
   id: "30",
-  element: '.line27',
+  element: '.line30',
   intro: 'assign the data pass to variable n  to data member named',
   position: 'bottom'
 },
 {
   id: "31",
-  element: '.line28',
-  intro: ' creates class constructor method with  three arguments, a string type for name, an int type for units_enrolled,, and a double type for the rate_per_unit data members',
+  element: '.line31',
+  intro: '  assign 15 to data member units_enrolled',
   position: 'bottom'
 },
 {
   id: "32",
-  element: '.line29',
-  intro: 'creates a class method named get_name() which retrieves the value assigned to data member get_name',
+  element: '.line32',
+  intro: 'assign 100.00 to data member rate_per_unit',
   position: 'bottom'
 },
 {
   id: "33",
-  element: '.line30',
-  intro: ' creates class method named compute_tfee(), which returns a double, that compute for the tuition fee based on the units_enrolled and rate_per_unit.',
+  element: '.line33',
+  intro: 'end of Student(string) constructor definition',
   position: 'bottom'
 },
 {
   id: "34",
-  element: '.line21',
+  element: '.line71',
   intro: 'Moves the cursor to the next line',
   position: 'bottom'
 },
 {
   id: "35",
-  element: '.line69',
+  element: '.line72',
   intro: ' prints “Information of StudRec1 object :”',
   position: 'bottom'
 },
 {
   id: "36",
-  element: '.line63',
+  element: '.line48',
   intro: ' start of get_name() constructor definition',
   position: 'bottom'
 },
 {
   id: "37",
-  element: '.line82',
+  element: '.line51',
   intro: 'retrieve the value assigned to name data member, In this case, “Emily Sicat” since it the object studRec1 uses the Student() constructor',
   position: 'bottom'
 },
 {
   id: "38",
-  element: '.line24',
+  element: '.line54',
   intro: ' end  of get_name() constructor definition ',
   position: 'bottom'
 },
 {
   id: "39",
-  element: '.line28',
+  element: '.line73',
   intro: ' prints “Name : Emily Sicat” since the object StudRec1 uses the Student() constructor ',
   position: 'bottom'
 },
 {
   id: "40",
-  element: '.line29',
+  element: '.line56',
   intro:'  start of compute_tfee() constructor definition',
   position: 'bottom'
 },
 {
   id: "41",
-  element: '.line29',
+  element: '.line59',
   intro:'  compute and returns the total tuition fee using the assigned values in data member units_enrolled and rate_per_unit',
   position: 'bottom'
 },
 {
 id: "42",
-  element: '.line29',
+  element: '.line62',
   intro:'  end of compute_tfee() constructor definition',
   position: 'end of Student() constructor definition'
 },
 {
   id: "43",
-  element: '.line65',
+  element: '.line74',
   intro: 'prints “Your total tuition fee to be paid : 1250” since studRec1 uses the Student() constructor',
   position: 'bottom'
 },
 {
   id: "44",
-  element: '.line32',
+  element: '.line76',
   intro: 'Moves the cursor to the next line ',
   position: 'bottom'
 },
 {
   id: "45",
-  element: '.line33',
+  element: '.line77',
   intro: ' prints “Information of StudRec1 object :”',
   position: 'bottom'
 },
 {
   id: "46",
-  element: '.line34',
+  element: '.line48',
   intro: '  start of get_name() constructor definition',
   position: 'bottom'
 },
 {
   id: "47",
-  element: '.line35',
+  element: '.line51',
   intro: 'retrieve the value assigned to name data member, In this case, “Lance Sicat” since it the object studRec2 uses the Student(string,int,double) constructor',
   position: 'bottom'
 },
 {
   id: "48",
-  element: '.line36',
+  element: '.line54',
   intro: 'end  of get_name() constructor definition',
   position: 'bottom'
 },
 {
   id: "49",
-  element: '.line66',
+  element: '.line78',
   intro: ' prints “Name : Lance Sicat” since the object StudRec1 uses the Student(string ,int, double) constructor',
   position: 'bottom'
 },
 {
   id: "50",
-  element: '.line16',
+  element: '.line56',
   intro: 'start of compute_tfee() constructor definition',
   position: 'bottom'
 },
 {
   id: "51",
-  element: '.line27',
+  element: '.line59',
   intro: 'compute and returns the total tuition fee using the assigned values in data member units_enrolled and rate_per_unit',
   position: 'bottom'
 },
 {
   id: "52",
-  element: '.line28',
+  element: '.line62',
   intro: ' end of compute_tfee() constructor definition',
   position: 'bottom'
 },
 {
   id: "53",
-  element: '.line29',
+  element: '.line79',
   intro: 'prints “Your total tuition fee to be paid : 2500” since studRec1 uses the Student(string, int, double) constructor',
   position: 'bottom'
 },
 {
   id: "54",
-  element: '.line30',
+  element: '.line81',
   intro: 'Moves the cursor to the next line',
   position: 'bottom'
 },
 {
   id: "55",
-  element: '.line21',
+  element: '.line82',
   intro: 'prints “Information of StudRec1 object :”',
   position: 'bottom'
 },
 {
   id: "56",
-  element: '.line69',
+  element: '.line48',
   intro: ' start of get_name() constructor definition',
   position: 'bottom'
 },
 {
   id: "57",
-  element: '.line63',
+  element: '.line51',
   intro: 'retrieve the value assigned to name data member, In this case, “Iya Sicat” since it the object studRec3 uses the Student(string) constructor',
   position: 'bottom'
 },
 {
   id: "58",
-  element: '.line82',
+  element: '.line54',
   intro: 'end  of get_name() constructor definition',
   position: 'bottom'
 },
 {
   id: "59",
-  element: '.line24',
+  element: '.line83',
   intro: 'prints “Name : Iya Sicat” since the object StudRec1 uses the Student(string) constructor',
   position: 'bottom'
 },
 {
   id: "60",
-  element: '.lin28',
+  element: '.line56',
   intro: 'start of compute_tfee() constructor definition',
   position: 'bottom'
 },
 {
   id: "61",
-  element: '.line29',
+  element: '.line59',
   intro:'compute and returns the total tuition fee using the assigned values in data member units_enrolled and rate_per_unit',
   position: 'bottom'
 },
 {
   id: "62",
-  element: '.line29',
+  element: '.line62',
   intro:'  end of compute_tfee() constructor definition',
   position: 'bottom'
 },
 {
   id: "63",
-  element: '.line29',
+  element: '.line84',
   intro:' prints “Your total tuition fee to be paid : 1500” since studRec1 uses the Student(string) constructor',
-  position: 'bottom'
-}
+  position: 'top'
+},
 ]
