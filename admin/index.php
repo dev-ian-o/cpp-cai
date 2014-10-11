@@ -1,3 +1,6 @@
+<?php $dir = $_SERVER['DOCUMENT_ROOT'] .'cai_project'; ?>
+<?php require_once '../includes/database/database.php';?>
+<?php require_once '../includes/classes/exam-functions.php';?>
 <?php require_once 'header-footer/header.php';?>
 <?php require_once 'header-footer/nav.php';?>
 	<div id="page-wrapper">
