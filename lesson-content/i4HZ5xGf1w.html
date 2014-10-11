@@ -309,15 +309,15 @@ int main()
   string first_name;
   string last_name;
 
-  cout << "Enter your first name: ";
+  cout &lt;&lt; "Enter your first name: ";
   cin >> first_name;
 
-  cout << endl;
-  cout << "Enter your last name: ";
+  cout &lt;&lt; endl;
+  cout &lt;&lt; "Enter your last name: ";
   cin >> last_name;
 
-  cout << endl << endl;
-  cout << "Welcome, " << first_name << " " << last_name << endl;
+  cout &lt;&lt; endl &lt;&lt; endl;
+  cout &lt;&lt; "Welcome, " &lt;&lt; first_name &lt;&lt; " " &lt;&lt; last_name &lt;&lt; endl;
 
   return 0;
 }
@@ -442,8 +442,8 @@ Welcome, John Molluzzo
 //This program illustrates the use of getline()
 //to input multi-word strings.
 
-#include <iostream>
-#include <string>
+#include &lt;iostream&gt;
+#include &lt;string&gt;
 
 using namespace std;
 
@@ -452,16 +452,16 @@ int main()
   string full_name;
   string state_name;
 
-  cout << "Enter your full name: ";
+  cout &lt;&lt; "Enter your full name: ";
   getline(cin,full_name);
 
-  cout << endl;
-  cout << "Enter your state of residence: ";
+  cout &lt;&lt; endl;
+  cout &lt;&lt; "Enter your state of residence: ";
   getline(cin,state_name);
 
-  cout << endl << endl;
-  cout << "Welcome, " << full_name << endl;
-  cout << state_name << " is a nice place to live." << endl;
+  cout &lt;&lt; endl &lt;&lt; endl;
+  cout &lt;&lt; "Welcome, " &lt;&lt; full_name &lt;&lt; endl;
+  cout &lt;&lt; state_name &lt;&lt; " is a nice place to live." &lt;&lt; endl;
 
   return 0;
  }
@@ -485,14 +485,10 @@ New York is a nice place to live.
     Operations on
     <tt>
         string
-    </tt></strong
+    </tt></strong>
     Objects
-</p class="mL10">
-<p>
-    <a name="iddle2081"></a>
-    <a name="iddle2071"></a>
-    <a name="iddle2068"></a>
-    <a name="iddle1839"></a>
+</p>
+<p class="mL15">
     The
     <tt>
         string
@@ -507,13 +503,13 @@ New York is a nice place to live.
     </tt>
     objects in much the same way as you use them on numeric data types.
 </p>
-<p>
+<p class="mL10">
     <strong>5.2.6 String Assignment</strong>
 </p>
-<p>
+<p class="mL15">
     It is legal to assign one string object to another as follows.
 </p>
-<table border="1" cellspacing="0" cellpadding="0" width="624">
+<table border="1" cellspacing="0" cellpadding="0" width="624" class="mL15">
     <tbody>
         <tr>
             <td width="210" valign="top">
@@ -640,7 +636,7 @@ str2 = str1;</pre>
 <p class="mL15">
     You can read the += when operating on strings as "is appended with." The following code has the same result as the previous example.
 </p>
-<table border="1" cellspacing="0" cellpadding="0" width="624">
+<table border="1" cellspacing="0" cellpadding="0" width="624" class="mL15">
     <tbody>
         <tr>
             <td width="624" colspan="2" valign="top">
@@ -651,9 +647,9 @@ str2 = str1;</pre>
         </tr>
         <tr>
             <td width="210" valign="top">
-                <pre>string str1 = "Hello, "</pre>
-                <pre>string str2 = "World!"</pre>
-                <pre>string str3 = str1 + str2;</pre>
+                <pre>string str1 = "Hello, "
+string str2 = "World!"
+string str3 = str1 + str2;</pre>
             </td>
             <td width="414" valign="top">
                 <p>
@@ -664,13 +660,8 @@ str2 = str1;</pre>
         </tr>
         <tr>
             <td width="210" valign="top">
-                <p>
-                    string str3 = "Hello, ";
-                </p>
-                <p>
-                    str3 += "World!";
-                </p>
-                <pre></pre>
+                <pre>string str3 = "Hello, ";
+str3 += "World!";</pre>
             </td>
             <td width="414" valign="top">
                 <p>
@@ -681,7 +672,7 @@ str2 = str1;</pre>
         </tr>
     </tbody>
 </table>
-<table border="1" cellspacing="0" cellpadding="0" width="624">
+<table border="1" cellspacing="0" cellpadding="0" width="624" class="mL15">
     <tbody>
         <tr>
             <td width="624" colspan="2" valign="top">
@@ -736,18 +727,19 @@ str2 = str1;</pre>
         </tr>
     </tbody>
 </table>
-<p>
+<br>
+<p class="mL10">
     <strong>5.2.8. Applying a Class Method</strong>
 </p>
-<p>
+<p class="mL15">
     To apply a class method to an object, use the <strong>dot (.) operator</strong> as follows:
 </p>
-<p>
+<p class="mL15">
     <tt>
         class_object.method_name()
     </tt>
 </p>
-<p>
+<p class="mL15">
     This sends a message, namely
     <tt>
         method_name
@@ -758,18 +750,18 @@ str2 = str1;</pre>
     </tt>
     , which in turn executes the method.
 </p>
-<p>
+<p class="mL15">
     For example, to find the number of characters in the value of a string object (that is, the length of the string), use the <a name="ch10term6"></a>length()
     method, which is a method of the string class. Recall that a method represents a message, or request, that is sent to an object to do something. To apply a
     method to an object, you must use the <a name="ch10term8"></a><strong>dot (.) operator</strong> as follows.
 </p>
-<p>
+<p class="mL15">
     str1.length()
 </p>
-<p>
+<p class="mL15">
     This statement sends the length() message to the string object str1: "Compute your length and return its value."
 </p>
-<p>
+<p class="mL15">
     In this section, we discuss some useful
     <tt>
         string
@@ -780,7 +772,7 @@ str2 = str1;</pre>
     </tt>
     objects.
 </p>
-<p>
+<p class="mL15">
     Recall that the character positions in a
     <tt>
         string
@@ -796,583 +788,297 @@ object's value are numbered from 0 to one less than the number of characters in 
     <img src="../uploads/images/c5-2/1.png">
     Figure 1
 </h5>
-<p>
-    <a name="452"></a>
-    <a name="iddle2123"></a>
-    <a name="iddle2087"></a>
+<p class="mL15">
     We will now discuss several
     <tt>
         string
     </tt>
-class methods that we will use to manipulate the string in    <a href="mk:@MSITStore:D:\Subjects\C++\C++%20for%20Business%20Programming,%20Second%20Edition.chm::/0130467006/ch10lev1sec6.html#ch10fig02">Figure </a>1.
+class methods that we will use to manipulate the string in<a href="#">Figure </a>1.
 </p>
-<table border="1" cellspacing="0" cellpadding="0" width="634">
-    <tbody>
-        <tr>
-            <td width="138" valign="top">
-                <p align="center">
-                    string Class method
-                </p>
-            </td>
-            <td width="115" valign="top">
-                <p align="center">
-                    Meaning
-                </p>
-            </td>
-            <td width="96" colspan="2" valign="top">
-                <p align="center">
-                    Syntax
-                </p>
-            </td>
-            <td width="118" valign="top">
-                <p align="center">
-                    Example
-                </p>
-                <p align="center">
-                    Declaration
-                </p>
-            </td>
-            <td width="166" valign="top">
-                <p align="center">
-                    Output
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="138" valign="top">
-                <p>
-                    length()
-                </p>
-            </td>
-            <td width="115" valign="top">
-                <p>
-                    Return the numeric length of string.
-                </p>
-            </td>
-            <td width="96" colspan="2" valign="top">
-                <p>
-                    length()
-                </p>
-            </td>
-            <td width="118" valign="top">
-                <pre>string str=”This is an example string”</pre>
-            </td>
-            <td width="166" valign="top">
-                <p>
-                    cout &lt;&lt; str.length(); will return 15
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="138" valign="top">
-                <pre>replace()</pre>
-            </td>
-            <td width="115" valign="top">
-                <pre>Allows to replace one substring by another.</pre>
-            </td>
-            <td width="96" colspan="2" valign="top">
-                <pre>replace(int,int,string)</pre>
-                <pre></pre>
-                <pre>where: it replace no. of characters in the second argument beginning at location in the first argument by the string in the third argument</pre>
-            </td>
-            <td width="118" valign="top">
-                <pre>string str=”This is an example string”</pre>
-                <pre></pre>
-            </td>
-            <td width="166" valign="top">
-                <pre>str.replace(0,4,”Here”)</pre>
-                <pre>cout&lt;&lt;str;</pre>
-                <pre>will return “Here is an example of string”</pre>
-                <pre></pre>
-                <pre>str.replace(18,0,”of a “);</pre>
-                <pre>cout&lt;&lt;str;</pre>
-                <pre>will return “This is an example of a string”</pre>
-            </td>
-        </tr>
-        <tr>
-            <td width="138" valign="top">
-                <pre>insert()</pre>
-            </td>
-            <td width="115" valign="top">
-                <pre>Places a string at a certain location in another string with the characters that follow being moved to the right. </pre>
-            </td>
-            <td width="96" colspan="2" valign="top">
-                <pre>insert(int,string)</pre>
-            </td>
-            <td width="118" valign="top">
-                <pre>string str=”This is an example string”</pre>
-            </td>
-            <td width="166" valign="top">
-                <pre>str.insert(19,”of a “);</pre>
-                <pre>will return “This is an example of a string” as it moved the word “string” that is at position 19 and insert “of a “ before it. (Start counting at left and 0 as you first index position) </pre>
-            </td>
-        </tr>
-        <tr>
-            <td width="138" valign="top">
-                <pre>append()</pre>
-            </td>
-            <td width="115" valign="top">
-                <pre>Allows you to add a string to the end of the string to which you apply the method.</pre>
-            </td>
-            <td width="96" colspan="2" valign="top">
-                <pre>append(string)</pre>
-            </td>
-            <td width="118" valign="top">
-                <pre>string str=”This is an example string”</pre>
-            </td>
-            <td width="166" valign="top">
-                <pre>str.append(“.”)</pre>
-                <pre>will return “This is an example string.”</pre>
-                <pre></pre>
-                <pre>Note that “.” is already appended at the end of the string.</pre>
-                <pre></pre>
-            </td>
-        </tr>
-        <tr>
-            <td width="138" valign="top">
-                <pre>erase()</pre>
-            </td>
-            <td width="115" valign="top">
-                <pre>Erase a substring from a string.</pre>
-            </td>
-            <td width="95" valign="top">
-                <pre>erase(int,int)</pre>
-                <pre></pre>
-                <pre>where:</pre>
-                <pre>first int argument is the starting position and second int argument is the number of characters to erase.</pre>
-            </td>
-            <td width="120" colspan="2" valign="top">
-                <pre>string str=”This is an example string”</pre>
-            </td>
-            <td width="166" valign="top">
-                <pre>str.erase(5,3);</pre>
-                <pre>will return “This an example of string” as it remove the “is “(including the space after is) because it start erasing at position 5 and deletes 3 characters.</pre>
-            </td>
-        </tr>
-        <tr>
-            <td width="138" valign="top">
-                <p>
-                    <tt>
-                        empty()
-                    </tt>
-                </p>
-            </td>
-            <td width="115" valign="top">
-                <p>
-                    Returns true if string is empty otherwise returns false
-                </p>
-            </td>
-            <td width="96" colspan="2" valign="top">
-                <p>
-                    empty()
-                </p>
-            </td>
-            <td width="118" valign="top">
-                <p>
-                    string str1;
-                </p>
-                <p>
-                    string str2=”Hello”;
-                </p>
-            </td>
-            <td width="166" valign="top">
-                <p>
-                    str1.empty() will return true
-                </p>
-                <p>
-                    str2.empty() will return false
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td width="138" valign="top">
-                <pre>find_first_of()</pre>
-            </td>
-            <td width="115" valign="top">
-                <pre>Find and return the index location of the first occurrence of any of a set of characters. It return -1 if it does not find any in the set of characters.</pre>
-            </td>
-            <td width="96" colspan="2" valign="top">
-                <pre>find_first_of(string,[int])</pre>
-                <pre></pre>
-                <pre>Note: int argument is optional that refers where to start the searching.</pre>
-            </td>
-            <td width="118" valign="top">
-                <pre>string str=”Hello, how are you today?”;</pre>
-                <pre></pre>
-                <pre>string punc=”.,!?:;”;</pre>
-            </td>
-            <td width="166" valign="top">
-                <pre>str.find_first_of(punc); will return 5 since “,” is the first punctuation found in the set that is in the string</pre>
-                <pre></pre>
-                <pre>str.find_first_of(punc,7); will return 24 since “?” is next punctuation in the set that is in the string</pre>
-            </td>
-        </tr>
-        <tr>
-            <td width="138" valign="top">
-                <pre>substr()</pre>
-            </td>
-            <td width="115" valign="top">
-                <pre>Extracts strings starting from the 1<sup>st</sup> argument, the number of characters to extracts depends on the 2<sup>nd</sup>  argument specified </pre>
-            </td>
-            <td width="96" colspan="2" valign="top">
-                <pre>substr(int,int)</pre>
-            </td>
-            <td width="118" valign="top">
-                <pre>string str=”C++ Programming”</pre>
-                <pre></pre>
-            </td>
-            <td width="166" valign="top">
-                <pre>str.substr(0,3);</pre>
-                <pre>will return “C++”</pre>
-                <pre></pre>
-                <pre>str.substr(7,4); will return “gram”</pre>
-                <pre></pre>
-                <pre>str.substr(12,2);</pre>
-                <pre>will return “in”</pre>
-            </td>
-        </tr>
-        <tr>
-            <td width="138" valign="top">
-                <pre>find()<tt></tt></pre>
-            </td>
-            <td width="115" valign="top">
-                <pre>Find first occurrence in string and returns it index position.  If the string is not found it returns -1.<tt></tt></pre>
-            </td>
-            <td width="96" colspan="2" valign="top">
-                <pre>find(string)</pre>
-            </td>
-            <td width="118" valign="top">
-                <pre>string str=”C++ Programming”</pre>
-            </td>
-            <td width="166" valign="top">
-                <pre>str.find(“+”);</pre>
-                <pre>will return 1</pre>
-                <pre></pre>
-                <pre>str.find(“Programs”); will return -1 since Programs is not found in str</pre>
-            </td>
-        </tr>
-        <tr>
-            <td width="138" valign="top">
-                <p>
-                    at()
-                </p>
-            </td>
-            <td width="115" valign="top">
-                <p>
-                    Retrieve or change an individual character in a string object
-                </p>
-            </td>
-            <td width="96" colspan="2" valign="top">
-                <p>
-                    at(int) where:
-                </p>
-                <p>
-                    int represents index in string starting at 0 up to size - 1
-                </p>
-            </td>
-            <td width="118" valign="top">
-                <p>
-                    string str=”C++ Programming”
-                </p>
-            </td>
-            <td width="166" valign="top">
-                <p>
-                    cout &lt;&lt; str.at(4);
-                </p>
-                <p>
-                    will return P
-                </p>
-                <p>
-                    str.at(7) = “Z”
-                </p>
-                <p>
-                    cout &lt;&lt; str;
-                </p>
-                <p>
-                    will return C++ ProZramming; replace the letter “g” with letter “Z”
-                </p>
-            </td>
-        </tr>
-        <tr height="0">
-            <td width="134">
-            </td>
-            <td width="121">
-            </td>
-            <td width="229">
-            </td>
-            <td width="1">
-            </td>
-            <td width="110">
-            </td>
-            <td width="222">
-            </td>
-        </tr>
-    </tbody>
-</table>
-<h4>
-    5.2.9 Program dem051-4.cpp
-</h4>
-<p>
-    Program dem051-4.cpp illustrates all of the methods discussed in this section.
-</p>
-<table border="0" cellpadding="0" width="932">
-    <tbody>
-        <tr>
-            <td valign="top">
-                <pre><code>1</code><br/>
-  <code>2</code><br/>
-  <code>3</code><br/>
-  <code>4</code><br/>
-  <code>5</code><br/>
-  <code>6</code><br/>
-  <code>7</code><br/>
-  <code>8</code><br/>
-  <code>9</code><br/>
-  <code>10</code><br/>
-  <code>11</code><br/>
-  <code>12</code><br/>
-  <code>13</code><br/>
-  <code>14</code><br/>
-  <code>15</code><br/>
-  <code>16</code><br/>
-  <code>17</code><br/>
-  <code>18</code><br/>
-  <code>19</code><br/>
-  <code>20</code><br/>
-  <code>21</code><br/>
-  <code>22</code><br/>
-  <code>23</code></pre>
-                <pre><code>24</code></pre>
-                <pre><code>25</code></pre>
-                <pre><code>26</code></pre>
-                <pre><code>27</code></pre>
-                <pre><code>28</code></pre>
-                <pre><code>29</code></pre>
-                <pre><code>30</code></pre>
-                <pre><code>31</code></pre>
-                <pre><code>32</code></pre>
-                <pre><code>33</code></pre>
-                <pre><code>34</code></pre>
-                <pre><code>35</code></pre>
-                <pre><code>36</code></pre>
-                <pre><code>37</code></pre>
-                <pre><code>38</code></pre>
-                <pre><code>39</code></pre>
-                <pre><code>40</code></pre>
-                <pre><code>41</code></pre>
-                <pre><code>42</code></pre>
-                <pre><code>43</code></pre>
-                <pre><code>44</code></pre>
-                <pre><code>45</code></pre>
-                <pre><code>46</code></pre>
-                <pre><code>47</code></pre>
-                <pre><code>48</code></pre>
-                <pre><code>49</code></pre>
-                <pre><code>50</code></pre>
-                <pre><code>51</code></pre>
-                <pre><code>52</code></pre>
-                <pre><code>53</code></pre>
-                <pre><code>54</code></pre>
-                <pre><code>55</code></pre>
-                <pre><code>56</code></pre>
-                <pre><code>57</code></pre>
-                <pre><code>58</code></pre>
-                <pre><code>59</code></pre>
-                <pre><code>60</code></pre>
-                <pre><code>61</code></pre>
-                <pre><code>62</code></pre>
-                <pre><code>63</code></pre>
-                <pre><code>64</code></pre>
-                <pre><code>65</code></pre>
-                <pre><code>66</code></pre>
-                <pre><code>67</code></pre>
-                <pre><code>68</code></pre>
-                <pre><code>69</code></pre>
-                <pre><code>70</code></pre>
-                <pre><code>71</code></pre>
-                <pre><code>72</code></pre>
-                <pre><code>73</code></pre>
-                <pre><code>74</code></pre>
-                <pre><code>75</code></pre>
-                <pre><code>76</code></pre>
-                <pre><code>77</code></pre>
-                <pre><code>78</code></pre>
-                <pre><code>79</code></pre>
-                <pre><code>80</code></pre>
-                <pre><code>81</code></pre>
-                <pre><code>82</code></pre>
-                <pre>83</pre>
-                <pre>84</pre>
-                <pre>85</pre>
-            </td>
-            <td width="637" valign="top">
-                <pre>//dem051-4.cpp</pre>
-                <pre></pre>
-                <pre>//This program illustrates some of methods that are available</pre>
-                <pre>//to manipulate string objects.</pre>
-                <pre></pre>
-                <pre>#include &lt;iostream&gt;</pre>
-                <pre>#include &lt;string&gt;</pre>
-                <pre></pre>
-                <pre>using namespace std;</pre>
-                <pre></pre>
-                <pre>int main()</pre>
-                <pre>{</pre>
-                <pre>    string str1 = "This is an example string";</pre>
-                <pre>    string str2 = "sample";</pre>
-                <pre>    string str3;</pre>
-                <pre>    string punctuation = ".,:;!?";</pre>
-                <pre></pre>
-                <pre>    int position;</pre>
-                <pre></pre>
-                <pre>    cout &lt;&lt; "The original string, str1, is : "</pre>
-                <pre>         &lt;&lt; str1 &lt;&lt; endl &lt;&lt; endl;</pre>
-                <pre></pre>
-                <pre>    //Finds the first occurrence of "is" in str1</pre>
-                <pre>    position = str1.find("is");</pre>
-                <pre></pre>
-                <pre>    cout &lt;&lt; "The first occurrence of \"is\" is at position "</pre>
-                <pre>         &lt;&lt; position &lt;&lt; endl &lt;&lt; endl;</pre>
-                <pre></pre>
-                <pre>    //Finds the first occurrence of "is" in str1 after position 3</pre>
-                <pre>    position = str1.find("is", 3);</pre>
-                <pre></pre>
-                <pre>    cout &lt;&lt; "The first occurrence of \"is\" after position 3 is "</pre>
-                <pre>         &lt;&lt; "at position " &lt;&lt; position &lt;&lt; endl &lt;&lt; endl;</pre>
-                <pre></pre>
-                <pre>    //Finds the first occurrence of "is" from the end of str1</pre>
-                <pre>    position = str1.rfind("is");</pre>
-                <pre></pre>
-                <pre>    cout &lt;&lt; "The first occurrence of \"is\" from the end of str1 is "</pre>
-                <pre>         &lt;&lt; "at position " &lt;&lt; position &lt;&lt; endl &lt;&lt; endl;</pre>
-                <pre></pre>
-                <pre>    //Try to find a substring that is not in str1.</pre>
-                <pre>    position = str1.find("Hello");</pre>
-                <pre></pre>
-                <pre>    if (position == -1)</pre>
-                <pre>        cerr &lt;&lt; "The substring \"Hello\" was not found in str1."</pre>
-                <pre>             &lt;&lt; endl &lt;&lt; endl;</pre>
-                <pre></pre>
-                <pre>    //Extracts a 8-character substring from str1 beginning at position 11</pre>
-                <pre>    str3 = str1.substr(11, 8);</pre>
-                <pre>    cout &lt;&lt; "The 8-charater substring of str1 beginning at position 11 is: "</pre>
-                <pre>         &lt;&lt; str3 &lt;&lt; endl &lt;&lt; endl;</pre>
-                <pre></pre>
-                <pre>    //Replace 7 characters beginning at position 11 with the string str2</pre>
-                <pre>    str1.replace(11, 7, str2);</pre>
-                <pre></pre>
-                <pre>    cout &lt;&lt; "After replacing the word \"example\" " &lt;&lt; endl</pre>
-                <pre>         &lt;&lt; "by the word \"sample\", in str1 the string is: "</pre>
-                <pre>         &lt;&lt; str1 &lt;&lt; endl &lt;&lt; endl;</pre>
-                <pre></pre>
-                <pre>    //Erases a 7-character substring from str1 beginning at position 11</pre>
-                <pre>    str1.erase(11, 7);</pre>
-                <pre></pre>
-                <pre>    cout &lt;&lt; "After erasing the word \"sample \", in str1 the string is: "</pre>
-                <pre>         &lt;&lt; str1 &lt;&lt; endl &lt;&lt; endl;</pre>
-                <pre></pre>
-                <pre>    //Insert the string "example " into the string beginning at position 11</pre>
-                <pre>    str1.insert(11, "example ");</pre>
-                <pre></pre>
-                <pre>    cout &lt;&lt; "After putting back the word \"example \", in str1 the string is: "</pre>
-                <pre>         &lt;&lt; endl &lt;&lt; str1 &lt;&lt; endl &lt;&lt; endl;</pre>
-                <pre></pre>
-                <pre>    //Append a period at the end of the string</pre>
-                <pre>    str1.append(".");</pre>
-                <pre></pre>
-                <pre>    cout &lt;&lt; "After appending a period, the string str1 is: "</pre>
-                <pre>         &lt;&lt; str1 &lt;&lt; endl &lt;&lt; endl;</pre>
-                <pre></pre>
-                <pre>    //Finds the first occurrence of a punctuation mark in str1</pre>
-                <pre>    position =     str1.find_first_of(punctuation);</pre>
-                <pre></pre>
-                <pre>    cout &lt;&lt; "The first punctuation mark in str1 is "</pre>
-                <pre>         &lt;&lt; "at position " &lt;&lt; position &lt;&lt; endl &lt;&lt; endl;</pre>
-                <pre>    return 0;</pre>
-                <pre>}</pre>
-            </td>
-            <td width="257" valign="top">
-            </td>
-        </tr>
-    </tbody>
-</table>
-<p>
-    <a name="457"> </a>
-</p>
-<table border="1" cellspacing="0" cellpadding="0">
+<table class="table table-bordered mL15">
     <thead>
         <tr>
-            <td width="509" valign="top">
-                <p>
-                    <strong>Program Output</strong>
-                </p>
-            </td>
+            <td>string Class method</td>
+            <td>Meaning</td>
+            <td>Syntax</td>
+            <td>Example Declaration</td>
+            <td>Output</td>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td width="509" valign="top">
-                <pre><a name="PLID18"></a></pre>
-                <pre>The original string, str1, is : This is an example</pre>
-                <pre>
-   
-   
-   string</pre>
-                <pre></pre>
-                <pre>The first occurrence of "is" is at position 2</pre>
-                <pre></pre>
-                <pre>The first occurrence of "is" after position 3 is</pre>
-                <pre>
-   
-   
-   at position 5</pre>
-                <pre></pre>
-                <pre>The first occurrence of "is" from the end of str1</pre>
-                <pre>
-   
-   
-   is at position 5</pre>
-                <pre></pre>
-                <pre>The substring "Hello" was not found in str1.</pre>
-                <pre></pre>
-                <pre>The 8-charater substring of str1 beginning at</pre>
-                <pre>
-   
-   
-   position 11 is: example</pre>
-                <pre></pre>
-                <pre>After replacing the word "example"</pre>
-                <pre>by the word "sample", in str1 the string is: This</pre>
-                <pre>
-   
-   
-   is an sample string</pre>
-                <pre></pre>
-                <pre>After erasing the word "sample ", in str1 the</pre>
-                <pre>
-   
-   
-   string is: This is an string</pre>
-                <pre></pre>
-                <pre>After putting back the word "example ", in str1</pre>
-                <pre>
-   
-   
-   the string is:</pre>
-                <pre>This is an example string</pre>
-                <pre></pre>
-                <pre>After appending a period, the string str1 is: This</pre>
-                <pre>
-   
-   
-   is an example string.</pre>
-                <pre></pre>
-                <pre>The first punctuation mark in str1 is at position 25</pre>
+            <td>length()</td>
+            <td>Return the numeric length of string. </td>
+            <td>length()</td>
+            <td>string str=”This is an example string”</td>
+            <td>cout&lt;&lt;str.length(); will return 15</td>
+        </tr>
+
+        <tr>
+            <td>length()</td>
+            <td>Return the numeric length of string. </td>
+            <td>length()</td>
+            <td>string str=”This is an example string”</td>
+            <td>cout&lt;&lt;str.length(); will return 15</td>
+        </tr>
+        <tr>
+            <td>replace()</td>
+            <td>Allows to replace one substring by another.</td>
+            <td>replace(int,int,string)
+            <br>
+            where: it replace no. of characters in the second argument beginning at location in the first argument by the string in the third argument
+
+            </td>
+            <td>string str=”This is an example string”</td>
+            <td>str.replace(0,4,”Here”)
+            cout&lt;&lt;str;
+            will return “Here is an example of string”
+            <br>
+            str.replace(18,0,”of a “);
+            cout&lt;&lt;str;
+            will return “This is an example of a string”
+            </td>
+        </tr>
+        <tr>
+            <td>insert()</td>
+            <td>Places a string at a certain location in another string with the characters that follow being moved to the right. </td>
+            <td>insert(int,string)</td>
+            <td>string str=”This is an example string”</td>
+            <td>str.insert(19,”of a “);
+            will return “This is an example of a string” as it moved the word “string” that is at position 19 and insert “of a “ before it. (Start counting at left and 0 as you first index position) 
+            </td>
+        </tr>
+        <tr>
+            <td>append()</td>
+            <td>Allows you to add a string to the end of the string to which you apply the method.</td>
+            <td>append(string)</td>
+            <td>string str=”This is an example string”</td>
+            <td>str.append(“.”)
+            will return “This is an example string.”
+            <br>
+            Note that “.” is already appended at the end of the string.
+            </td>
+        </tr>
+        <tr>
+            <td>erase()</td>
+            <td>Erase a substring from a string.</td>
+            <td>erase(int,int)
+            <br>
+            where:
+            first int argument is the starting position and second int argument is the number of characters to erase.
+            </td>
+            <td>string str=”This is an example string”</td>
+            <td>str.erase(5,3);
+            will return “This an example of string” as it remove the “is “(including the space after is) because it start erasing at position 5 and deletes 3 characters.
+            </td>
+        </tr>
+        <tr>
+            <td>empty()</td>
+            <td>Returns  true if string is empty otherwise returns false</td>
+            <td>empty()</td>
+            <td>string str1;
+            string str2=”Hello”;
+            </td>
+            <td>str1.empty() will return true
+            str2.empty() will return false
+            </td>
+        </tr>
+        <tr>
+            <td>find_first_of()</td>
+            <td>Find and return the index location of the first occurrence of any of a set of characters. It return -1 if it does not find any in the set of characters.</td>
+            <td>find_first_of(string,[int])
+            <br>
+            Note: int argument is optional that refers where to start the searching.
+            </td>
+            <td>string str=”Hello, how are you today?”;
+            <br>
+            string punc=”.,!?:;”;
+            </td>
+            <td>str.find_first_of(punc); will return 5 since “,” is the first punctuation found in the set that is in the string
+            <br>
+            str.find_first_of(punc,7); will return 24 since “?” is next punctuation in the set that is in the string
+            </td>
+        </tr>
+        <tr>
+            <td>substr()</td>
+            <td>Extracts strings starting from the 1st argument, the number of characters to extracts depends on the 2nd  argument specified </td>
+            <td>substr(int,int)</td>
+            <td>string str=”C++ Programming”</td>
+            <td>str.substr(0,3);
+            will return “C++”
+            <br>
+            str.substr(7,4); will return “gram”
+            <br>
+            str.substr(12,2);
+            will return “in”
+            </td>
+        </tr>
+        <tr>
+            <td>find()</td>
+            <td>Find first occurrence in string and returns it index position.  If the string is not found it returns -1.</td>
+            <td>find(string)</td>
+            <td>string str=”C++ Programming”</td>
+            <td>str.find(“+”);
+            will return 1
+            <br>
+            str.find(“Programs”); will return -1 since Programs is not found in str
+            </td>
+        </tr>
+
+        <tr>
+            <td>at()</td>
+            <td>Retrieve or change an individual character in a string object</td>
+            <td>at(int) where:
+            int represents index in string starting at 0 up to size - 1
+            </td>
+            <td>string str=”C++ Programming”</td>
+            <td>cout &lt;&lt; str.at(4);
+            will return P
+
+            str.at(7) = “Z”
+            cout &lt;&lt; str;
+            will return C++ ProZramming; replace the letter “g” with letter “Z”
             </td>
         </tr>
     </tbody>
 </table>
-<p>
+
+<p class="mL10">
+   <strong> 5.2.9 Program dem051-4.cpp</strong>
+</p>
+<p class="mL15">
+    Program dem051-4.cpp illustrates all of the methods discussed in this section.
+</p>
+<div class="row mL15">
+    <div class="col-xs-12">
+        <pre class="code"><code>//dem051-4.cpp
+
+//This program illustrates some of methods that are available
+//to manipulate string objects.
+
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+using namespace std;
+
+int main()
+{
+    string str1 = "This is an example string";
+    string str2 = "sample";
+    string str3;
+    string punctuation = ".,:;!?";
+
+    int position;
+
+    cout &lt;&lt; "The original string, str1, is : "
+         &lt;&lt; str1 &lt;&lt; endl &lt;&lt; endl;
+
+    //Finds the first occurrence of "is" in str1
+    position = str1.find("is");
+
+    cout &lt;&lt; "The first occurrence of \"is\" is at position "
+         &lt;&lt; position &lt;&lt; endl &lt;&lt; endl;
+
+    //Finds the first occurrence of "is" in str1 after position 3
+    position = str1.find("is", 3);
+
+    cout &lt;&lt; "The first occurrence of \"is\" after position 3 is "
+         &lt;&lt; "at position " &lt;&lt; position &lt;&lt; endl &lt;&lt; endl;
+
+    //Finds the first occurrence of "is" from the end of str1
+    position = str1.rfind("is");
+
+    cout &lt;&lt; "The first occurrence of \"is\" from the end of str1 is "
+         &lt;&lt; "at position " &lt;&lt; position &lt;&lt; endl &lt;&lt; endl;
+
+    //Try to find a substring that is not in str1.
+    position = str1.find("Hello");
+
+    if (position == -1)
+        cerr &lt;&lt; "The substring \"Hello\" was not found in str1."
+             &lt;&lt; endl &lt;&lt; endl;
+
+    //Extracts a 8-character substring from str1 beginning at position 11
+    str3 = str1.substr(11, 8);
+    cout &lt;&lt; "The 8-charater substring of str1 beginning at position 11 is: "
+         &lt;&lt; str3 &lt;&lt; endl &lt;&lt; endl;
+
+    //Replace 7 characters beginning at position 11 with the string str2
+    str1.replace(11, 7, str2);
+
+    cout &lt;&lt; "After replacing the word \"example\" " &lt;&lt; endl
+         &lt;&lt; "by the word \"sample\", in str1 the string is: "
+         &lt;&lt; str1 &lt;&lt; endl &lt;&lt; endl;
+
+    //Erases a 7-character substring from str1 beginning at position 11
+    str1.erase(11, 7);
+
+    cout &lt;&lt; "After erasing the word \"sample \", in str1 the string is: "
+         &lt;&lt; str1 &lt;&lt; endl &lt;&lt; endl;
+
+    //Insert the string "example " into the string beginning at position 11
+    str1.insert(11, "example ");
+
+    cout &lt;&lt; "After putting back the word \"example \", in str1 the string is: "
+         &lt;&lt; endl &lt;&lt; str1 &lt;&lt; endl &lt;&lt; endl;
+
+    //Append a period at the end of the string
+    str1.append(".");
+
+    cout &lt;&lt; "After appending a period, the string str1 is: "
+         &lt;&lt; str1 &lt;&lt; endl &lt;&lt; endl;
+
+    //Finds the first occurrence of a punctuation mark in str1
+    position =     str1.find_first_of(punctuation);
+
+    cout &lt;&lt; "The first punctuation mark in str1 is "
+         &lt;&lt; "at position " &lt;&lt; position &lt;&lt; endl &lt;&lt; endl;
+    return 0;
+}
+
+        </code>
+        </pre>
+    </div>
+    <div class="col-xs-12">
+        <div>OUTPUT:</div>
+        <pre><code>
+        The original string, str1, is : This is an example
+ string
+
+The first occurrence of "is" is at position 2
+
+The first occurrence of "is" after position 3 is
+ at position 5
+
+The first occurrence of "is" from the end of str1
+ is at position 5
+
+The substring "Hello" was not found in str1.
+
+The 8-charater substring of str1 beginning at
+ position 11 is: example
+
+After replacing the word "example"
+by the word "sample", in str1 the string is: This
+ is an sample string
+
+After erasing the word "sample ", in str1 the
+ string is: This is an string
+
+After putting back the word "example ", in str1
+ the string is:
+This is an example string
+
+After appending a period, the string str1 is: This
+ is an example string.
+
+The first punctuation mark in str1 is at position 25
+
+        </code>
+        </pre>
+    </div>
+</div>
+<p class="mL15">
     The program comments and output explain the code. Note that the program uses the escape sequence
     <tt>
         \"
@@ -1387,4 +1093,3 @@ class methods that we will use to manipulate the string in    <a href="mk:@MSITS
     </tt>
     , inside a quoted string.
 </p>
-<br clear="all"/>
