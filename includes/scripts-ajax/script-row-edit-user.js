@@ -26,7 +26,7 @@ function initEditUser(form){
 		url: '../includes/requests/request-row-edit-user.php',
 		type: 'POST',
 		data: form.serialize(),
-		dataType: 'json',
+		// dataType: 'json',
 		success: function(results){
 			var vars = results;
 			if(vars.error === "ok")

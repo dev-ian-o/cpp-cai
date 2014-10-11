@@ -1,7 +1,6 @@
 <?php
 session_start();
-unset($_SESSION[$_SESSION['hash']]);
-unset($_SESSION['hash']);
+$_SESSION = array();
 echo "<script>window.location = 'login.php';</script>";
 
 ?>

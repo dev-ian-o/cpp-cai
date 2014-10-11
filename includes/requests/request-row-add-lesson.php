@@ -1,5 +1,6 @@
 <?php $dir = $_SERVER['DOCUMENT_ROOT'] .'cai_project'; ?>
 <?php include($dir ."/includes/classes/exam-functions.php"); ?>
+<?php require_once '../includes/classes/session.php'; ?>
 <?php	
 
 	if (($_POST['form']) === "add-row-lesson-page")
