@@ -1,12 +1,12 @@
 <h3> 5.1 User-Define Data Types using Structure </h3>
 <p class="mL10"> <b> 5.1.1 Structure</b> </p>
 <p class="mL15">
-	Arrays allow the programmer to define variables that combine several data items of the same kind. For example, an array of five integers combines five
-	integer values that can be treated as a unit. In this section, we introduce the structure, which allows you to combine data items of different kinds.
+    Arrays allow the programmer to define variables that combine several data items of the same kind. For example, an array of five integers combines five
+    integer values that can be treated as a unit. In this section, we introduce the structure, which allows you to combine data items of different kinds.
 </p>
 <p class="mL10"><b>5.1.2 Defining Structure</b></p>
 <p class="mL15">
-	A <i>data structure</i> is a group of data elements grouped together under one name. These data elements, known as <i>members</i>, can have different
+    A <i>data structure</i> is a group of data elements grouped together under one name. These data elements, known as <i>members</i>, can have different
 	types and different lengths. Data structures can be declared in C++ using the following syntax:
 	<br/>
 	<br/>
@@ -22,7 +22,7 @@
 	<br/>
 	.
 	<br/>
-	} &lt;object_names&gt;;</code>
+	} <object_names>;</code>
 	<br/>
 	<br/>
 	Where <code>type_name</code> is a name for the structure type, <code>object_name</code> can be a set of valid identifiers for objects(optional) that have
@@ -64,7 +64,13 @@ struct PART_STRUCT
 With this <b>keyboard, mouse</b> and <b>monitor</b> are variables, that is of the data type <b>PART_STRUCT</b>.  Internally, the variables <b>keyboard, mouse,</b> and <b>monitor</b> has the structure that we define in the <b>struct</b> keyword
 </code></pre>
 <p class="mL15">
-The definition begins with the keyword struct. The identifier PART_STRUCT gives a name to the structure. (We place the suffix _struct at the end of a structure name to remind us that the identifier is a structure. This is not required by C++, but is a useful programming practice.) Following the structure name are the structure members enclosed in braces. The structure members are the parts of the structure and they are declared in the same way as ordinary variables although they are not variables. The PART_STRUCT structure has three members. The first member, part_no, is a character array. The second member, quantity_on_hand, is an integer. The third member, unit_price, is a double. Note that the definition of the structure ends in a semicolon.
+The definition begins with the keyword struct. The identifier PART_STRUCT gives a name to the structure. 
+(We place the suffix _struct at the end of a structure name to remind us that the identifier is a structure. 
+This is not required by C++, but is a useful programming practice.) 
+Following the structure name are the structure members enclosed in braces. 
+The structure members are the parts of the structure and they are declared in the same way as ordinary variables although they are not variables. The PART_STRUCT structure has three members. The first member, part_no, is a character array. The second member, quantity_on_hand, is an integer. 
+The third member, unit_price, is a double.
+Note that the definition of the structure ends in a semicolon.
 </p>
 <p class="mL15">
 	Note:
@@ -226,8 +232,8 @@ monitor.unit_price</code></pre>
 // variables and the member operator to // access structure
 // variable members.
 
-#include &lt;iostream&gt;
-#include &lt;string&gt;
+#include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -246,37 +252,37 @@ int main()
   mouse.quantity_on_hand = 10;
   mouse.unit_price =1499.75; 
 	
-  cout &lt;&lt; "Enter the seven-character part number: ";
+  cout << "Enter the seven-character part number: ";
   getline(cin,keyboard.part_no);
 
-  cout &lt;&lt; endl;
-  cout &lt;&lt; "Enter the quantity on hand: ";
+  cout << endl;
+  cout << "Enter the quantity on hand: ";
   cin >> keyboard.quantity_on_hand;
 
-  cout &lt;&lt; endl;
-  cout &lt;&lt; "Enter the unit price: ";
+  cout << endl;
+  cout << "Enter the unit price: ";
   cin >> keyboard.unit_price;
 
-  cout &lt;&lt; endl;
-  cout &lt;&lt; "You entered the following information for the variable keyboard of data type PART_STRUCT:" &lt;&lt; endl &lt;&lt; endl;
-  cout &lt;&lt; "Part Number:      " &lt;&lt; 
-	   keyboard.part_no &lt;&lt; endl;
-  cout &lt;&lt; "Quantity On Hand: " 
-	&lt;&lt; keyboard.quantity_on_hand
-       &lt;&lt; endl;
-  cout &lt;&lt; "Unit Price:       "  
-	&lt;&lt; keyboard.unit_price &lt;&lt; endl;
+  cout << endl;
+  cout << "You entered the following information for the variable keyboard of data type PART_STRUCT:" << endl << endl;
+  cout << "Part Number:      " << 
+	   keyboard.part_no << endl;
+  cout << "Quantity On Hand: " 
+	<< keyboard.quantity_on_hand
+       << endl;
+  cout << "Unit Price:       "  
+	<< keyboard.unit_price << endl;
 
   
-cout &lt;&lt; endl;
-  cout &lt;&lt; "You assigned the following information for the variable mouse of data type PART_STRUCT:" &lt;&lt; endl &lt;&lt; endl;
-  cout &lt;&lt; "Part Number:      " &lt;&lt; 
-	   mouse.part_no &lt;&lt; endl;
-  cout &lt;&lt; "Quantity On Hand: " 
-	&lt;&lt; mouse.quantity_on_hand
-       &lt;&lt; endl;
-  cout &lt;&lt; "Unit Price:       "  
-	&lt;&lt; mouse.unit_price &lt;&lt; endl;
+cout << endl;
+  cout << "You assigned the following information for the variable mouse of data type PART_STRUCT:" << endl << endl;
+  cout << "Part Number:      " << 
+	   mouse.part_no << endl;
+  cout << "Quantity On Hand: " 
+	<< mouse.quantity_on_hand
+       << endl;
+  cout << "Unit Price:       "  
+	<< mouse.unit_price << endl;
 
 
    return 0;

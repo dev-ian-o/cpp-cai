@@ -1,5 +1,5 @@
 <?php $dir = $_SERVER['DOCUMENT_ROOT'] .'cai_project'; ?>
-<?php require_once($dir."/includes/database/config.php"); ?>
+<?php require_once("../includes/database/config.php"); ?>
 <?php
 
 

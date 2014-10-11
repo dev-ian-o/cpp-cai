@@ -1,9 +1,5 @@
-
 <?php session_start();?>
-<pre>
-<?php print_r($_SESSION);?>
-</pre>
-<?php //if( !(isset($_SESSION['hash'])) && !(isset($_SESSION[$_SESSION['hash']]))  ) { echo "<script>window.location = 'login.php';</script>"; } ?>
+<?php if( !(isset($_SESSION['hash'])) && !(isset($_SESSION[$_SESSION['hash']]))  ) { echo "<script>window.location = 'login.php';</script>"; } ?>
 <?php //if(isset($_SESSION[]))?>
 
 <div id="wrapper">
