@@ -1,7 +1,7 @@
 <?php $dir = $_SERVER['DOCUMENT_ROOT'] .'cai_project'; ?>
-<?php require_once '../includes/database/database.php';?>
-<?php require_once '../includes/classes/exam-functions.php';?>
-<?php //require_once $dir . '/includes/classes/file.php';?>
+<?php require_once $dir . '/includes/database/database.php';?>
+<?php require_once $dir . '/includes/classes/exam-functions.php';?>
+<?php require_once $dir . '/includes/classes/file.php';?>
 
 <?php $lessons = json_decode(fetch_lessons($conn,false)); ?>
 <?php $sub_lessons = json_decode(fetch_sub_lessons($conn,false)); ?>
@@ -16,8 +16,8 @@
 		<div class="panel-body">
 		<h3 class="here-score"><code>SCORE: </code></h3>
 <?php
-	$items = array();
-	$arrKey = array();
+	$items = [];
+	$arrKey = [];
 	if (isset($_POST['submit']))
 	{
 		$exam_item_id = $_POST['exam_item_id'];
@@ -46,11 +46,11 @@
 					$tally['exam_item_id'] = $item[0]->exam_item_id;
 					$tally['correct'] = 0;
 					$tally['wrong'] = 1;
-					// $tally['exam_date'] = date('yyyy-mm-dd hh:mm');
-					print_r($tally);
+					$tally['exam_date'] = date('yyyy-mm-dd hh:mm');
+
 					add_tally($tally, $conn);
-					//$file =  $dir.'/db/dbtally.txt';
-					// File::put($file, json_encode($tally), true);
+					$file =  $dir.'/db/dbtally.txt';
+					File::put($file, json_encode($tally), true);
 					// print_r($item);
 				}
 				else{
@@ -65,13 +65,12 @@
 					$tally['exam_item_id'] = $item[0]->exam_item_id;
 					$tally['correct'] = 1;
 					$tally['wrong'] = 0;
-					// $tally['exam_date'] = date('yyyy-mm-dd hh:mm');
-					print_r($tally);
+					$tally['exam_date'] = date('yyyy-mm-dd hh:mm');
 					add_tally($tally, $conn);
 
-					//$file =  $dir.'/db/dbtally.txt';
+					$file =  $dir.'/db/dbtally.txt';
 					// echo $file;
-					// File::put($file, json_encode($tally), true);
+					File::put($file, json_encode($tally), true);
 				}
 
 

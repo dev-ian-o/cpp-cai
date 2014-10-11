@@ -1,6 +1,6 @@
 <?php $dir = $_SERVER['DOCUMENT_ROOT'] .'cai_project'; ?>
-<?php require_once '../includes/database/database.php';?>
-<?php require_once '../includes/classes/exam-functions.php';?>
+<?php require_once $dir . '/includes/database/database.php';?>
+<?php require_once $dir . '/includes/classes/exam-functions.php';?>
 <?php 
 
 	$htmlPagesArr = array(
@@ -75,7 +75,7 @@
 			<div class="panel-body">
 				<div class="my-code-area">
 					<pre>
-						<?php include '../simulate/html/'.$htmlPage;?>
+						<?php include $dir . '/simulate/html/'.$htmlPage;?>
 					</pre>
 				</div>
 			</div>

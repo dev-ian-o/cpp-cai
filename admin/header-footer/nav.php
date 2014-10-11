@@ -1,5 +1,10 @@
+
 <?php session_start();?>
-<?php if( !(isset($_SESSION['hash'])) && !(isset($_SESSION[$_SESSION['hash']]))  ) { echo "<script>window.location = 'login.php';</script>"; } ?>
+<pre>
+<?php print_r($_SESSION);?>
+</pre>
+<?php //if( !(isset($_SESSION['hash'])) && !(isset($_SESSION[$_SESSION['hash']]))  ) { echo "<script>window.location = 'login.php';</script>"; } ?>
+<?php //if(isset($_SESSION[]))?>
 
 <div id="wrapper">
 	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">

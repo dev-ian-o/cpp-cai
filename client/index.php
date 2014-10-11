@@ -12,7 +12,7 @@
 
 
 <?php require_once 'header-footer/footer.php';?>
-<!-- <script src="../includes/scripts-ajax/script-index.js"></script>   	 -->
+<script src="../includes/scripts-ajax/script-index.js"></script>   	
 
 <script type="text/javascript">
 	$('document').ready(function(){
