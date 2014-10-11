@@ -1,6 +1,6 @@
 <?php $dir = $_SERVER['DOCUMENT_ROOT'] .'cai_project'; ?>
-<?php include($dir ."/includes/classes/exam-functions.php"); ?>
-<?php include($dir ."/includes/classes/file.php"); ?>
+<?php include("../includes/classes/exam-functions.php"); ?>
+<?php include("../includes/classes/file.php"); ?>
 <?php
 	// print_r(json_encode($_POST));
 

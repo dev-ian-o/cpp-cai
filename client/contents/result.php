@@ -49,7 +49,7 @@
 					$tally['exam_date'] = date('yyyy-mm-dd hh:mm');
 
 					add_tally($tally, $conn);
-					$file =  $dir.'/db/dbtally.txt';
+					$file =  '../db/dbtally.txt';
 					File::put($file, json_encode($tally), true);
 					// print_r($item);
 				}
@@ -68,7 +68,7 @@
 					$tally['exam_date'] = date('yyyy-mm-dd hh:mm');
 					add_tally($tally, $conn);
 
-					$file =  $dir.'/db/dbtally.txt';
+					$file =  '../db/dbtally.txt';
 					// echo $file;
 					File::put($file, json_encode($tally), true);
 				}

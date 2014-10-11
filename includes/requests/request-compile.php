@@ -1,5 +1,5 @@
 <?php $dir = $_SERVER['DOCUMENT_ROOT'] .'cai_project'; ?>
-<?php include($dir ."/includes/classes/getError.php"); ?>
+<?php include("../includes/classes/getError.php"); ?>
 <?php
 	if (($_POST['form']) === "form-compile")
 	{
