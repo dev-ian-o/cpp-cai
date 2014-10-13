@@ -4,7 +4,6 @@
 <?php require_once '../includes/database/database.php';?>
 <?php require_once '../includes/classes/exam-functions.php';?>
 <?php session_start();?>
-<?php //if( (isset($_SESSION['hash'])) && (isset($_SESSION[$_SESSION['hash']]))  ) { echo "<script>window.location = 'index.php';</script>"; } ?>
 <?php 
 if(isset($_SESSION['user_id'])){ 
     $user = array();
@@ -12,7 +11,7 @@ if(isset($_SESSION['user_id'])){
     $key = check_hash_user($user,$conn);
     $key = $key[0];
     $key = $key['hash_key'];
-    
+
     if(isset($_SESSION[$key])){  echo "<script>window.location = 'index.php';</script>"; }
 }   
 ?>
@@ -55,7 +54,9 @@ if(isset($_SESSION['user_id'])){
         {
             $row = json_decode($row);
             echo "<script>alert('successfully logged in');</script>";
-            $hash = sha1(md5(rand(1000,9999)));
+            // $hash = sha1(md5(rand(1000,9999)));
+            $hash = sha1(md5(random_str()));
+
             $_SESSION[$hash] = $hash;
             $_SESSION['user_id'] = $row[0]->user_id;
             $pass = array();

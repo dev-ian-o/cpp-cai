@@ -2,7 +2,6 @@
 <?php require_once '../includes/database/database.php';?>
 <?php require_once '../includes/classes/exam-functions.php';?>
 <?php require_once '../includes/classes/file.php';?>
-
 <?php $lessons = json_decode(fetch_lessons($conn,false)); ?>
 <?php $sub_lessons = json_decode(fetch_sub_lessons($conn,false)); ?>
 
@@ -28,6 +27,8 @@
 		{
 			$items = json_decode(fetch_exam_by_chapter($conn,$id,false));
 			// --> foreachhere
+
+			$examinee_id = sha1(md5(random_str()));
 			$a = 1;
 			foreach ($exam_item_id as $key => $value) 
 			{
@@ -47,6 +48,7 @@
 					$tally['correct'] = 0;
 					$tally['wrong'] = 1;
 					$tally['exam_date'] = date('yyyy-mm-dd hh:mm');
+					$tally['examinee_id'] = $examinee_id;
 
 					add_tally($tally, $conn);
 					$file =  '../db/dbtally.txt';
@@ -66,6 +68,7 @@
 					$tally['correct'] = 1;
 					$tally['wrong'] = 0;
 					$tally['exam_date'] = date('yyyy-mm-dd hh:mm');
+					$tally['examinee_id'] = $examinee_id;
 					add_tally($tally, $conn);
 
 					$file =  '../db/dbtally.txt';

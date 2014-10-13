@@ -2,7 +2,6 @@
 
 <?php require_once '../database/database-request.php';?>
 
-
 <?php
 
 function getUserIP() {
@@ -420,39 +419,11 @@ function query_sub_lessons($conn,$id = 1,$print = true){
 	if ($print) print_r($row); else return $row;
 }
 
-
-
-
-// function add_tally($row,$conn){
-
-// 	$stmt = $conn->prepare("INSERT INTO tbl_tally(
-// 		lesson_id,
-// 		lesson_sub_id,
-// 		exam_item_id,
-// 		correct,
-// 		wrong,
-// 		exam_date
-// 		) 
-// 		VALUES(:lesson_id,:lesson_sub_id,:exam_item_id,:correct,:wrong,now())
-// 	");
-
-// 	$stmt->execute(array(
-// 		"lesson_id" => $row["lesson_id"],
-// 		"lesson_sub_id" => $row["lesson_sub_id"],
-// 		"exam_item_id" => $row["exam_item_id"],
-// 		"correct" => $row["correct"],
-// 		"wrong" => $row["wrong"]
-// 	));
-	
-// 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);	
-// }
 function add_tally($row,$conn){
-
-
 	$stmt = $conn->prepare("INSERT INTO tbl_tally(
-		lesson_id,lesson_sub_id,exam_item_id,correct,wrong,date_exam
+		lesson_id,lesson_sub_id,exam_item_id,correct,wrong,date_exam,examinee_id
 		) 
-		VALUES(:lesson_id,:lesson_sub_id,:exam_item_id,:correct,:wrong,now())
+		VALUES(:lesson_id,:lesson_sub_id,:exam_item_id,:correct,:wrong,now(),:examinee_id)
 	");
 
 	$stmt->execute(array(
@@ -460,14 +431,25 @@ function add_tally($row,$conn){
 		"lesson_sub_id" => $row["lesson_sub_id"],
 		"exam_item_id" => $row["exam_item_id"],
 		"correct" => $row["correct"],
-		"wrong" => $row["wrong"]
+		"wrong" => $row["wrong"],
+		"examinee_id" => $row["examinee_id"]
 	));
-	
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		
 	return $row;
 }
 
+
+function fetch_tally($row,$conn){
+	$stmt = $conn->prepare("SELECT * FROM tbl_tally
+		WHERE lesson_id = :lesson_id
+	");
+
+	$stmt->execute(array(
+		"lesson_id" => $row['lesson_id']
+	));
+	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	return $row;
+}
 
 function add_results($row,$conn){
 
@@ -581,34 +563,65 @@ function validates_user($row,$conn){
 	return $row;
 }
 
+function count_correct($row,$conn){
+	$stmt = $conn->prepare("SELECT *,
+		count(*) AS total FROM tbl_tally
+		WHERE correct = 1 and exam_item_id = :exam_item_id and
+		date_exam LIKE :date_exam;
+	");
+	$date = '2014-%';
+	if($row['sort_by'] == "y") { $date = $row['year'].'-%'; } else
+	if($row['sort_by'] == "my") { $date = $row['year'].'-'.$row['month'].'-%'; } else
+	if($row['sort_by'] == "my") { $date = $row['year'].'-'.$row['month'].'-'.$row['day'].'%'; }
+	$stmt->execute(array(
+		'exam_item_id' => $row['exam_item_id'],
+		'date_exam' => $date
+	));
+	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+	$row = json_encode($row);
 
-// $arr = array(
-// 		"lesson_id" => "1",
-// 		"lesson_sub_id" => "1",
-// 		"lesson_question" => "1",
-// 		"lesson_choice1" => "1",
-// 		"lesson_choice2" => "1",
-// 		"lesson_choice3" => "1",
-// 		"lesson_choice4" => "1",
-// 		"lesson_answer" => "1",
-// 		"exam_item_id" => "1"
-// );
+	return $row;
+}
 
-// update_exam_items($arr,$conn);
+function count_wrong($row,$conn){
+	$stmt = $conn->prepare("SELECT *,
+		count(*) AS total FROM tbl_tally
+		WHERE wrong = 1 and exam_item_id = :exam_item_id and
+		date_exam LIKE :date_exam;
+	");
+	$date = '2014-%';
+	if($row['sort_by'] == "y") { $date = $row['year'].'-%'; } else
+	if($row['sort_by'] == "my") { $date = $row['year'].'-'.$row['month'].'-%'; } else
+	if($row['sort_by'] == "my") { $date = $row['year'].'-'.$row['month'].'-'.$row['day'].'%'; }
+	$stmt->execute(array(
+		'exam_item_id' => $row['exam_item_id'],
+		'date_exam' => $date
+	));
+	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+	$row = json_encode($row);
 
-// $arr = array(
-// 	'lesson_chapter' => '1',
-// 	'lesson_description' => 'c++ thingy',
-// );
-// update_lesson($arr, $conn);
+	return $row;
 
-// fetch_lessons($conn);
-
+}
 
 function show_limit($val,$limit = 20){
 	$str = substr($val, 0, $limit);
 	if(strlen($val) > $limit) $str .= "...";
 	return $str;
 }
+
+
+function random_str(){
+	    $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+	    $pass = array(); 
+	    $length = 10;
+	    $alphaLength = strlen($alphabet) - 1; 
+	    for ($i = 0; $i < $length; $i++) {
+	        $n = rand(0, $alphaLength);
+	        $pass[] = $alphabet[$n];
+	    }
+	    return implode($pass); //turn the array into a string
+	
+	}
