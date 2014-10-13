@@ -4,9 +4,6 @@
 <?php $sub_lessons = json_decode(fetch_sub_lessons($conn,false)); ?>
 <?php
 
-// check lesson id
-// query check date
-//
 $sortedBy = "y";
 $sortBy = array('all','y','my','mdy');
 if(isset($_GET['sortby'])){
@@ -29,6 +26,7 @@ if(isset($_GET['lesson'])){ $lesson_id = $_GET['lesson']; }
 
 $row['lesson_id'] = '5';
 $tally = fetch_tally($row,$conn);
+
 ?>
 <div id="page-wrapper">
 
@@ -125,6 +123,57 @@ $tally = fetch_tally($row,$conn);
         <?php endif;?>
         <?php endforeach;?>
     </div>
+
+<?php $exam_items = json_decode(fetch_exam_items_lesson_id($conn,$lesson_id,false));?>
+<?php $sub_lessons_per_id = json_decode(fetch_sub_lesson_id($conn,$lesson_id,false));?>
+    <div class="row">
+        <div class="col-md-12">
+             <div class="panel panel-default">
+                <div class="panel-heading clearfix">
+                    <b>*LEGEND </b>
+                </div>
+                <div class="panel-body">
+
+                    <table class="table table-bordered table-responsive">
+                        <thead>
+                            <tr>
+                                <td>Label</td>
+                                <td>Question</td>
+                                <td>Lesson</td>
+                                <td>Correct</td>
+                                <td>Incorrect</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach($sub_lessons_per_id as $key => $valueSub): ?>
+                            <?php foreach($exam_items as $key => $value):?>
+                            <?php if($value->lesson_sub_id === $valueSub->lesson_sub_id):?>
+                            <?php 
+                                $count['exam_item_id'] = $value->exam_item_id;
+                                $count['sort_by'] = $sortedBy;
+                                $count['year'] = $year;
+                                $count['month'] = $month;
+                                $count['day'] = $day;
+                            ?>
+                            <?php $wrong = json_decode(count_wrong($count,$conn));?>
+                            <?php $correct = json_decode(count_correct($count,$conn));?>
+                            <tr>
+                                <td><?= "Q:".++$key; ?></td>    
+                                <td><a href="#" class="tooltip-texts" data-toggle="tooltip" data-placement="top" title="<?= $value->lesson_question;?>"><?= show_limit($value->lesson_question, 20);?></a></td>
+                                <td><?= $valueSub->lesson_sub_description;?></td>
+                                <td><?= $correct[0]->total;?></td>
+                                <td> <?= $wrong[0]->total;?></td>
+                            </tr> 
+                            <?php endif; ?>
+                            <?php endforeach;?>
+                        <?php endforeach;?>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <a href="#" class="go-top">Go Top</a>
@@ -135,31 +184,9 @@ $tally = fetch_tally($row,$conn);
 
 <?php require_once 'header-footer/footer.php';?>
 
-<?php $exam_items = json_decode(fetch_exam_items_lesson_id($conn,$lesson_id,false));?>
-<?php $sub_lessons_per_id = json_decode(fetch_sub_lesson_id($conn,$lesson_id,false));?>
 
-<?php //print_r($exam_items); ?>
-<?php //print_r($sub_lessons_per_id); ?>
-<?php 
-    $count = array();
-    foreach($sub_lessons_per_id as $key => $valueSub){
 
-        foreach($exam_items as $key => $value){
-            if($value->lesson_sub_id === $valueSub->lesson_sub_id){
-                $count['exam_item_id'] = $value->exam_item_id;
-                $count['sort_by'] = $sortedBy;
-                $count['year'] = $year;
-                $count['month'] = $month;
-                $count['day'] = $day;
-                $wrong = json_decode(count_wrong($count,$conn));
-                // print_r(json_decode(count_correct($count,$conn)));
-                // echo "<br>_____________________<br>";
-            }
-        }
-    }
-?>
 <?php $count = array(); ?>
-<?php //$no = 1 ?>
 <?php foreach($sub_lessons_per_id as $key => $valueSub): ?>
 <script type="text/javascript">
 	Morris.Bar({
@@ -198,6 +225,7 @@ $tally = fetch_tally($row,$conn);
 <script type="text/javascript">
     $('document').ready(function(){
         console.log('ready');
+        $('.tooltip-texts').tooltip();
         date = new Date();
         year = date.getFullYear();        
         months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
