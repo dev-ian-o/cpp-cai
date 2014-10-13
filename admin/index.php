@@ -8,7 +8,7 @@
 // query check date
 //
 $sortedBy = "y";
-$sortBy = array('y','my','mdy');
+$sortBy = array('all','y','my','mdy');
 if(isset($_GET['sortby'])){
     $indicatorSortBy = $_GET['sortby'];
     if(in_array($indicatorSortBy, $sortBy)){
@@ -16,12 +16,12 @@ if(isset($_GET['sortby'])){
         $sortedBy = $indicatorSortBy;
 
     }else{
-        $sortedBy = "y";
+        $sortedBy = "all";
     }
 }else{
-    $sortedBy = "y";
+    $sortedBy = "all";
 }
-if(isset($_GET['year'])){ $year = $_GET['year']; } else{ $year = "2004";}
+if(isset($_GET['year'])){ $year = $_GET['year']; } else{ $year = "2014";}
 if(isset($_GET['month'])){ $month = $_GET['month']; } else { $month = "1"; }
 if(isset($_GET['day'])){ $day = $_GET['day']; } else { $day = "1"; }
 $lesson_id = $lessons[4]->lesson_id;
@@ -66,16 +66,20 @@ $tally = fetch_tally($row,$conn);
                     <form method="get">
                         <input type="hidden" name="lesson" value="<?=  $lesson_id;?>">
                         <select class="form-control sort-date" name="sortby">
+                            <option value="all" <?php if($sortedBy == "all"){echo "selected";}?>>All</option>
                             <option value="y" <?php if($sortedBy == "y"){echo "selected";}?>>YEAR</option>
                             <option value="my" <?php if($sortedBy == "my"){echo "selected";}?>>MONTH AND YEAR</option>
                             <option value="mdy" <?php if($sortedBy == "mdy"){echo "selected";}?>>MONTH, DAY AND YEAR</option>
                         </select><br>
                         <div class="render-sort">
+                        <?php if($sortedBy === "y" || $sortedBy === "my" || $sortedBy === "mdy"):?>
                             <select class="form-control sort-year" name="year">
                                 <?php for($a = date("Y"); $a >= 2013; $a--):?>
                                     <option value="<?= $a;?>" <?php if($year == $a){echo "selected";}?>><?= $a; ?></option>
                                 <?php endfor;?>
                             </select>
+                        <?php endif;?>
+
                         <?php if($sortedBy === "my" || $sortedBy === "mdy"):?>
                             <br><select class="form-control sort-month" name="month">
                                 <?php $monthsArr = array('January','February','March','April','May','June','July','August','September','October','November','December');?>
@@ -197,7 +201,13 @@ $tally = fetch_tally($row,$conn);
         date = new Date();
         year = date.getFullYear();        
         months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-        $elYear = $('.sort-year');
+        
+        $elYear = "<select class='form-control sort-month' name='year'>";
+        for(a = year; a >= 2013; a--){
+            $elYear += "<option value="+a+">"+a+"</option>";
+        }
+        $elYear += "</select>";
+
         $elMonth = "<br><select class='form-control sort-month' name='month'>";
         for(a = 0; a < months.length; a++){
             $elMonth += "<option value="+(a+1)+">"+months[a]+"</option>";
@@ -211,7 +221,11 @@ $tally = fetch_tally($row,$conn);
         $elDay += "</select>";
         $('.sort-date').on('input', function(e){
             sortby = $('.sort-date').val();
-            if(sortby === 'y'){
+            if(sortby === 'all'){
+                console.log('all');
+                $('.render-sort').html("");
+
+            }else if(sortby === 'y'){
                 console.log('year');
                 $('.render-sort').html($elYear);
 

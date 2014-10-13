@@ -570,7 +570,8 @@ function count_correct($row,$conn){
 		WHERE correct = 1 and exam_item_id = :exam_item_id and
 		date_exam LIKE :date_exam;
 	");
-	$date = '2014-%';
+	$date = '%';
+	if($row['sort_by'] == "all") { $date = '%'; } else
 	if($row['sort_by'] == "y") { $date = $row['year'].'-%'; } else
 	if($row['sort_by'] == "my") { $date = $row['year'].'-'.$row['month'].'-%'; } else
 	if($row['sort_by'] == "my") { $date = $row['year'].'-'.$row['month'].'-'.$row['day'].'%'; }
@@ -591,7 +592,8 @@ function count_wrong($row,$conn){
 		WHERE wrong = 1 and exam_item_id = :exam_item_id and
 		date_exam LIKE :date_exam;
 	");
-	$date = '2014-%';
+	$date = '%';
+	if($row['sort_by'] == "all") { $date = '%'; } else
 	if($row['sort_by'] == "y") { $date = $row['year'].'-%'; } else
 	if($row['sort_by'] == "my") { $date = $row['year'].'-'.$row['month'].'-%'; } else
 	if($row['sort_by'] == "my") { $date = $row['year'].'-'.$row['month'].'-'.$row['day'].'%'; }
