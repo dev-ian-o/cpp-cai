@@ -159,7 +159,7 @@ $tally = fetch_tally($row,$conn);
                             <?php $correct = json_decode(count_correct($count,$conn));?>
                             <tr>
                                 <td><?= "Q:".++$key; ?></td>    
-                                <td><a href="#" class="tooltip-texts" data-toggle="tooltip" data-placement="top" title="<?= $value->lesson_question;?>"><?= show_limit($value->lesson_question, 20);?></a></td>
+                                <td><a href="#" class="tooltip-texts" data-toggle="tooltip" data-placement="top" title="<?= htmlspecialchars($value->lesson_question);?>"><?= htmlspecialchars(show_limit($value->lesson_question, 20));?></a></td>
                                 <td><?= $valueSub->lesson_sub_description;?></td>
                                 <td><?= $correct[0]->total;?></td>
                                 <td> <?= $wrong[0]->total;?></td>

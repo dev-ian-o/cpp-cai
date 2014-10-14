@@ -5,7 +5,7 @@
 
 <?php	
 	//form name here ----------v
-	if (($_POST['form']) === "add-row-lesson-page")
+	if (($_POST['form']) === "remove-row-exam-page")
 	{
 
 		$vars = $_POST;
@@ -13,6 +13,8 @@
 			"error" => "",
 			"output" => "",
 		);
+		remove_exam_items($vars,$conn);		
+		$return['error'] = "ok";
 		print_r(json_encode($return));
 	}
 

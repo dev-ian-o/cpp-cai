@@ -225,7 +225,7 @@
     <div class="modal-dialog">
         <form id="form-remove-row-exam" method="post">
         <input type="hidden" name="remove-row-exam-page" value="exam">
-        <input type="hidden" name="exam_id" value="">
+        <input type="hidden" name="exam_item_id" value="">
         <input type="hidden" name="form" value="remove-row-exam-page">
         <div class="modal-content">
             <div class="modal-header">
@@ -233,7 +233,7 @@
                 <h4 class="modal-title" id="myModalLabel">Are you sure you want to remove?</h4>
             </div>
             <div class="modal-body">
-                <p><b class="lesson-chapter"></b>: <b class="lesson-description"></b></p>
+                <p><b class="delete_entity"></b></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -250,6 +250,7 @@
 <?php require_once 'header-footer/footer.php';?>
 <script src="../includes/scripts-ajax/script-row-add-quiz-question.js"></script>    
 <script src="../includes/scripts-ajax/script-row-edit-quiz-question.js"></script>    
+<script src="../includes/scripts-ajax/script-row-remove-quiz-question.js"></script>    
 
 <script>
     $(document).ready(function() { 
@@ -291,6 +292,30 @@
             $form = "#form-add-row-exam";
             $($form).find('input[name=lesson_id]').val(lesson_id);
             $($form).find('input[name=lesson_sub_id]').val(lesson_sub_id);
+        });
+        $('.remove-exam-btn').click(function(){
+           
+            $parent = this.parentElement;
+            exam_item_id = $($parent).find('[name=exam_item_id]').val();
+            lesson_question = $($parent).find('[name=lesson_question]').val();
+            lesson_answer = $($parent).find('[name=lesson_answer]').val();
+            lesson_choice1 = $($parent).find('[name=lesson_choice1]').val();
+            lesson_choice2 = $($parent).find('[name=lesson_choice2]').val();
+            lesson_choice3 = $($parent).find('[name=lesson_choice3]').val();
+            lesson_choice4 = $($parent).find('[name=lesson_choice4]').val();
+            lesson_id = $($parent).find('[name=lesson_id]').val();
+            lesson_sub_id = $($parent).find('[name=lesson_sub_id]').val();
+            $form = "#form-remove-row-exam";
+            $($form).find('[name=exam_item_id]').val(exam_item_id)
+            $($form).find('[name=lesson_question]').val(lesson_question);
+            $($form).find('[name=lesson_answer]').val(lesson_answer);
+            $($form).find('[name=lesson_choice1]').val(lesson_choice1);
+            $($form).find('[name=lesson_choice2]').val(lesson_choice2);
+            $($form).find('[name=lesson_choice3]').val(lesson_choice3);
+            $($form).find('[name=lesson_choice4]').val(lesson_choice4);
+            $($form).find('[name=lesson_id]').val(lesson_choice3);
+            $($form).find('[name=lesson_sub_id]').val(lesson_choice4); 
+            $($form).find('.delete_entity').html("ID:"+lesson_sub_id+"<br>"+lesson_question); 
         });
     });
 

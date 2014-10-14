@@ -1,10 +1,10 @@
 
 $(document).ready(function(){
 
-	$("#form-edit-row-lesson").on('submit', function(e){
+	$("#form-remove-row-lesson").on('submit', function(e){
 		e.preventDefault();
-		form = "#form-edit-row-lesson";
-		init("form-edit-row-lesson");	
+		form = "#form-remove-row-lesson";
+		init("form-remove-row-lesson");	
 		return false;
 	});
 
@@ -18,7 +18,7 @@ function init(form){
 	form = $('#'+form);
 	// console.log(form.serialize());
 	$.ajax({
-		url: '../includes/requests/request-add-row-lesson.php',
+		url: '../includes/requests/request-row-remove-lesson.php',
 		type: 'POST',
 		data: form.serialize(),
 		dataType: 'json',
@@ -26,8 +26,8 @@ function init(form){
 			var vars = results;
 			if(vars.error === "ok")
 			{
-				$('#edit-row').modal('hide');
-				notif_edit();
+				$('#remove-row').modal('hide');
+				// notif_edit();
 				$(form)[0].reset();
 				window.location = "index-page.php";
 			}

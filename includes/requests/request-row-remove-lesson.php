@@ -4,7 +4,7 @@
 <?php require_once '../classes/session-request.php'; ?>
 
 <?php	
-
+	//form name here ----------v
 	if (($_POST['form']) === "remove-row-lesson-page")
 	{
 
@@ -13,18 +13,9 @@
 			"error" => "",
 			"output" => "",
 		);
-
-		
-		// print_r(json_encode(query_lessons_id($conn,$vars,false)));
-		// if(query_lessons($conn,$vars,false) === "[]"){
-		// 	update_lesson($vars,$conn);
-		// 	$return['error'] = "ok";
-		// 	print_r(json_encode($return));
-		// }
-		// else{
-		// 	// not ok
-		// 	print_r(json_encode($return));	
-		// }
+		remove_lesson($vars,$conn);
+		$return['error'] = "ok";
+		print_r(json_encode($return));
 	}
 
 ?>

@@ -47,7 +47,7 @@
 		                <a href="quiz-questions.php"><i class="fa fa-dashboard fa-fw"></i> Quiz Questions</a>
 		            </li>
 		            <li>
-		                <a href="quiz-analytics.php"><i class="fa fa-dashboard fa-fw"></i> Quiz Results Analtics</a>
+		                <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Quiz Results Analtics</a>
 		            </li>
 		            <li>
 		                <a href="admin-user.php"><i class="fa fa-dashboard fa-fw"></i> Admin User Settings</a>

@@ -294,17 +294,17 @@
 <!-- remove-row-sub-lesson -->
 <div class="modal fade" id="remove-row-sub" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <form id="form-remove-row" method="post">
-        <input type="hidden" name="remove-row-page" value="lesson">
-        <input type="hidden" name="lesson_id" value="">
-        <input type="hidden" name="form" value="remove-row-page">
+        <form id="form-remove-sub-row" method="post">
+        <input type="hidden" name="remove-row-sub-page" value="lesson">
+        <input type="hidden" name="lesson_sub_id" value="">
+        <input type="hidden" name="form" value="remove-row-sub-page">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title" id="myModalLabel">Are you sure you want to remove?</h4>
             </div>
             <div class="modal-body">
-                <p><b class="lesson-chapter"></b>: <b class="lesson-description"></b></p>
+                <p><b class="delete_entity"></b></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -326,8 +326,10 @@
 <?php require_once 'header-footer/footer.php';?>
 <script src="../includes/scripts-ajax/script-row-add-lesson.js"></script>    
 <script src="../includes/scripts-ajax/script-row-edit-lesson.js"></script>   
+<script src="../includes/scripts-ajax/script-row-remove-lesson.js"></script>   
 <script src="../includes/scripts-ajax/script-row-add-sub-lesson.js"></script>    
 <script src="../includes/scripts-ajax/script-row-edit-sub-lesson.js"></script>    
+<script src="../includes/scripts-ajax/script-row-remove-sub-lesson.js"></script>    
 <script>
     $(document).on('ready change input click',function() {
         $('#datatable-lesson').dataTable();
@@ -409,6 +411,22 @@
             $('#form-add-row-sub-lesson').find('[name="lesson_sub_id"]').val(lesson_sub_id);
         });
 
+        $('.remove-btn-sub').on('click', function(){
+            lesson_sub_id = $(this.parentElement).find('input').val();
+            lesson_sub_description = $(this.parentElement.parentElement).find('td.lesson_sub_description').html();
+            lesson_chapter_sub = $(this.parentElement.parentElement).find('td.lesson_chapter-sub').html();
+            lesson_content = $(this.parentElement.parentElement).find('td.content').html();
+            
+
+            $('#form-remove-sub-row').find('[name="lesson_sub_description"]').val(lesson_sub_description);
+            $('#form-remove-sub-row').find('[name="lesson_description"]').val(lesson_chapter_sub);
+            $('#form-remove-sub-row').find('[name="lesson_description"]').find('[data-val='+lesson_chapter_sub+']').attr('selected','selected');
+            // debugger;
+            $('#form-remove-sub-row').find('[name="lesson_sub_id"]').val(lesson_sub_id);
+            $('#form-remove-sub-row').find('.delete_entity').html("ID: "+lesson_sub_id+"<br>"+"Lesson Description: "+lesson_sub_description);
+        });
+
+// form-remove-sub-row
         $('#form-add-row-sub-lesson').find('[name=lesson_description]').on('input',function(e){
             length = this.childElementCount;
             selected = this.selectedOptions;

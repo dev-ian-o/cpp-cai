@@ -160,7 +160,7 @@
     <div class="modal-dialog">
         <form id="form-remove-row-user" method="post">
         <input type="hidden" name="remove-row-user-page" value="lesson">
-        <input type="hidden" name="lesson_id" value="">
+        <input type="hidden" name="user_id" value="">
         <input type="hidden" name="form" value="remove-row-user-page">
         <div class="modal-content">
             <div class="modal-header">
@@ -168,7 +168,7 @@
                 <h4 class="modal-title" id="myModalLabel">Are you sure you want to remove?</h4>
             </div>
             <div class="modal-body">
-                <p><b class="lesson-chapter"></b>: <b class="lesson-description"></b></p>
+                <p><b class="delete_entity"></b></p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
@@ -185,6 +185,7 @@
 <?php require_once 'header-footer/footer.php';?>
 <script src="../includes/scripts-ajax/script-row-add-user.js"></script>    
 <script src="../includes/scripts-ajax/script-row-edit-user.js"></script>    
+<script src="../includes/scripts-ajax/script-row-remove-user.js"></script>    
 
 <script type="text/javascript">
     
@@ -203,6 +204,14 @@ $(document).on('ready change input click',function() {
         $form = "#form-edit-row-user-password";
         $($form).find('input[name=user_id]').val(user_id);
         // debugger;
+    });
+    $('.remove-btn').click(function(){
+        user_id = $(this.parentElement).find('input[name=user_id]').val();
+        username = $(this.parentElement).find('input[name=username]').val();
+
+        $form = "#form-remove-row-user";
+        $($form).find('input[name=user_id]').val(user_id); 
+        $($form).find('.delete_entity').html(username); 
     });
 });
 </script>

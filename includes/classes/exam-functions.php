@@ -3,6 +3,7 @@
 <?php require_once '../includes/database/database.php';?>
 
 
+
 <?php
 
 function getUserIP() {
@@ -105,12 +106,13 @@ function query_correct_id($conn,$row,$print = false)
 
 	$stmt = $conn->prepare("SELECT * 
 		FROM tbl_exam_items
-		WHERE exam_item_id =:exam_item_id AND lesson_answer =:lesson_answer 
+		WHERE exam_item_id =:exam_item_id AND lesson_answer =:lesson_answer AND deleted_at =:deleted_at 
 	");
 	
 	$stmt->execute(array(
 		"exam_item_id" => $row["exam_item_id"], 
-		"lesson_answer" => $row["lesson_answer"]
+		"lesson_answer" => $row["lesson_answer"],
+		"deleted_at" => "0000-00-00 00:00:00"
 	));
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -124,11 +126,12 @@ function query_item($conn,$row,$print = false)
 
 	$stmt = $conn->prepare("SELECT * 
 		FROM tbl_exam_items
-		WHERE exam_item_id =:exam_item_id
+		WHERE exam_item_id =:exam_item_id AND deleted_at =:deleted_at
 	");
 	
 	$stmt->execute(array(
-		"exam_item_id" => $row
+		"exam_item_id" => $row,
+		"deleted_at" => "0000-00-00 00:00:00"
 	));
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -250,10 +253,11 @@ function update_sub_lesson_content($row,$conn){
 
 function fetch_lessons($conn,$print = true){
 	$stmt = $conn->prepare("SELECT * 
-		FROM tbl_lessons_chapters
+		FROM tbl_lessons_chapters WHERE deleted_at =:deleted_at
 	");
 	
 	$stmt->execute(array(
+		"deleted_at" => "0000-00-00 00:00:00"
 
 	));
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -266,11 +270,11 @@ function fetch_lessons($conn,$print = true){
 
 function fetch_users($conn,$print = true){
 	$stmt = $conn->prepare("SELECT * 
-		FROM tbl_user
+		FROM tbl_user WHERE deleted_at = :deleted_at
 	");
 	
 	$stmt->execute(array(
-
+		"deleted_at" => "0000-00-00 00:00:00"
 	));
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -282,11 +286,12 @@ function fetch_users($conn,$print = true){
 function fetch_exam_items_lesson_id($conn,$id,$print = true){
 	$stmt = $conn->prepare("SELECT * 
 		FROM tbl_exam_items
-		WHERE lesson_id =:lesson_id
+		WHERE lesson_id =:lesson_id AND deleted_at =:deleted_at
 	");
 	
 	$stmt->execute(array(
-		"lesson_id" => $id
+		"lesson_id" => $id,
+		"deleted_at" => "0000-00-00 00:00:00"
 	));
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -298,11 +303,12 @@ function fetch_exam_items_lesson_id($conn,$id,$print = true){
 function fetch_sub_lesson_id($conn,$id,$print = true){
 	$stmt = $conn->prepare("SELECT * 
 		FROM tbl_lessons_sub_chapters
-		WHERE lesson_id =:lesson_id
+		WHERE lesson_id =:lesson_id AND deleted_at =:deleted_at
 	");
 	
 	$stmt->execute(array(
-		"lesson_id" => $id
+		"lesson_id" => $id,
+		"deleted_at" => "0000-00-00 00:00:00"
 	));
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -315,12 +321,13 @@ function fetch_sub_lesson_id($conn,$id,$print = true){
 function fetch_exam_by_lesson($conn,$id,$print = true){
 	$stmt = $conn->prepare("SELECT * 
 		FROM tbl_exam_items
-		WHERE lesson_sub_id = :lesson_sub_id
+		WHERE lesson_sub_id = :lesson_sub_id AND deleted_at =:deleted_at
 		ORDER BY RAND() LIMIT 10
 	");
 	
 	$stmt->execute(array(
 		"lesson_sub_id" => $id,
+		"deleted_at" => "0000-00-00 00:00:00"
 	));
 
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -333,12 +340,13 @@ function fetch_exam_by_lesson($conn,$id,$print = true){
 function fetch_exam_by_chapter($conn,$id,$print = true){
 	$stmt = $conn->prepare("SELECT * 
 		FROM tbl_exam_items
-		WHERE lesson_id = :lesson_id
+		WHERE lesson_id = :lesson_id AND deleted_at =:deleted_at
 		ORDER BY RAND() LIMIT 30
 	");
 	
 	$stmt->execute(array(
 		"lesson_id" => $id,
+		"deleted_at" => "0000-00-00 00:00:00"
 	));
 
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -355,12 +363,13 @@ function query_lessons($conn, $row, $print=true){
 	$stmt = $conn->prepare("SELECT * 
 		FROM tbl_lessons_chapters
 		WHERE lesson_chapter = :lesson_chapter OR
-		lesson_description = :lesson_description
+		lesson_description = :lesson_description AND deleted_at =:deleted_at
 	");
 	
 	$stmt->execute(array(
 		"lesson_description" => $row['lesson_description'],
-		"lesson_chapter" => $row['lesson_chapter']
+		"lesson_chapter" => $row['lesson_chapter'],
+		"deleted_at" => "0000-00-00 00:00:00"
 	));
 
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -373,11 +382,12 @@ function query_lessons($conn, $row, $print=true){
 function query_lessons_id($conn, $row, $print=true){
 	$stmt = $conn->prepare("SELECT * 
 		FROM tbl_lessons_chapters
-		WHERE lesson_id = :lesson_id
+		WHERE lesson_id = :lesson_id AND deleted_at =:deleted_at
 	");
 	
 	$stmt->execute(array(
 		"lesson_id" => $row['lesson_id'],
+		"deleted_at" => "0000-00-00 00:00:00",
 	));
 
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -391,11 +401,11 @@ function query_lessons_id($conn, $row, $print=true){
 
 function fetch_sub_lessons($conn,$print = true){
 	$stmt = $conn->prepare("SELECT * 
-		FROM tbl_lessons_sub_chapters
+		FROM tbl_lessons_sub_chapters WHERE deleted_at =:deleted_at
 	");
 	
 	$stmt->execute(array(
-
+		"deleted_at" => "0000-00-00 00:00:00"
 	));
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -407,11 +417,12 @@ function fetch_sub_lessons($conn,$print = true){
 function query_sub_lessons($conn,$id = 1,$print = true){
 	$stmt = $conn->prepare("SELECT * 
 		FROM tbl_lessons_sub_chapters
-		WHERE lesson_sub_id = :id
+		WHERE lesson_sub_id = :id AND deleted_at =:deleted_at
 	");
 	
 	$stmt->execute(array(
-		'id' => $id
+		'id' => $id,
+		"deleted_at" => "0000-00-00 00:00:00"
 	));
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -446,7 +457,7 @@ function fetch_tally($row,$conn){
 	");
 
 	$stmt->execute(array(
-		"lesson_id" => $row['lesson_id']
+		"lesson_id" => $row['lesson_id'],
 	));
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	return $row;
@@ -550,12 +561,13 @@ function update_exam_items($row,$conn){
 function validates_user($row,$conn){
 	$stmt = $conn->prepare("SELECT * 
 		FROM tbl_user
-		WHERE username = :username AND password = :password
+		WHERE username = :username AND password = :password AND deleted_at = :deleted_at
 	");
 	
 	$stmt->execute(array(
 		'username' => $row['username'],
 		'password' => $row['password'],
+		'deleted_at' => '0000-00-00 00:00:00'
 	));
 	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -628,3 +640,63 @@ function random_str(){
 	    return implode($pass); //turn the array into a string
 	
 	}
+/////
+///delete functions
+///
+
+function remove_user($row,$conn){
+	
+	$stmt = $conn->prepare("UPDATE tbl_user 
+		SET deleted_at = now()
+		WHERE user_id = :user_id
+	");	
+
+	$stmt->execute(array(
+		"user_id" => $row["user_id"]
+	));
+	
+	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);	
+}
+
+
+function remove_lesson($row,$conn){
+	$stmt = $conn->prepare("UPDATE tbl_lessons_chapters 
+		SET deleted_at =now()
+		WHERE lesson_id = :lesson_id
+	");
+
+	$stmt->execute(array(
+		"lesson_id" => $row["lesson_id"]
+	));
+	
+	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+function remove_sub_lesson($row,$conn){
+	$stmt = $conn->prepare("UPDATE tbl_lessons_sub_chapters 
+		SET deleted_at =now()
+		WHERE lesson_sub_id = :lesson_sub_id
+	");
+
+	$stmt->execute(array(
+		"lesson_sub_id" => $row["lesson_sub_id"]
+	));
+	
+	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+function remove_exam_items($row,$conn){
+	$stmt = $conn->prepare("UPDATE tbl_exam_items 
+		SET deleted_at =now()
+		WHERE exam_item_id = :exam_item_id
+	");
+
+	$stmt->execute(array(
+		"exam_item_id" => $row["exam_item_id"]
+	));
+	
+	$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+

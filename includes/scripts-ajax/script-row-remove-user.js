@@ -1,9 +1,9 @@
 //  always edit init!
 $(document).ready(function(){
-	$("#form-add-row-lesson").on('submit', function(e){
+	$("#form-remove-row-user").on('submit', function(e){
 		e.preventDefault();
-		form = "#form-add-row-lesson";
-		initAddLesson("form-add-row-lesson");	
+		form = "#form-remove-row-user";
+		initRemoveLesson("form-remove-row-user");	
 		return false;
 	});
 
@@ -11,13 +11,13 @@ $(document).ready(function(){
 
 
 
-function initAddLesson(form){
+function initRemoveLesson(form){
 	console.log("fetching");
 	$(".loader").fadeIn('fast');
 	form = $('#'+form);
 	console.log(form.serialize());
 	$.ajax({
-		url: '../includes/requests/request-row-add-lesson.php',
+		url: '../includes/requests/request-row-remove-user.php',
 		type: 'POST',
 		data: form.serialize(),
 		dataType: 'json',
@@ -25,16 +25,16 @@ function initAddLesson(form){
 			var vars = results;
 			if(vars.error === "ok")
 			{
-				$('#add-row').modal('hide');
-				notif_success();
+				$('#remove-row').modal('hide');
+				// notif_success();
 				$(form)[0].reset();
-				window.location = "index-page.php";
+				window.location = "admin-user.php";
 				// renderHtml(vars);
 			}
 			else
 			{
 				console.log(vars);
-				notif_error();
+				// notif_error();
 			}
 		},
 		complete:function(){

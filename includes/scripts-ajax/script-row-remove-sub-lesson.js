@@ -1,10 +1,10 @@
 
 $(document).ready(function(){
 
-	$("#form-edit-row-lesson").on('submit', function(e){
+	$("#form-remove-sub-row").on('submit', function(e){
 		e.preventDefault();
-		form = "#form-edit-row-lesson";
-		init("form-edit-row-lesson");	
+		form = "#form-remove-sub-row";
+		init("form-remove-sub-row");	
 		return false;
 	});
 
@@ -18,7 +18,7 @@ function init(form){
 	form = $('#'+form);
 	// console.log(form.serialize());
 	$.ajax({
-		url: '../includes/requests/request-add-row-lesson.php',
+		url: '../includes/requests/request-row-remove-sub-lesson.php',
 		type: 'POST',
 		data: form.serialize(),
 		dataType: 'json',

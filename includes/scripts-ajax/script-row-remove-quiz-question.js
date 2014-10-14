@@ -1,9 +1,9 @@
 //  always edit init!
 $(document).ready(function(){
-	$("#form-add-row-lesson").on('submit', function(e){
+	$("#form-remove-row-exam").on('submit', function(e){
 		e.preventDefault();
-		form = "#form-add-row-lesson";
-		initRemoveQuiz("form-add-row-lesson");	
+		form = "#form-remove-row-exam";
+		initRemoveQuiz("form-remove-row-exam");	
 		return false;
 	});
 
@@ -15,9 +15,8 @@ function initRemoveQuiz(form){
 	console.log("fetching");
 	$(".loader").fadeIn('fast');
 	form = $('#'+form);
-	console.log(form.serialize());
 	$.ajax({
-		url: '../includes/requests/request-row-add-lesson.php',
+		url: '../includes/requests/request-row-remove-quiz-question.php',
 		type: 'POST',
 		data: form.serialize(),
 		dataType: 'json',
@@ -25,16 +24,16 @@ function initRemoveQuiz(form){
 			var vars = results;
 			if(vars.error === "ok")
 			{
-				$('#add-row').modal('hide');
-				notif_success();
+				$('#remove-exam-row').modal('hide');
+				// notif_success();
 				$(form)[0].reset();
-				window.location = "index-page.php";
+				window.location = "quiz-questions.php";
 				// renderHtml(vars);
 			}
 			else
 			{
-				console.log(vars);
-				notif_error();
+				// console.log(vars);
+				// notif_error();
 			}
 		},
 		complete:function(){
