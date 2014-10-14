@@ -35,11 +35,11 @@
                             <?php foreach ($users as $key => $value): ?>
                                     <tr>
                                             <td><?= $a++; ?></td>
-                                            <td class="username"><?= $value->username;?></td>
+                                            <td class="username"><?= htmlspecialchars($value->username);?></td>
                                             <td class="lesson_chapter">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
                                             <td>
                                                 <input type="hidden" name="user_id" value="<?= $value->user_id;?>">
-                                                <input type="hidden" name="username" value="<?= $value->username;?>">
+                                                <input type="hidden" name="username" value="<?= htmlspecialchars($value->username);?>">
                                                 <button class="btn btn-info btn-sm edit-btn-name" data-toggle="modal" data-target="#edit-row-name"><i class="fa fa-pencil"></i> Edit Username</button>
                                                 <button class="btn btn-info btn-sm edit-btn-password" data-toggle="modal" data-target="#edit-row-password"><i class="fa fa-pencil"></i> New Password</button>
                                                 <button class="btn btn-danger btn-sm remove-btn" data-toggle="modal" data-target="#remove-row"><i class="fa fa-remove"></i> Remove</button>
@@ -73,15 +73,15 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label>Username:</label>
-                    <input type="text" name="username" class="form-control" placeholder="Username">
+                    <input type="text" name="username" class="form-control" placeholder="Username" required>
                 </div>
                 <div class="form-group">
                     <label>Password:</label>
-                    <input type="password" name="password" class="form-control" placeholder="Password">
+                    <input type="password" name="password" class="form-control" placeholder="Password" required>
                 </div>
                 <div class="form-group">
                     <label>Re-type Password:</label>
-                    <input type="password" name="retypepassword" class="form-control" placeholder="Password">
+                    <input type="password" name="retypepassword" class="form-control" placeholder="Password" required>
                 </div>
             </div>
             <div class="modal-footer">
@@ -109,7 +109,7 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label>Username:</label>
-                    <input type="text" name="username" class="form-control" placeholder="Username">
+                    <input type="text" name="username" class="form-control" placeholder="Username" required>
                 </div>
             </div>
             <div class="modal-footer">
@@ -138,11 +138,11 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label>Password:</label>
-                    <input type="password" name="password" class="form-control" placeholder="Password">
+                    <input type="password" name="password" class="form-control" placeholder="Password" required>
                 </div>
                 <div class="form-group">
                     <label>Re-type Password:</label>
-                    <input type="password" name="retypepassword" class="form-control" placeholder="Password">
+                    <input type="password" name="retypepassword" class="form-control" placeholder="Password" required>
                 </div>
             </div>
             <div class="modal-footer">
@@ -188,7 +188,7 @@
 
 <script type="text/javascript">
     
-$(document).ready(function() {
+$(document).on('ready change input click',function() {
     $("#datatable-user").dataTable(); 
     $(".edit-btn-name").click(function(){
         user_id = $(this.parentElement).find('input[name=user_id]').val();
@@ -205,4 +205,120 @@ $(document).ready(function() {
         // debugger;
     });
 });
+</script>
+
+<script type="text/javascript">
+    $('document').ready(function(){
+        $('#form-edit-row-user-name').bootstrapValidator({
+            // container: 'tooltip',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                username: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The username is required'
+                        },
+                        stringLength: {
+                            min: 8,
+                            message: 'The username must be 8 or above characters'
+                        }
+
+                    }
+                }
+            }
+        });
+
+        // form-add-row-user
+    $('#form-add-row-user').bootstrapValidator({
+        // container: 'tooltip',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            username: {
+                validators: {
+                    notEmpty: {
+                        message: 'The username is required'
+                    },
+                    stringLength: {
+                        min: 8,
+                        message: 'The username must be 8 or above characters'
+                    }
+                }
+            },
+            password: {
+                validators: {
+                    notEmpty: {
+                        message: 'The password is required'
+                    },
+                    identical: {
+                        field: 'retypepassword',
+                        message: 'The password and its confirm are not the same'
+                    },
+                    stringLength: {
+                        min: 8,
+                        message: 'The password must be 8 or above characters'
+                    }
+                }
+            },
+            retypepassword: {
+                validators: {
+                    notEmpty: {
+                        message: 'The retype password is required'
+                    },
+                    identical: {
+                        field: 'password',
+                        message: 'The password and its confirm are not the same'
+                    }
+                }
+            }
+        }
+    });
+    $('#form-edit-row-user-password').bootstrapValidator({
+        // container: 'tooltip',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            password: {
+                validators: {
+                    notEmpty: {
+                        message: 'The password is required'
+                    },
+                    identical: {
+                        field: 'retypepassword',
+                        message: 'The password and its confirm are not the same'
+                    },
+                    stringLength: {
+                        min: 8,
+                        message: 'The password must be 8 or above characters'
+                    }
+                }
+            },
+            retypepassword: {
+                validators: {
+                    notEmpty: {
+                        message: 'The retype password is required'
+                    },
+                    identical: {
+                        field: 'password',
+                        message: 'The password and its confirm are not the same'
+                    }
+                }
+            }
+        }
+    });
+});
+    // form-edit-row-user-password
+
+
+
 </script>

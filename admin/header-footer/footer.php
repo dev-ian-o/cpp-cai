@@ -20,6 +20,7 @@
 <script src="../lib/js/plugins/dataTables/dataTables.bootstrap.js"></script>
 
 <script src="../lib/js/jquery.gritter/js/jquery.gritter.js"></script>
+<script src="../lib/dist/js/bootstrapValidator.min.js"></script>
 	<script>
         
 	    $(window).load(function() {

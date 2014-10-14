@@ -78,26 +78,26 @@
                     <tr>
                         <td><?= $a++; ?></td>
                         <td class="lesson_question">
-                            <a href="#" class="tooltip-texts" data-toggle="tooltip" data-placement="top" title="<?= $value->lesson_question;?>"><?= show_limit($value->lesson_question, 20);?></a>
+                            <a href="#" class="tooltip-texts" data-toggle="tooltip" data-placement="top" title="<?= htmlspecialchars($value->lesson_question);?>"><?= htmlspecialchars(show_limit($value->lesson_question, 20));?></a>
                         </td>
                         <td class="lesson_choices">
                             <?php $combinedQuestions = $value->lesson_choice1.", ".$value->lesson_choice2.", ".$value->lesson_choice3.", ".$value->lesson_choice4;?>
-                            <a href="#" class="tooltip-texts" data-toggle="tooltip" data-placement="top" title="<?= $combinedQuestions;?>"><?=  show_limit($combinedQuestions, 20);?></a>
+                            <a href="#" class="tooltip-texts" data-toggle="tooltip" data-placement="top" title="<?= htmlspecialchars($combinedQuestions);?>"><?=  htmlspecialchars(show_limit($combinedQuestions, 20));?></a>
                         </td>
                         <td class="lesson_answer">
-                            <a href="#" class="tooltip-texts" data-toggle="tooltip" data-placement="top" title="<?= $value->lesson_answer;?>"><?=  show_limit($value->lesson_answer, 20);?></a>
+                            <a href="#" class="tooltip-texts" data-toggle="tooltip" data-placement="top" title="<?= htmlspecialchars($value->lesson_answer);?>"><?=  htmlspecialchars(show_limit($value->lesson_answer, 20));?></a>
                         </td>
                         <td>
                             <input type="hidden" name="exam_item_id" value="<?= $value->exam_item_id;?>">
-                            <input type="hidden" name="lesson_question" value="<?= $value->lesson_question;?>">
+                            <input type="hidden" name="lesson_question" value="<?= htmlspecialchars($value->lesson_question);?>">
                             <input type="hidden" name="lesson_id" value="<?= $value->lesson_id;?>">
                             <input type="hidden" name="lesson_sub_id" value="<?= $value->lesson_sub_id;?>">
-                            <input type="hidden" name="lesson_answer" value="<?= $value->lesson_answer;?>">
+                            <input type="hidden" name="lesson_answer" value="<?= htmlspecialchars($value->lesson_answer);?>">
 
-                            <input type="hidden" name="lesson_choice1" value="<?= $value->lesson_choice1;?>">
-                            <input type="hidden" name="lesson_choice2" value="<?= $value->lesson_choice2;?>">
-                            <input type="hidden" name="lesson_choice3" value="<?= $value->lesson_choice3;?>">
-                            <input type="hidden" name="lesson_choice4" value="<?= $value->lesson_choice4;?>">
+                            <input type="hidden" name="lesson_choice1" value="<?= htmlspecialchars($value->lesson_choice1);?>">
+                            <input type="hidden" name="lesson_choice2" value="<?= htmlspecialchars($value->lesson_choice2);?>">
+                            <input type="hidden" name="lesson_choice3" value="<?= htmlspecialchars($value->lesson_choice3);?>">
+                            <input type="hidden" name="lesson_choice4" value="<?= htmlspecialchars($value->lesson_choice4);?>">
                             <button class="btn btn-info btn-sm edit-exam-btn" data-toggle="modal" data-target="#edit-row-exam"><i class="fa fa-pencil"></i> Edit</button>
                             <button class="btn btn-danger btn-sm remove-exam-btn" data-toggle="modal" data-target="#remove-row-exam"><i class="fa fa-remove"></i> Remove</button>
                         </td>
@@ -136,27 +136,27 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label>Question</label>
-                    <input type="text" name="lesson_question" class="form-control" placeholder="Enter text">
+                    <textarea name="lesson_question" class="form-control" placeholder="Enter text"></textarea required>
                 </div>
                 <div class="form-group">
                     <label>Choice #1</label>
-                    <input type="text" name="lesson_choice1" class="form-control" placeholder="Enter text">
+                    <input type="text" name="lesson_choice1" class="form-control" placeholder="Enter text" required>
                 </div>
                 <div class="form-group">
                     <label>Choice #2</label>
-                    <input type="text" name="lesson_choice2" class="form-control" placeholder="Enter text">
+                    <input type="text" name="lesson_choice2" class="form-control" placeholder="Enter text" required>
                 </div>
                 <div class="form-group">
                     <label>Choice #3</label>
-                    <input type="text" name="lesson_choice3" class="form-control" placeholder="Enter text">
+                    <input type="text" name="lesson_choice3" class="form-control" placeholder="Enter text" required>
                 </div>
                 <div class="form-group">
                     <label>Choice #4</label>
-                    <input type="text" name="lesson_choice4" class="form-control" placeholder="Enter text">
+                    <input type="text" name="lesson_choice4" class="form-control" placeholder="Enter text" required>
                 </div>
                 <div class="form-group">
                     <label>Answer</label>
-                    <input type="text" name="lesson_answer" class="form-control" placeholder="Enter text">
+                    <input type="text" name="lesson_answer" class="form-control" placeholder="Enter text" required>
                 </div>
             </div>
             <div class="modal-footer">
@@ -186,27 +186,27 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label>Question</label>
-                    <input type="text" name="lesson_question" class="form-control" placeholder="Enter text">
+                    <textarea name="lesson_question" class="form-control" placeholder="Enter text"></textarea required>
                 </div>
                 <div class="form-group">
                     <label>Choice #1</label>
-                    <input type="text" name="lesson_choice1" class="form-control" placeholder="Enter text">
+                    <input type="text" name="lesson_choice1" class="form-control" placeholder="Enter text" required>
                 </div>
                 <div class="form-group">
                     <label>Choice #2</label>
-                    <input type="text" name="lesson_choice2" class="form-control" placeholder="Enter text">
+                    <input type="text" name="lesson_choice2" class="form-control" placeholder="Enter text" required>
                 </div>
                 <div class="form-group">
                     <label>Choice #3</label>
-                    <input type="text" name="lesson_choice3" class="form-control" placeholder="Enter text">
+                    <input type="text" name="lesson_choice3" class="form-control" placeholder="Enter text" required>
                 </div>
                 <div class="form-group">
                     <label>Choice #4</label>
-                    <input type="text" name="lesson_choice4" class="form-control" placeholder="Enter text">
+                    <input type="text" name="lesson_choice4" class="form-control" placeholder="Enter text" required>
                 </div>
                 <div class="form-group">
                     <label>Answer</label>
-                    <input type="text" name="lesson_answer" class="form-control" placeholder="Enter text">
+                    <input type="text" name="lesson_answer" class="form-control" placeholder="Enter text" required>
                 </div>
             </div>
             <div class="modal-footer">
@@ -252,9 +252,6 @@
 <script src="../includes/scripts-ajax/script-row-edit-quiz-question.js"></script>    
 
 <script>
-    $(document).ready(function() {
-        $('.tooltip-texts').tooltip();
-    });
     $(document).ready(function() { 
     <?php foreach($sub_lessons_per_id as $key => $valueSub): ?>
         $("#<?= 'chapter'.$key;?>").dataTable(); 
@@ -263,28 +260,29 @@
 
 </script>
 <script type="text/javascript">
-    $(document).ready(function(){
+    $(document).on('ready change input click',function() {
+        $('.tooltip-texts').tooltip();
         $(".edit-exam-btn").click(function(){
             $parent = this.parentElement;
-            exam_item_id = $($parent).find('input[name=exam_item_id]').val();
-            lesson_question = $($parent).find('input[name=lesson_question]').val();
-            lesson_answer = $($parent).find('input[name=lesson_answer]').val();
-            lesson_choice1 = $($parent).find('input[name=lesson_choice1]').val();
-            lesson_choice2 = $($parent).find('input[name=lesson_choice2]').val();
-            lesson_choice3 = $($parent).find('input[name=lesson_choice3]').val();
-            lesson_choice4 = $($parent).find('input[name=lesson_choice4]').val();
-            lesson_id = $($parent).find('input[name=lesson_id]').val();
-            lesson_sub_id = $($parent).find('input[name=lesson_sub_id]').val();
+            exam_item_id = $($parent).find('[name=exam_item_id]').val();
+            lesson_question = $($parent).find('[name=lesson_question]').val();
+            lesson_answer = $($parent).find('[name=lesson_answer]').val();
+            lesson_choice1 = $($parent).find('[name=lesson_choice1]').val();
+            lesson_choice2 = $($parent).find('[name=lesson_choice2]').val();
+            lesson_choice3 = $($parent).find('[name=lesson_choice3]').val();
+            lesson_choice4 = $($parent).find('[name=lesson_choice4]').val();
+            lesson_id = $($parent).find('[name=lesson_id]').val();
+            lesson_sub_id = $($parent).find('[name=lesson_sub_id]').val();
             $form = "#form-edit-row-exam";
-            $($form).find('input[name=exam_item_id]').val(exam_item_id)
-            $($form).find('input[name=lesson_question]').val(lesson_question);
-            $($form).find('input[name=lesson_answer]').val(lesson_answer);
-            $($form).find('input[name=lesson_choice1]').val(lesson_choice1);
-            $($form).find('input[name=lesson_choice2]').val(lesson_choice2);
-            $($form).find('input[name=lesson_choice3]').val(lesson_choice3);
-            $($form).find('input[name=lesson_choice4]').val(lesson_choice4);
-            $($form).find('input[name=lesson_id]').val(lesson_choice3);
-            $($form).find('input[name=lesson_sub_id]').val(lesson_choice4);
+            $($form).find('[name=exam_item_id]').val(exam_item_id)
+            $($form).find('[name=lesson_question]').val(lesson_question);
+            $($form).find('[name=lesson_answer]').val(lesson_answer);
+            $($form).find('[name=lesson_choice1]').val(lesson_choice1);
+            $($form).find('[name=lesson_choice2]').val(lesson_choice2);
+            $($form).find('[name=lesson_choice3]').val(lesson_choice3);
+            $($form).find('[name=lesson_choice4]').val(lesson_choice4);
+            $($form).find('[name=lesson_id]').val(lesson_choice3);
+            $($form).find('[name=lesson_sub_id]').val(lesson_choice4);
         });
         $(".add-exam-btn").click(function(){
             $parent = this.parentElement;

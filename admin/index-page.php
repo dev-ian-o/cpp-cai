@@ -12,7 +12,7 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading clearfix">
-                        CPP Lessons 
+                        CPP Chapters
                         <div class="pull-right">
                             <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#add-row"><i class="fa fa-plus"></i> ADD</button>
                         </div>
@@ -34,8 +34,8 @@
                                 <?php foreach ($lessons as $key => $value): ?>
                                         <tr>
                                                 <td><?= $a++; ?></td>
-                                                <td class="lesson_description"><?= $value->lesson_description;?></td>
-                                                <td class="lesson_chapter"><?= $value->lesson_chapter;?></td>
+                                                <td class="lesson_description"><?= htmlspecialchars($value->lesson_description);?></td>
+                                                <td class="lesson_chapter"><?= htmlspecialchars($value->lesson_chapter);?></td>
                                                 <td>
                                                     <input type="hidden" name="lesson_id" value="<?= $value->lesson_id;?>">
                                                     <button class="btn btn-info btn-sm edit-btn" data-toggle="modal" data-target="#edit-row"><i class="fa fa-pencil"></i> Edit</button>
@@ -57,7 +57,7 @@
             <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading clearfix">
-                        CPP Sub Lessons 
+                        CPP Lessons 
                         <div class="pull-right">
                             <button class="btn btn-sm btn-success add-btn-sub" data-toggle="modal" data-target="#add-row-sub"><i class="fa fa-plus"></i> ADD</button>
                         </div>
@@ -79,8 +79,8 @@
                                 <?php foreach ($sub_lessons as $key => $value): ?>
                                         <tr>
                                                 <td><?= $a++; ?></td>
-                                                <td class="lesson_sub_description"><?= $value->lesson_sub_description;?></td>
-                                                <td class="lesson_chapter-sub"><?= $value->lesson_chapter;?></td>
+                                                <td class="lesson_sub_description"><?= htmlspecialchars($value->lesson_sub_description);?></td>
+                                                <td class="lesson_chapter-sub"><?= htmlspecialchars($value->lesson_chapter);?></td>
                                                 <td>
                                                     <input type="hidden" name="lesson_sub_id" value="<?= $value->lesson_sub_id;?>">
                                                     <input type="hidden" name="lesson_id" value="<?= $value->lesson_id;?>">
@@ -112,16 +112,16 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Add CPP Lessons</h4>
+                <h4 class="modal-title" id="myModalLabel">Add CPP Chapter</h4>
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label>Chapter Lesson</label>
-                    <input type="text" name="lesson_description" class="form-control" placeholder="Chapter Lesson">
+                    <label>Chapter Description</label>
+                    <input type="text" name="lesson_description" class="form-control" placeholder="Chapter Description" required>
                 </div>
                 <div class="form-group">
                     <label>Chapter No.</label>
-                    <input type="text" name="lesson_chapter" class="form-control" placeholder="Enter text">
+                    <input type="text" name="lesson_chapter" class="form-control" placeholder="Enter text" required>
                 </div>
             </div>
             <div class="modal-footer">
@@ -144,16 +144,16 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Edit CPP Lessons</h4>
+                <h4 class="modal-title" id="myModalLabel">Edit CPP Chapter</h4>
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label>Chapter Lesson</label>
-                    <input type="text" name="lesson_description" class="form-control" placeholder="Chapter Lesson">
+                    <label>Chapter Description</label>
+                    <input type="text" name="lesson_description" class="form-control" placeholder="Chapter Description" required>
                 </div>
                 <div class="form-group">
                     <label>Chapter No.</label>
-                    <input type="text" name="lesson_chapter" class="form-control" placeholder="Enter text">
+                    <input type="text" name="lesson_chapter" class="form-control" placeholder="Enter text" required>
                 </div>
             </div>
             <div class="modal-footer">
@@ -201,34 +201,34 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Add CPP Sub Lesson</h4>
+                <h4 class="modal-title" id="myModalLabel">Add CPP Lesson</h4>
             </div>
             <div class="modal-body">
                 <div class="form-group">
                     <label>Chapter</label>
-                    <select class="form-control" name="lesson_description">
+                    <select class="form-control" name="lesson_description" required>
                     <?php foreach ($lessons as $key => $value): ?>           
                         <option data-pos="<?= $key;?>" data-val="<?= $value->lesson_chapter;?>"><?= $value->lesson_description;?></option>
                     <?php endforeach;?>
                     </select>
                 </div>
                 <div class="hide">                    
-                    <select class="form-control" name="lesson_chapter">
+                    <select class="form-control" name="lesson_chapter" required>
                     <?php foreach ($lessons as $key => $value): ?>           
                         <option data-pos="<?= $key;?>" data-val="<?= $value->lesson_chapter;?>"><?= $value->lesson_chapter;?></option>
                     <?php endforeach;?>
                     </select>
                 </div>
                 <div class="hide">                    
-                    <select class="form-control" name="lesson_id">
+                    <select class="form-control" name="lesson_id" required>
                     <?php foreach ($lessons as $key => $value): ?>           
                         <option data-pos="<?= $key;?>" data-val="<?= $value->lesson_chapter;?>"><?= $value->lesson_id;?></option>
                     <?php endforeach;?>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Sub Lesson Title:</label>
-                    <input type="text" name="lesson_sub_description" class="form-control" placeholder="Sub Lesson Title">
+                    <label>Lesson Title:</label>
+                    <input type="text" name="lesson_sub_description" class="form-control" placeholder="Lesson Title" required>
                 </div>            
             </div>
             <div class="modal-footer">
@@ -256,29 +256,29 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label>Chapter</label>
-                    <select class="form-control" name="lesson_description">
+                    <select class="form-control" name="lesson_description" required>
                     <?php foreach ($lessons as $key => $value): ?>           
                         <option data-pos="<?= $key;?>" data-val="<?= $value->lesson_chapter;?>"><?= $value->lesson_description;?></option>
                     <?php endforeach;?>
                     </select>
                 </div>
                 <div class="hide">                    
-                    <select class="form-control" name="lesson_chapter">
+                    <select class="form-control" name="lesson_chapter" required>
                     <?php foreach ($lessons as $key => $value): ?>           
                         <option data-pos="<?= $key;?>" data-val="<?= $value->lesson_chapter;?>"><?= $value->lesson_chapter;?></option>
                     <?php endforeach;?>
                     </select>
                 </div>
                 <div class="hide">                    
-                    <select class="form-control" name="lesson_id">
+                    <select class="form-control" name="lesson_id" required>
                     <?php foreach ($lessons as $key => $value): ?>           
                         <option data-pos="<?= $key;?>" data-val="<?= $value->lesson_chapter;?>"><?= $value->lesson_id;?></option>
                     <?php endforeach;?>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Sub Lesson Title:</label>
-                    <input type="text" name="lesson_sub_description" class="form-control" placeholder="Sub Lesson Title">
+                    <label>Lesson Title:</label>
+                    <input type="text" name="lesson_sub_description" class="form-control" placeholder="Lesson Title" required>
                 </div>
             </div>
             <div class="modal-footer">
@@ -329,7 +329,7 @@
 <script src="../includes/scripts-ajax/script-row-add-sub-lesson.js"></script>    
 <script src="../includes/scripts-ajax/script-row-edit-sub-lesson.js"></script>    
 <script>
-    $(document).ready(function() {
+    $(document).on('ready change input click',function() {
         $('#datatable-lesson').dataTable();
         $('#datatable-sub-lesson').dataTable();
         $('.edit-btn').on('click', function(){
