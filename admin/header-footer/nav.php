@@ -9,7 +9,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		    </button>
-		    <a class="navbar-brand" href="index.html">CPP-CAI ADMIN</a>
+		    <a class="navbar-brand" href="index.php">CPP-CAI ADMIN</a>
 		</div>
 		<!-- /.navbar-header -->
 
