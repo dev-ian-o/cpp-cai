@@ -8,4 +8,5 @@ if(isset($_SESSION['user_id'])){
 	$key = $key['hash_key'];
 	if(!isset($_SESSION[$key])){  echo "<script>window.location = 'login.php';</script>"; }
 }
+
 ?>

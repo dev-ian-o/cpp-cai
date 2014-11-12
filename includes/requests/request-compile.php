@@ -1,5 +1,5 @@
 <?php $dir = $_SERVER['DOCUMENT_ROOT'] .'cai_project'; ?>
-<?php include("../includes/classes/getError.php"); ?>
+<?php include("../classes/getError.php"); ?>
 <?php
 	if (($_POST['form']) === "form-compile")
 	{
@@ -10,7 +10,6 @@
 			"output" => "",
 		);
 		writeCPP($vars['code']); // create a file cpp random name
-
 		if(getError($_SESSION['file_name']) !== "Compilation complete"){
 			$error = getError($_SESSION['file_name']);
 			$return['error'] = $error;

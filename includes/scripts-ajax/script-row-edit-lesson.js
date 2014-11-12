@@ -5,7 +5,6 @@ $(document).ready(function(){
 		e.preventDefault();
 		form = "#form-edit-row-lesson";
 		initEditLesson("form-edit-row-lesson");	
-		// debugger;
 		return false;
 	});
 

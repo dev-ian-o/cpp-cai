@@ -186,7 +186,7 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label>Question</label>
-                    <textarea name="lesson_question" class="form-control" placeholder="Enter text"></textarea required>
+                    <textarea name="lesson_question" class="form-control" placeholder="Enter text" required></textarea>
                 </div>
                 <div class="form-group">
                     <label>Choice #1</label>

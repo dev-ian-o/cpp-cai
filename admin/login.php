@@ -27,10 +27,10 @@ if(isset($_SESSION['user_id'])){
                     <form role="form" method="post">
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Username" name="username" type="text" autofocus>
+                                <input class="form-control" placeholder="Username" name="username" type="text" autofocus required>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                <input class="form-control" placeholder="Password" name="password" type="password" value="" required>
                             </div>
                             <button type="submit" name="submit" class="btn btn-lg btn-success btn-block">Login</button>
                         </fieldset>

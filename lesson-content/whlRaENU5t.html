@@ -61,7 +61,7 @@ class Class_Name {
   public class method declaration and definition;
   ... 
 
-} &lt;object_names&gt;;
+} <object_names>;
 
 public class method definitions for class methods that are only declared inside the class
 
@@ -95,7 +95,7 @@ class Triangle {
   access_specifier_2:
     member2;
   ...
-} &lt;object_names&gt;;
+} <object_names>;
         </code></pre>
     </div>
     <div class="col-xs-6">
@@ -106,7 +106,7 @@ class Student_Record {
   access_specifier_2:
     member2;
   ...
-} &lt;object_names&gt;;
+} <object_names>;
         </code></pre>
     </div>
 </div>
@@ -146,8 +146,8 @@ Classes have the same format as plain <em>data structures</em>, except that they
 <p>
     Syntax for declaring <strong>instance variable</strong> (one of the class members) of a class, usually have a <strong>private</strong> access specifier.
 </p>
-<pre><code>&lt;access specifier&gt; :
-        &lt;type&gt; &lt;attribute name&gt;;</code></pre>
+<pre><code><access specifier> :
+        <type> <attribute name>;</code></pre>
 <p>
     Or
 </p>
@@ -155,9 +155,9 @@ Classes have the same format as plain <em>data structures</em>, except that they
     Syntax for declaring <strong>class method (another class member)</strong>, usually have a <strong>public</strong> access specifier.
 </p>
 
-<pre><code>&lt;access specifier&gt; :
-    &lt;type&gt; &lt;class method name&gt;(&lt;optional argument list&gt;);
-    &lt;type&gt; &lt;class method name&gt;(&lt;optional argument list&gt;)
+<pre><code><access specifier> :
+    <type> <class method name>(<optional argument list>);
+    <type> <class method name>(<optional argument list>)
         {  
           Method definition…
         };
@@ -239,7 +239,7 @@ Like the discussion in string to declare a string object is:
     <li>str is an object declared out of the string class</li>
 </ul>
 <p>Therefore, the syntax in declaring objects out of the user-defined class is</p>
-<p class="text-center"><pre><code>&lt;user-define class_name&gt; &lt;object_names&gt;;</code></pre></p>
+<p class="text-center"><pre><code><user-define class_name> <object_names>;</code></pre></p>
 <p>For example, using the Triangle class, we can declare object as</p>
 
 <p class="text-center"><pre><code>Triangle triA;
@@ -479,7 +479,7 @@ double Student_Record::compute_tfee(int units, double rate){
     Therefore, the syntax for accessing class method, use the following:
 </p>
 <p>
-    <pre><code>&lt;object_names&gt;<strong>.</strong>&lt;class_method&gt;</code></pre>
+    <pre><code><object_names><strong>.</strong><class_method></code></pre>
 </p>
 <p>
     For example:
@@ -554,8 +554,8 @@ A method whose only purpose is to access the value of a private instance variabl
     Syntax of defining an accessor method
 </p>
 
-<pre><code>&lt;return-type&gt;   ClassNiame::&lt;getAccessorMethodName&gt;(){
-         &lt;accessor-method-definition&gt;;
+<pre><code><return-type>   ClassNiame::<getAccessorMethodName>(){
+         <accessor-method-definition>;
          ……
 }
 </code></pre>
@@ -711,8 +711,8 @@ int Sample::get_age(){
 <p>
     Syntax of defining an mutator method
 </p>
-<?php code("&lt;return-type&gt;   ClassNiame::&lt;setAccessorMethodName&gt;(&lt;data-type&gt; identifier){
-         &lt;mutator-method-definition&gt;;
+<?php code("<return-type>   ClassNiame::<setAccessorMethodName>(<data-type> identifier){
+         <mutator-method-definition>;
          ……
 }
 ")?>
@@ -951,8 +951,8 @@ Triangle::Triangle(){
 <p>
     For example:
 </p>
-<?php code('#include &lt;iostream&gt;
-#include &lt;string&gt;
+<?php code('#include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -975,7 +975,7 @@ Triangle::Triangle(){
 int main()
 {
    Triangle triA;//uses the Triangle() constructor that assigns 10 and 50 to  data members base and height  
-   cout &lt;&lt; "triA area: " &lt;&lt; triA.area() &lt;&lt; endl;
+   cout << "triA area: " << triA.area() << endl;
   return 0;
 }
 
@@ -1052,8 +1052,8 @@ int main()
 </p>
 <div class="row">
     <div class="col-xs-7">
-    <?php code('#include &lt;iostream&gt;
-    #include &lt;string&gt;
+    <?php code('#include <iostream>
+    #include <string>
 
     using namespace std;
 
@@ -1127,7 +1127,7 @@ Triangle triC(13,27);
 <div class="row">
     <div class="col-xs-7">
         <?php code('Program Code');?>
-        <?php code('#include &lt;iostream&gt;
+        <?php code('#include <iostream>
 using namespace std; 
 class Triangle{
   private: //optional since this is the default
@@ -1152,8 +1152,8 @@ int main(){
    Triangle triB;  
    triA.set_values(2,5);
    triB.set_values(5,10);
-   cout &lt;&lt; "triA area: " &lt;&lt; triA.area() &lt;&lt; endl;
-  cout &lt;&lt; "triB area: " &lt;&lt; triB.area() &lt;&lt; endl;
+   cout << "triA area: " << triA.area() << endl;
+  cout << "triB area: " << triB.area() << endl;
   return 0;
 }
 ');?>
@@ -1166,12 +1166,12 @@ triB area : 25
 
     </div>
     <div class="col-xs-12">
-        <p><b>NOTE:</b> Notice that we use the object triA inside the main() even though it is not instantiated inside the main(). Remember that in the syntax of defining a class, &lt;object_names&gt; is an optional list of names for object.  In this example, we define the class and instantiated one object for the class named triA.  Therefore, object triA can be used anywhere in the main() since it is already created.</p>
+        <p><b>NOTE:</b> Notice that we use the object triA inside the main() even though it is not instantiated inside the main(). Remember that in the syntax of defining a class, <object_names> is an optional list of names for object.  In this example, we define the class and instantiated one object for the class named triA.  Therefore, object triA can be used anywhere in the main() since it is already created.</p>
     </div>
     <div class="col-xs-7">
         <?php code('Program Code');?>
-        <?php code('#include &lt;iostream&gt;
-#include &lt;string&gt;
+        <?php code('#include <iostream>
+#include <string>
 using namespace std; 
 class Triangle{
   private:

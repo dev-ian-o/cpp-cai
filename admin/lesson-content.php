@@ -8,7 +8,7 @@
 <?php $sub_lessons = json_decode(fetch_sub_lessons($conn,false)); ?>
 <?php 
 // defaul if there's no get
-  if (isset($_GET['lesson'])) {$lesson = $_GET['lesson'];}
+  if (isset($_GET['lesson'])) {$lesson = htmlspecialchars($_GET['lesson']);}
   else { $lesson = $sub_lessons[0]->lesson_sub_id; }
 ?>
 

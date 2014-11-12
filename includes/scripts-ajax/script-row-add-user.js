@@ -3,6 +3,7 @@ $(document).ready(function(){
 	$("#form-add-row-user").on('submit', function(e){
 		e.preventDefault();
 		form = "#form-add-row-user";
+		debugger;
 		initAddUser("form-add-row-user");	
 		return false;
 	});
